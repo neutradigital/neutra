@@ -50,13 +50,104 @@ nav {
  nav {
   font-family: 'Manrope';
   color: white;
-  border-radius: 5px;
   padding-left: 40px;
   padding-right: 40px;
   background-color: rgb(33, 34, 46, 0.7);
   box-shadow: 1px 1px 10px black;
  }
 }
+
+
+/* --- OPTIMIZACIÓN LANDSCAPE PARA NEUTRA --- */
+
+/* --- TIPOGRAFÍA DINÁMICA PARA NEUTRA --- */
+
+/* Aplicamos cambios solo cuando la pantalla es baja (Landscape) */
+@media (max-height: 550px) {
+    /* 1. Contenedor Card: Forzamos altura y eliminamos aire superior/inferior */
+    .snap-center {
+        height: 290px !important;
+        padding: 0.5rem 1rem !important; /* Padding mínimo de 8px arriba/abajo */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        gap: 0 !important;
+    }
+
+    /* 2. Cabecera: Título y subtítulo pegados */
+    .snap-center h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0px !important;
+        line-height: 1.1 !important;
+    }
+
+    .snap-center p.italic.mb-8 {
+        font-size: 9px !important;
+        margin-bottom: 4px !important; /* Reducido de 32px (mb-8) a 4px */
+    }
+
+    /* 3. Retícula de Beneficios: Colapso total de Gaps */
+    .snap-center .grid-cols-\[100px_1fr\] {
+        gap-y: 2px !important; /* Espacio mínimo entre filas */
+        margin-bottom: 2px !important;
+        row-gap: 2px !important;
+    }
+
+    /* Títulos de características y labels */
+    .snap-center .font-bold.uppercase.tracking-wide,
+    .snap-center .text-neutral-500.text-xs {
+        font-size: 8px !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+    }
+
+    /* Descripciones: Texto ultra compacto */
+    .snap-center .text-\[10px\] {
+        font-size: 8px !important;
+        line-height: 1 !important;
+        margin-top: 1px !important;
+        display: -webkit-box; /* Limitamos a 2 líneas para asegurar que quepa */
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* 4. Footer: Precio y Botón pegados a la lista */
+    .snap-center .border-t.pt-6 {
+        padding-top: 4px !important;
+        margin-top: 2px !important;
+        border-top: 1px solid rgba(0,0,0,0.05) !important;
+    }
+
+    .snap-center .text-2xl.font-light {
+        font-size: 1rem !important;
+        line-height: 1 !important;
+    }
+
+    .snap-center .text-\[10px\].uppercase.tracking-widest {
+        font-size: 7px !important;
+        margin-bottom: 1px !important;
+    }
+
+    .start {
+        padding: 4px 10px !important;
+        font-size: 9px !important;
+    }
+}
+
+@media (max-height: 600px) {
+    /* Colapsamos el espacio entre filas del grid de beneficios */
+    .snap-center .grid-cols-\[100px_1fr\] {
+        gap-y: 8px !important; /* Mucho más apretado */
+    }
+
+    /* Reducimos el padding superior del footer de la card */
+    .snap-center .border-t.pt-6 {
+        padding-top: 8px !important;
+        margin-top: 8px !important;
+    }
+}
+
 
 .menu-options a:hover {
   color: #EEE6F7;
@@ -110,7 +201,7 @@ nav {
 }
 
 
-#what-we-do p {
+#what-we-do {
   font-family:var(--titles-font);
   color: #F9F9F9;
 }
@@ -121,9 +212,9 @@ p span {
 
 #what-we-do button {
   background:radial-gradient(circle, #ffffff, var(--color-primary));
-  width: fit-content;
   color: #21222e;
 }
+
 
 #carousel-container .snap-center {
   background:radial-gradient(circle, #ffffff, #E2E8F0);
@@ -170,7 +261,6 @@ p span {
 
 h4 {
   font-family: var(--titles-font);
-  color:#dedede;
   text-align: center;
   width: fit-content;
   align-self: center;
@@ -265,10 +355,10 @@ span {
 }
 
 
-article img {
+/* article img {
   border-radius: 10px;
   box-shadow: 10px 10px black;
-}
+} */
 
 
 #about-me-text article {
@@ -308,4 +398,139 @@ footer {
 
 footer h4 {
   color: black;
+}
+
+
+/* AVISO DE PRIVACIDAD */
+
+#avisoprivacy {
+  color: white;
+}
+
+#terminosserv {
+  color: white;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+#sectores {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 1200px; /* Opcional: control de ancho para desktop */
+    margin: 0 auto;
+}
+
+/* --- TARJETA (ARTICLE) --- */
+.sector-card {
+    position: relative;
+    height: 80px; /* Altura cerrada en mobile */
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* LA IMAGEN: Capa de fondo fija */
+.sector-card__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.4);
+    transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+/* EL CONTENIDO: Siempre por encima */
+.sector-card__overlay {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 20px;
+    pointer-events: none; /* Los clics pasan al article */
+}
+
+.sector-card__title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sector-card__info {
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.4s ease, visibility 0.3s;
+}
+
+.sector-card__info p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* --- LOGICA DE ESTADOS (MOBILE & CLICK) --- */
+
+/* Cuando la tarjeta tiene la clase .is-active (vía JS) */
+.sector-card.is-active {
+    height: 160px; /* Expansión mobile */
+}
+
+.sector-card.is-active .sector-card__info {
+    opacity: 1;
+    max-height: 200px;
+    visibility: visible;
+}
+
+.sector-card.is-active .sector-card__img {
+    filter: brightness(0.3);
+}
+
+/* --- LOGICA DE ESTADOS (DESKTOP / MOUSE) --- */
+
+/* Solo aplica hover si el dispositivo tiene un puntero (mouse) */
+@media (hover: hover) {
+    .sector-card:hover {
+        height: 400px; /* Altura solicitada para desktop */
+    }
+
+    .sector-card:hover .sector-card__info {
+        opacity: 1;
+        max-height: 300px;
+        visibility: visible;
+    }
+
+    .sector-card:hover .sector-card__img {
+        transform: scale(1.05);
+        filter: brightness(0.3);
+    }
+
+    .sector-card__title {
+        transition: font-size 0.3s ease;
+    }
+
+    .sector-card:hover .sector-card__title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Ajuste de altura base para pantallas grandes */
+@media (min-width: 1024px) {
+    .sector-card {
+        height: 120px;
+    }
 }

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/logos/neutralogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet">
+    <link rel="preload" as="image" href="./src/images/camilo.png">
+    <title>NEUTRA</title>
+  </head>
+  <body>
+    <header id="home" class="flex m-0 flex-col pt-5 pb-7 justify-center items-center text-center">
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#21222e] backdrop-blur-md border-b border-white/10  transition-all duration-300">
+  
+    <h1 id="brand" class="text-2xl font-bold tracking-[0.2em] z-50 relative">
+      NEUTRA
+    </h1>
+
+    <button id="menu-btn" class="flex flex-col gap-1.5 md:hidden z-50 focus:outline-none">
+      <span id="line1" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+      <span id="line2" class="block w-6 h-0.5 bg-white transition-opacity duration-300"></span>
+      <span id="line3" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+    </button>
+
+    <ul id="menu-items" class="fixed inset-0 bg-[#21222e] h-96 w-screen flex flex-col justify-center items-center align-middle gap-5 text-2xl tracking-widest opacity-0 pointer-events-none transition-opacity duration-300
+        md:static md:h-auto md:w-auto md:bg-transparent md:flex-row md:gap-10 md:text-sm md:opacity-100 md:pointer-events-auto">
+        
+      <li><a href="/index.html" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">HOME</a></li>
+      <li><a href="/index.html/#suites" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SUITES</a></li>
+      <li><a href="/index.html/#selectedw" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SELECTED WORK</a></li>
+      <li><a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20vengo%20de%20la%20web%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20estrat%C3%A9gico." class="hover:text-gray-400 transition-colors" onclick="closeMenu()">CONTACTO</a></li>
+    </ul>
+
+  </nav>
+
+    </header>
+      <section id="terminosserv" class="flex flex-col gap-10 p-12">
+    <h1 class="text-center text-4xl">TÉRMINOS Y CONDICIONES DE SERVICIO</h1>
+        <div>
+            <ol class="flex flex-col gap-5 list-decimal">
+                <li><strong>Objeto:</strong> NEUTRA se compromete a la prestación de servicios de estrategia, diseño y desarrollo 
+                    digital conforme a lo estipulado en la propuesta comercial aceptada por el Cliente.</li>
+                <li><strong>Propiedad Intelectual:</strong> Los derechos de autor sobre el diseño y código fuente desarrollado 
+                    pertenecen a NEUTRA hasta que el Cliente liquide el 100% de la contraprestación pactada. 
+                    Tras el pago final, el Cliente adquiere la propiedad del producto final para su uso comercial. </li>
+                <li><strong>Metodología y Cambios:</strong> El servicio se rige por un sistema de entregas por hitos. 
+                    El Cliente tiene derecho a dos (2) rondas de revisiones por hito. Cambios adicionales o 
+                    fuera del alcance inicial serán cotizados de forma independiente.</li>
+                <li><strong>Herramientas de Terceros:</strong> NEUTRA utiliza servicios externos (Vercel, Google Workspace, 
+                    WhatsApp Business) para la ejecución de sus activos. NEUTRA no se hace responsable por 
+                    interrupciones de servicio imputables a dichos proveedores.</li>
+                <li><strong>Terminación:</strong> En caso de cancelación del proyecto por parte del Cliente, los anticipos 
+                    pagados no serán reembolsables, cubriendo los gastos operativos y de reserva de agenda 
+                    de la agencia.</li>
+            </ol>
+        </div>
+  </section>
+
+   <footer class="bg-white border-t md:fixed bottom-0 w-full border-gray-100 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      
+      <div class="space-y-4">
+        <h2 class="text-xl font-bold tracking-tighter text-gray-900">NEUTRA</h2>
+        <p class="text-sm text-gray-500 max-w-xs">
+          Transformando servicios digitales complejos en soluciones estratégicas productizadas.
+        </p>
+      </div>
+
+      <div class="flex flex-col space-y-3">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3>
+        <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información" 
+           class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
+           <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+           WhatsApp: 222 197 8263
+        </a>
+        <p class="text-gray-600 text-sm">Coatepec, Veracruz, MX</p>
+      </div>
+
+      <div class="flex flex-col space-y-3">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
+        <a href="/privacidad.html" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
+        <a href="/terminos.html" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de Servicio</a>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
+      <p class="text-xs text-gray-400">
+        &copy; 2026 NEUTRA. Todos los derechos reservados.
+      </p>
+      <p class="text-xs text-gray-400 mt-2 md:mt-0 italic">
+        Estrategia con enfoque y claridad.
+      </p>
+    </div>
+  </div>
+</footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

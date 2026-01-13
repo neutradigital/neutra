@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/logos/neutralogo.svg" />
@@ -21,9 +21,9 @@
         </video>
   <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#21222e] backdrop-blur-md border-b border-white/10  transition-all duration-300">
   
-    <h1 id="brand" class="text-2xl font-bold tracking-[0.2em] z-50 relative">
+    <a href="index.html"><h1 id="brand" class="text-2xl font-bold tracking-[0.2em] z-50 relative">
       NEUTRA
-    </h1>
+    </h1></a>
 
     <button id="menu-btn" class="flex flex-col gap-1.5 md:hidden z-50 focus:outline-none">
       <span id="line1" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
@@ -36,33 +36,73 @@
         
       <li><a href="#home" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">HOME</a></li>
       <li><a href="#suites" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SUITES</a></li>
-      <li><a href="#projects" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SELECTED WORK</a></li>
+      <li><a href="#selectedw" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SELECTED WORK</a></li>
       <li><a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20vengo%20de%20la%20web%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20estrat%C3%A9gico." class="hover:text-gray-400 transition-colors" onclick="closeMenu()">CONTACTO</a></li>
     </ul>
 
   </nav>
       <section id="hero" class="flex flex-col-reverse pt-6 justify-center gap-8 md:flex md:flex-row md:mt-6 md:pb-6 xl:pt-60 xl:pb-16 xl:gap-11 xl:self-center">
         <div class="titleandname text-[32px] flex justify-center text-center flex-col gap-2 md:text-start lg:gap-4 xl:gap-8">
-          <h1 class="text-[55px] leading-16 md:text-3xl lg:text-5xl xl:leading-45 xl:text-[180px] text-center text-gray-600">SHOWCASE <br> EXCELLENCE.</h1>
+          <h1 class="text-[55px] leading-16 md:text-7xl lg:text-5xl xl:leading-45 xl:text-[180px] text-center text-gray-600">SHOWCASE <br> EXCELLENCE.</h1>
         </div>
        </section>
     </header>
   <main>
-    <section id="what-we-do" class="professional mb-12 lg:m-44 xl:m-52 flex flex-col mt-10 justify-center gap-10 p-10 pt-0">
-      <p class="text-center text-[22px] lg:text-6xl lg:leading-20">Construimos galerías digitales para <strong>activos de alto rendimiento</strong>. 
-        <br>Nos especializamos en el <strong>Sector Inmobiliario</strong>, <strong>Automotriz</strong> y <strong>Deportivo</strong>.</p>
+    <section id="what-we-do" class="professional mb-12 lg:m-44 xl:mt-52 xl:mx-6  flex flex-col mt-10 justify-center gap-10 lg:gap-20 p-10 pt-0">
+      <p class="text-center text-[22px] lg:text-6xl lg:leading-20">Construimos galerías digitales para <br> <strong>activos de alto rendimiento</strong>. </p>
+    <div id="sectores" class="">
+        <div>
+          <h2 class="text-center uppercase text-[20px] lg:text-4xl italic font-semibold lg:mb-8">Sectores de especialización</h2>
+        </div>
+        <article class="sector-card">
+            <img class="sector-card__img" src="./src/images/realstatecard.png" alt="Inmobiliario">
+            <div class="sector-card__overlay">
+                <h2 class="sector-card__title">INMOBILIARIO</h2>
+                <p class="sector-card__info">Visualización 3D y experiencias inmersivas de alta gama.</p>
+            </div>
+        </article>
+
+        <article class="sector-card">
+            <img class="sector-card__img" src="./src/images/autoscard.png" alt="Automotriz">
+            <div class="sector-card__overlay">
+                <h2 class="sector-card__title">AUTOMOTRIZ</h2>
+                <p class="sector-card__info">Showrooms digitales y configuradores de vehículos premium.</p>
+            </div>
+        </article>
+
+        <article class="sector-card">
+            <img class="sector-card__img" src="./src/images/fitwomancard.png" alt="Deportivo">
+            <div class="sector-card__overlay">
+                <h2 class="sector-card__title">DEPORTIVO</h2>
+                <p class="sector-card__info">Ecosistemas digitales para el rendimiento y branding de élite.</p>
+            </div>
+        </article>
+
+        <article class="sector-card">
+            <img class="sector-card__img" src="./src/images/musiccard.png" alt="Musical">
+            <div class="sector-card__overlay">
+                <h2 class="sector-card__title">MUSICAL</h2>
+                <p class="sector-card__info">Identidad visual y plataformas interactivas para la industria.</p>
+            </div>
+        </article>
+    </div>
         <p class="text-center text-[18px] lg:text-4xl tracking-widest animate-pulse"><span>Preparados para el <strong>Escenario Global</strong>.</span></p>
-        <button class="rounded-[10px] font-light text-center self-center p-2 text-[20px]">COMENZAR PROYECTO</button>
+        <a class="text-center" href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información">
+          <button class="rounded-[10px] font-bold w-64 lg:w-125 lg:h-24 text-center self-center p-2 text-[20px] lg:text-4xl">COMENZAR PROYECTO</button>
+        </a>
     </section>
     <section id="suites" class="flex flex-col gap-1 justify-center mt-20 pb-8">
-      <h4 class="font-extralight text-4xl md:text-[45px] -tracking-tighter">SUITES</h4>
+      <h4 class="font-extralight text-4xl md:text-[75px] text-white -tracking-tighter">SUITES</h4>
 
         <div class="relative w-full py-10 max-w-7xl mx-auto">
           
           <div id="carousel-container" 
-              class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 pb-12 
-              md:px-12 
-              lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:snap-none lg:px-0 lg:pb-0 lg:w-full">
+          class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 pb-12 
+            md:px-12 
+            lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:snap-none lg:px-0 lg:pb-0 lg:w-full
+            min-[768px]:[@media(max-height:600px)]:flex 
+            min-[768px]:[@media(max-height:600px)]:overflow-x-auto 
+            min-[768px]:[@media(max-height:600px)]:snap-x">
 
             <div class="snap-center shrink-0 w-[85vw]  md:w-[400px] lg:w-auto h-[680px] bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col justify-between relative group hover:border-neutral-400 transition-colors duration-500 shadow-lg">
               <div>
@@ -261,8 +301,8 @@
 
       <div class="flex flex-col space-y-3">
         <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
-        <a href="#" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
-        <a href="#" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de Servicio</a>
+        <a href="/privacidad.html" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
+        <a href="/terminos.html" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de Servicio</a>
       </div>
 
     </div>
