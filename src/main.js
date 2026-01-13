@@ -49,21 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.sector-card');
 
     cards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            // Verificamos si la tarjeta ya está activa
-            const isActive = card.classList.contains('is-active');
+        card.addEventListener('click', function(e) {
+            // Detenemos cualquier otro evento que pueda interferir
+            e.stopPropagation();
+            
+            const isAlreadyActive = this.classList.contains('is-active');
 
-            // 1. Cerramos TODAS las tarjetas abiertas
-            // Esto garantiza el efecto acordeón y limpia estados previos
+            // 1. Limpieza total de todas las tarjetas
             cards.forEach(c => {
                 c.classList.remove('is-active');
+                // Esto fuerza al navegador a resetear la altura si se quedó "trabado"
+                c.style.height = ''; 
             });
 
-            // 2. Si la tarjeta clickeada NO estaba activa, la activamos
-            // Si YA estaba activa, al haber hecho el remove general en el paso 1, 
-            // el resultado es que se queda cerrada.
-            if (!isActive) {
-                card.classList.add('is-active');
+            // 2. Activación si corresponde
+            if (!isAlreadyActive) {
+                this.classList.add('is-active');
             }
         });
     });

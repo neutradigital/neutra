@@ -405,33 +405,86 @@ footer h4 {
   color: white;
 }
 
-/* --- CONTENEDOR PRINCIPAL --- */
+/* --- BLOQUE SECTORES NEUTRA BLINDADO --- */
+
 #sectores {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 2px;
     width: 100%;
     max-width: 1200px; /* Opcional: control de ancho para desktop */
     margin: 0 auto;
 }
 
-/* --- TARJETA (ARTICLE) --- */
 .sector-card {
     position: relative;
-    height: 80px; /* Altura cerrada en mobile */
+    height: 80px !important;
     width: 100%;
+    border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
     display: flex;
-    border-radius: 5px;
     align-items: center;
     justify-content: center;
-    transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    user-select: none;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: height; 
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
-/* LA IMAGEN: Capa de fondo fija */
+.sector-card.is-active {
+    height: 220px !important;
+}
+
+/* 1. EL CONTENEDOR DE TEXTO (Clave para que no se pierda nada) */
+.sector-card__overlay {
+    position: relative;
+    z-index: 20; /* Superior a la imagen */
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. EL TÍTULO (Ahora con su propia jerarquía) */
+.sector-card__title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* 3. LA INFORMACIÓN (Sin visibility:hidden para evitar bugs de Samsung) */
+.sector-card__info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    /* Usamos transform para forzar a la GPU del Samsung a renderizar */
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, max-height 0.4s ease, transform 0.4s ease;
+}
+
+.sector-card.is-active .sector-card__info {
+    opacity: 1;
+    max-height: 160px;
+    margin-top: 15px;
+    transform: translateY(0);
+}
+
+.sector-card__info p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 4. LA IMAGEN (Fondo absoluto) */
 .sector-card__img {
     position: absolute;
     top: 0;
@@ -439,92 +492,21 @@ footer h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    z-index: 1; /* Inferior al overlay */
     filter: brightness(0.4);
-    transition: transform 0.6s ease, filter 0.4s ease;
+    pointer-events: none;
 }
 
-/* EL CONTENIDO: Siempre por encima */
-.sector-card__overlay {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 0 20px;
-    pointer-events: none; /* Los clics pasan al article */
-}
-
-.sector-card__title {
-    color: #ffffff;
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.sector-card__info {
-    opacity: 0;
-    max-height: 0;
-    visibility: hidden;
-    overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.4s ease, visibility 0.3s;
-}
-
-.sector-card__info p {
-    color: #e0e0e0;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    line-height: 1.4;
-}
-
-/* --- LOGICA DE ESTADOS (MOBILE & CLICK) --- */
-
-/* Cuando la tarjeta tiene la clase .is-active (vía JS) */
-.sector-card.is-active {
-    height: 160px; /* Expansión mobile */
-}
-
-.sector-card.is-active .sector-card__info {
-    opacity: 1;
-    max-height: 200px;
-    visibility: visible;
-}
-
-.sector-card.is-active .sector-card__img {
-    filter: brightness(0.3);
-}
-
-/* --- LOGICA DE ESTADOS (DESKTOP / MOUSE) --- */
-
-/* Solo aplica hover si el dispositivo tiene un puntero (mouse) */
-@media (hover: hover) {
-    .sector-card:hover {
-        height: 400px; /* Altura solicitada para desktop */
+/* --- DESKTOP HOVER --- */
+@media (min-width: 1024px) {
+    .sector-card:hover:not(.is-active) {
+        height: 500px !important;
     }
-
+    /* El hover también debe activar la info en desktop */
     .sector-card:hover .sector-card__info {
         opacity: 1;
-        max-height: 300px;
-        visibility: visible;
-    }
-
-    .sector-card:hover .sector-card__img {
-        transform: scale(1.05);
-        filter: brightness(0.3);
-    }
-
-    .sector-card__title {
-        transition: font-size 0.3s ease;
-    }
-
-    .sector-card:hover .sector-card__title {
-        font-size: 2.2rem;
-    }
-}
-
-/* Ajuste de altura base para pantallas grandes */
-@media (min-width: 1024px) {
-    .sector-card {
-        height: 120px;
+        max-height: 160px;
+        margin-top: 15px;
+        transform: translateY(0);
     }
 }
