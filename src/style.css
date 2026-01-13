@@ -88,7 +88,6 @@ nav {
 
     /* 3. Retícula de Beneficios: Colapso total de Gaps */
     .snap-center .grid-cols-\[100px_1fr\] {
-        gap-y: 2px !important; /* Espacio mínimo entre filas */
         margin-bottom: 2px !important;
         row-gap: 2px !important;
     }
@@ -136,11 +135,6 @@ nav {
 }
 
 @media (max-height: 600px) {
-    /* Colapsamos el espacio entre filas del grid de beneficios */
-    .snap-center .grid-cols-\[100px_1fr\] {
-        gap-y: 8px !important; /* Mucho más apretado */
-    }
-
     /* Reducimos el padding superior del footer de la card */
     .snap-center .border-t.pt-6 {
         padding-top: 8px !important;
