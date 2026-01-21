@@ -1,3 +1,32 @@
+import './style.css'
+
+// const lenis = new Lenis()
+
+// function raf(time) {
+//   lenis.raf(time)
+//   requestAnimationFrame(raf)
+// }
+
+// requestAnimationFrame(raf)
+
+// gsap.to(".hero-image", {
+//   scrollTrigger: {
+//     trigger: ".hero-section",
+//     scrub: true, // La animación sigue el dedo/mouse
+//   },
+//   y: -100,
+//   scale: 1.1,
+//   ease: "none"
+// });
+
+// gsap.from(".card", {
+//   duration: 1,
+//   y: 50,
+//   opacity: 0,
+//   stagger: 0.2, // Cada tarjeta aparece 0.2s después de la anterior
+//   ease: "power3.out"
+// });
+
 const menuBtn = document.getElementById('menu-btn');
 const menuItems = document.getElementById('menu-items');
 const line1 = document.getElementById('line1');
