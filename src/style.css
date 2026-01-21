@@ -510,3 +510,49 @@ footer h4 {
         transform: translateY(0);
     }
 }
+
+:root {
+  --item-width: 300px;
+  --focus-scale: 1.25; /* Cuánto más grande será el del centro */
+  --opacity-side: 0.4;  /* Opacidad de los elementos laterales */
+}
+
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  padding: 60px 0; /* Espacio para que el elemento escalado no se corte */
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x:auto;
+  scroll-behavior: auto; /* Importante para el salto infinito */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 35%; /* Permite que el primer/último elemento lleguen al centro */
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-item {
+  flex: 0 0 var(--item-width);
+  height: 200px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Fondo sutil traslúcido */
+  color: white;
+  font-family: "Inter", sans-serif;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform: scale(0.8); /* Tamaño base para los que no están en el centro */
+  opacity: var(--opacity-side);
+}
+
+/* Clase activa que aplicaremos con JS */
+.carousel-item.is-active {
+  transform: scale(var(--focus-scale));
+  opacity: 1;
+  background: transparent;
+}
