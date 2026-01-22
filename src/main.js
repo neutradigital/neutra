@@ -101,42 +101,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const track = document.getElementById('track');
-const items = document.querySelectorAll('.carousel-item');
+const items = document.querySelectorAll('[data-item]');
 
-const updateFocus = () => {
-  const containerCenter = track.getBoundingClientRect().left + track.offsetWidth / 2;
-  
-  items.forEach(item => {
-    const itemCenter = item.getBoundingClientRect().left + item.offsetWidth / 2;
-    const distance = Math.abs(containerCenter - itemCenter);
-    
-    // Si el elemento está cerca del centro (umbral de 100px)
-    if (distance < 150) {
-      item.classList.add('is-active');
+const options = {
+  root: track,
+  rootMargin: '0px',
+  threshold: 0.8 // El elemento debe estar al 80% visible para activarse
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-active');
     } else {
-      item.classList.remove('is-active');
+      entry.target.classList.remove('is-active');
     }
   });
-};
+}, options);
 
-const handleInfinite = () => {
-  const scrollPos = track.scrollLeft;
-  const maxScroll = track.scrollWidth - track.offsetWidth;
+items.forEach(item => observer.observe(item));
 
-  if (scrollPos <= 0) {
-    track.scrollLeft = maxScroll / 2;
-  } else if (scrollPos >= maxScroll) {
-    track.scrollLeft = maxScroll / 2;
-  }
-};
-
-track.addEventListener('scroll', () => {
-  updateFocus();
-  handleInfinite();
-});
-
-// Inicialización
-window.onload = () => {
-  track.scrollLeft = (track.scrollWidth - track.offsetWidth) / 2;
-  updateFocus();
-};

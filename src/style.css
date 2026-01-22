@@ -453,7 +453,7 @@ footer h4 {
 /* 2. EL TÍTULO (Ahora con su propia jerarquía) */
 .sector-card__title {
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -517,42 +517,33 @@ footer h4 {
   --opacity-side: 0.4;  /* Opacidad de los elementos laterales */
 }
 
+/* Contenedor principal con máscara de desvanecimiento en los bordes (Toque Premium) */
 .carousel-viewport {
-  width: 100%;
-  overflow: hidden;
-  background: transparent;
-  padding: 60px 0; /* Espacio para que el elemento escalado no se corte */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .carousel-track {
-  display: flex;
-  overflow-x:auto;
-  scroll-behavior: auto; /* Importante para el salto infinito */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0 35%; /* Permite que el primer/último elemento lleguen al centro */
+  animation: scroll-neutra 30s linear infinite; /* 30s para un movimiento suave */
 }
 
-.carousel-track::-webkit-scrollbar { display: none; }
-
-.carousel-item {
-  flex: 0 0 var(--item-width);
-  height: 200px;
-  margin: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent; /* Fondo sutil traslúcido */
-  color: white;
-  font-family: "Inter", sans-serif;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  transform: scale(0.8); /* Tamaño base para los que no están en el centro */
-  opacity: var(--opacity-side);
+/* Pausar al pasar el mouse: UX excelente para que el cliente vea el detalle */
+.carousel-track:hover {
+  animation-play-state: paused;
 }
 
-/* Clase activa que aplicaremos con JS */
-.carousel-item.is-active {
-  transform: scale(var(--focus-scale));
-  opacity: 1;
-  background: transparent;
+@keyframes scroll-neutra {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Se mueve exactamente la mitad (un grupo completo) */
+  }
+}
+
+/* Optimización para móviles: más rápido para pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-track {
+    animation-duration: 15s;
+  }
 }
