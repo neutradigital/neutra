@@ -121,3 +121,15 @@ const observer = new IntersectionObserver((entries) => {
 
 items.forEach(item => observer.observe(item));
 
+
+// Función para pausar temporalmente en móvil
+track.addEventListener('touchstart', () => {
+  track.style.animationPlayState = 'paused';
+});
+
+// Reanudar después de 3 segundos de inactividad táctil
+track.addEventListener('touchend', () => {
+  setTimeout(() => {
+    track.style.animationPlayState = 'running';
+  }, 3000); 
+});

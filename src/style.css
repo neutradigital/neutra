@@ -528,8 +528,12 @@ footer h4 {
 }
 
 /* Pausar al pasar el mouse: UX excelente para que el cliente vea el detalle */
-.carousel-track:hover {
-  animation-play-state: paused;
+/* Elimina el hover general que tenías antes y usa este: */
+
+@media (hover: hover) {
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes scroll-neutra {
