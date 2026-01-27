@@ -1,10 +1,116 @@
 import './style.css'
 
+
 // Inicialización Centralizada
 document.addEventListener('DOMContentLoaded', () => {
+    initAnimations();
     initMobileMenu();
     initSectorCards();
+    initCustomCursor();
 });
+
+
+const lenis = new Lenis({
+    duration: 1.2, // Duración de la inercia (1.2s es el estándar "luxury")
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva exponencial suave
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false, // Recomendado false en móviles para mantener sensación nativa
+    touchMultiplier: 2,
+});
+
+// Loop de animación (Necesario para que Lenis funcione)
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// 2. INTEGRACIÓN GSAP + SCROLLTRIGGER
+gsap.registerPlugin(ScrollTrigger);
+
+// Sincronización Lenis-ScrollTrigger (VITAL para evitar lags visuales)
+// Le dice a ScrollTrigger que use el scroll suave de Lenis como referencia
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
+// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION")
+
+// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION" - STABLE VERSION)
+
+function initAnimations() {
+    
+    // A. REVEAL BÁSICO (Fade Up - UNA SOLA VEZ)
+    const revealElements = document.querySelectorAll('h1, h2, h3, p, button, .js-sector-card');
+    
+    revealElements.forEach(element => {
+        gsap.fromTo(element, 
+            { 
+                y: 50, 
+                opacity: 0, 
+                willChange: "transform" 
+            },
+            {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%", 
+                    // CAMBIO CLAVE:
+                    toggleActions: "play none none none", // Solo reproduce al entrar, nunca reversa
+                    once: true // Una vez que pasa, GSAP deja de vigilar este elemento (Ahorra CPU)
+                },
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power3.out"
+            }
+        );
+    });
+
+    // B. PARALLAX EN IMÁGENES (Este SÍ debe ser continuo)
+    // El parallax funciona mejor si siempre está activo, da sensación de profundidad constante.
+    const parallaxImages = document.querySelectorAll('img');
+    
+    parallaxImages.forEach(img => {
+        if(img.closest('.js-sector-card') || img.closest('#selectedw')) {
+            gsap.fromTo(img,
+                { y: -30 }, 
+                {
+                    y: 30, 
+                    scrollTrigger: {
+                        trigger: img.parentElement,
+                        scrub: true // Esto lo dejamos continuo, es interacción física, no aparición
+                    },
+                    ease: "none"
+                }
+            );
+        }
+    });
+    
+    // C. LÍNEAS DE SEPARACIÓN (Dibujo - UNA SOLA VEZ)
+    const lines = document.querySelectorAll('.h-px, .border-t, .border-b');
+    lines.forEach(line => {
+        gsap.fromTo(line,
+            { scaleX: 0, transformOrigin: "left center" }, 
+            {
+                scaleX: 1, 
+                scrollTrigger: {
+                    trigger: line,
+                    start: "top 90%",
+                    toggleActions: "play none none none", // Solo una vez
+                    once: true // Liberar memoria después
+                },
+                duration: 1.5,
+                ease: "expo.out"
+            }
+        );
+    });
+}
+
 
 // CONTROL DEL PRELOADER
 window.addEventListener('load', () => {
@@ -131,5 +237,58 @@ function initSectorCards() {
         if (window.innerWidth >= 1025) {
             cards.forEach(c => c.classList.remove('is-expanded'));
         }
+    });
+}
+
+function initCustomCursor() {
+    // Solo activar en Desktop (> 1024px)
+    if (window.innerWidth < 1025) return;
+
+    const dot = document.getElementById('cursor-dot');
+    const outline = document.getElementById('cursor-outline');
+
+    // Posición del mouse (Objetivo)
+    let mouse = { x: 0, y: 0 };
+    // Posición del círculo grande (Actual con retraso)
+    let outlinePos = { x: 0, y: 0 };
+
+    // 1. Rastrear movimiento del mouse
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+
+        // El punto pequeño se mueve instantáneamente (CSS se encarga del translate -50%)
+        dot.style.left = `${mouse.x}px`;
+        dot.style.top = `${mouse.y}px`;
+        
+        // Hack para que aparezcan si estaban ocultos al cargar
+        dot.style.opacity = 1;
+        outline.style.opacity = 1;
+    });
+
+    // 2. Animación fluida (Loop de física)
+    const animateCursor = () => {
+        // Fórmula LERP: Posición Actual += (Objetivo - Actual) * Velocidad (0.1 = lento, 0.2 = rápido)
+        outlinePos.x += (mouse.x - outlinePos.x) * 0.15;
+        outlinePos.y += (mouse.y - outlinePos.y) * 0.15;
+
+        outline.style.left = `${outlinePos.x}px`;
+        outline.style.top = `${outlinePos.y}px`;
+
+        requestAnimationFrame(animateCursor);
+    };
+    requestAnimationFrame(animateCursor);
+
+    // 3. Detectar elementos interactivos (Links, Botones, Cards)
+    // Seleccionamos todo lo que debería activar el cursor
+    const interactiveElements = document.querySelectorAll('a, button, .js-sector-card, input, textarea');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('hovering');
+        });
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('hovering');
+        });
     });
 }

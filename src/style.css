@@ -28,6 +28,63 @@
   font-family: 'Michroma';
 }
 
+/* --- CONFIGURACIÓN LENIS SCROLL --- */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+/* --- CUSTOM CURSOR CONFIG --- */
+/* Custom Cursor Positioning */
+#cursor-dot, #cursor-outline {
+  transform: translate(-50%, -50%);
+}
+
+/* Estado Hover (Focus Ring) */
+body.hovering #cursor-outline {
+  /* Escala grande */
+  transform: translate(-50%, -50%) scale(3);
+  
+  /* FONDO TRANSPARENTE: Vital. Si pones color aquí, tapas el texto. */
+  background-color: transparent !important;
+  
+  /* BORDE BLANCO: Vital. La diferencia de Blanco sobre Blanco es Negro (visible). */
+  border-color: #ffffff !important;
+  border-width: 1px;
+}
+
+/* El punto central se hace pequeño para no estorbar */
+body.hovering #cursor-dot {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+/* Opcional: Ocultar cursor nativo en desktop */
+@media (min-width: 1024px) {
+  body {
+    cursor: none; /* Desaparece la flecha nativa */
+  }
+  
+  /* Pero la mostramos en iframes o inputs por usabilidad */
+  iframe, input, textarea {
+    cursor: auto;
+  }
+}
+
 :root {
   /*Colores*/
   --color-primary: #EEE6F7; 
