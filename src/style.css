@@ -16,6 +16,18 @@
   src: url(./fonts/Michroma-Regular.ttf);
 }
 
+@keyframes loading-bar {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+.animate-loading-bar {
+  animation: loading-bar 1s infinite ease-in-out;
+}
+
+#text-pre {
+  font-family: 'Michroma';
+}
+
 :root {
   /*Colores*/
   --color-primary: #EEE6F7; 
@@ -546,4 +558,8 @@ footer h4 {
   .carousel-track {
     animation-duration: 15s;
   }
+}
+
+#startpro {
+  background-color: var(--color-primary);
 }

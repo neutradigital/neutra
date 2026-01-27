@@ -1,123 +1,135 @@
 import './style.css'
 
-// const lenis = new Lenis()
+// Inicialización Centralizada
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initSectorCards();
+});
 
-// function raf(time) {
-//   lenis.raf(time)
-//   requestAnimationFrame(raf)
-// }
-
-// requestAnimationFrame(raf)
-
-// gsap.to(".hero-image", {
-//   scrollTrigger: {
-//     trigger: ".hero-section",
-//     scrub: true, // La animación sigue el dedo/mouse
-//   },
-//   y: -100,
-//   scale: 1.1,
-//   ease: "none"
-// });
-
-// gsap.from(".card", {
-//   duration: 1,
-//   y: 50,
-//   opacity: 0,
-//   stagger: 0.2, // Cada tarjeta aparece 0.2s después de la anterior
-//   ease: "power3.out"
-// });
-
-const menuBtn = document.getElementById('menu-btn');
-const menuItems = document.getElementById('menu-items');
-const line1 = document.getElementById('line1');
-const line2 = document.getElementById('line2');
-const line3 = document.getElementById('line3');
-
-let isMenuOpen = false;
-
-function toggleMenu() {
-  isMenuOpen = !isMenuOpen;
-
-  // 1. Mostrar/Ocultar el menú (Overlay)
-  if (isMenuOpen) {
-    // Abrir menú (Mobile)
-    menuItems.classList.remove('opacity-0', 'pointer-events-none');
+// CONTROL DEL PRELOADER
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
     
-    // Animación de Burguer a "X"
-    line1.classList.add('rotate-45', 'translate-y-2');
-    line2.classList.add('opacity-0');
-    line3.classList.add('-rotate-45', '-translate-y-2');
-    
-  } else {
-    // Cerrar menú
-    menuItems.classList.add('opacity-0', 'pointer-events-none');
-    
-    // Animación de "X" a Burguer
-    line1.classList.remove('rotate-45', 'translate-y-2');
-    line2.classList.remove('opacity-0');
-    line3.classList.remove('-rotate-45', '-translate-y-2');
-  }
-}
+    if (preloader) {
+        // Pequeño delay artificial para que la animación no sea un "flash" molesto si carga muy rápido
+        setTimeout(() => {
+            preloader.classList.add('opacity-0'); // Desvanece
+            preloader.classList.add('pointer-events-none'); // Permite clickear debajo
+            
+            // Opcional: Iniciar animaciones de entrada del Hero aquí
+            // document.getElementById('hero-title').classList.add('animate-in');
+        }, 900);
+    }
+});
 
-// Evento Click
-menuBtn.addEventListener('click', toggleMenu);
+/**
+ * ------------------------------------------------------------------
+ * SISTEMA 1: MENÚ MÓVIL (Burger Menu)
+ * ------------------------------------------------------------------
+ */
+function initMobileMenu() {
+    const menuBtn = document.getElementById('menu-btn');
+    const menuItems = document.getElementById('menu-items');
+    
+    // Elementos del icono (líneas)
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
 
-// Función extra: Cerrar menú al hacer click en un link (UX vital)
-function closeMenu() {
-  if (window.innerWidth < 768) { // Solo en móvil
-    toggleMenu();
-  }
+    // Variable de estado
+    let isMenuOpen = false;
+
+    // Función interna para alternar estado
+    const toggleMenuState = () => {
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+            // ABRIR
+            menuItems.classList.remove('opacity-0', 'pointer-events-none');
+            menuItems.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden'; // Bloquear scroll
+
+            // Animación Burger -> X
+            line1.classList.add('rotate-45', 'translate-y-2');
+            line2.classList.add('opacity-0');
+            line3.classList.add('-rotate-45', '-translate-y-2');
+        } else {
+            // CERRAR
+            menuItems.classList.remove('opacity-100', 'pointer-events-auto');
+            menuItems.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = ''; // Desbloquear scroll
+
+            // Animación X -> Burger
+            line1.classList.remove('rotate-45', 'translate-y-2');
+            line2.classList.remove('opacity-0');
+            line3.classList.remove('-rotate-45', '-translate-y-2');
+        }
+    };
+
+    // Event Listener al botón
+    if (menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenuState();
+        });
+    }
+
+    // Cerrar menú al hacer click en enlaces (UX)
+    const links = menuItems ? menuItems.querySelectorAll('a') : [];
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) toggleMenuState();
+        });
+    });
+
+    // Exponer función globalmente si usas onclick="closeMenu()" en el HTML
+    window.closeMenu = () => {
+        if (isMenuOpen) toggleMenuState();
+    };
 }
 
 /**
- * Lógica de Interacción Neutra
- * Maneja la expansión y colapso simétrico de los sectores.
+ * ------------------------------------------------------------------
+ * SISTEMA 2: TARJETAS DE SECTORES (Accordión Mobile)
+ * ------------------------------------------------------------------
  */
-
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.sector-card');
+function initSectorCards() {
+    // IMPORTANTE: Asegúrate que en HTML las tarjetas tengan la clase 'js-sector-card'
+    const cards = document.querySelectorAll('.js-sector-card');
+    
+    if (cards.length === 0) {
+        console.warn('Neutra Debug: No se encontraron tarjetas con clase .js-sector-card');
+        return;
+    }
 
     cards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Detenemos cualquier otro evento que pueda interferir
-            e.stopPropagation();
+        card.addEventListener('click', (e) => {
             
-            const isAlreadyActive = this.classList.contains('is-active');
+            // Lógica exclusiva para Tablets y Móviles (< 1025px)
+            if (window.innerWidth < 1025) {
+                
+                // Evitar conflictos con enlaces internos si los hubiera
+                // e.preventDefault(); 
+                
+                const isExpanded = card.classList.contains('is-expanded');
+                
+                // 1. Reset: Cerrar todas las demás tarjetas
+                cards.forEach(c => c.classList.remove('is-expanded'));
 
-            // 1. Limpieza total de todas las tarjetas
-            cards.forEach(c => {
-                c.classList.remove('is-active');
-                // Esto fuerza al navegador a resetear la altura si se quedó "trabado"
-                c.style.height = ''; 
-            });
-
-            // 2. Activación si corresponde
-            if (!isAlreadyActive) {
-                this.classList.add('is-active');
+                // 2. Acción: Si no estaba expandida, la expandimos
+                if (!isExpanded) {
+                    // Forzar repintado para evitar glitches en iOS
+                    void card.offsetWidth; 
+                    card.classList.add('is-expanded');
+                }
             }
         });
     });
-});
 
-
-const track = document.getElementById('track');
-const items = document.querySelectorAll('[data-item]');
-
-const options = {
-  root: track,
-  rootMargin: '0px',
-  threshold: 0.8 // El elemento debe estar al 80% visible para activarse
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-active');
-    } else {
-      entry.target.classList.remove('is-active');
-    }
-  });
-}, options);
-
-items.forEach(item => observer.observe(item));
-
+    // Limpieza al redimensionar: Si pasan a Desktop, quitamos la clase expandida
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1025) {
+            cards.forEach(c => c.classList.remove('is-expanded'));
+        }
+    });
+}

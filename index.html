@@ -8,293 +8,340 @@
     <link rel="preload" as="image" href="./src/images/camilo.png">
     <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="./src/style.css"></noscript>
-    <link rel="preload" href="./src/images/background_neutra1.mp4" as="video" type="video" fetchpriority="high">
+    <link rel="preload" href="/fonts/tu-fuente-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/tu-fuente-light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./src/images/background_neutra1.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="./src/images/hero-fallback.jpg" as="image">
     <title>NEUTRA</title>
   </head>
   <body>
-    <header id="home" class="flex m-0 flex-col pt-5 pb-7 justify-center items-center mb-12 text-center h-175 xl:h-175">
-      <video 
-          autoplay 
-          loop 
-          muted 
-          playsinline 
-          class="absolute top-0 left-0 w-full h-175 xl:h-full object-cover -z-10">
-        <source src="./src/images/background_neutra1.mp4" type="video/mp4" />
-        </video>
-  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#21222e] backdrop-blur-md border-b border-white/10  transition-all duration-300">
+    <div id="preloader" class="fixed inset-0 z-[100] bg-[#21222e] flex flex-col justify-center items-center transition-opacity duration-700 ease-out">
+    <h1 id="text-pre" class="text-white text-3xl font-bold tracking-[0.3em] animate-pulse">NEUTRA</h1>
+    
+    <div class="mt-4 w-32 h-0.5 bg-white/20 overflow-hidden rounded-full">
+        <div class="w-full h-full bg-white animate-loading-bar origin-left"></div>
+    </div>
+  </div>
+    <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
   
-    <a href="index.html"><h1 id="brand" class="text-2xl font-bold tracking-[0.2em] z-50 relative">
-      NEUTRA
-    </h1></a>
+  <div class="absolute inset-0 w-full h-full -z-10 bg-black/30"> <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        class="w-full h-full object-cover">
+      <source src="./src/images/background_neutra1.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-    <button id="menu-btn" class="flex flex-col gap-1.5 md:hidden z-50 focus:outline-none">
-      <span id="line1" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
-      <span id="line2" class="block w-6 h-0.5 bg-white transition-opacity duration-300"></span>
-      <span id="line3" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5 md:px-12 bg-[#21222e]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+  
+    <a href="index.html" class="relative z-50">
+      <h1 id="brand" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white">
+        NEUTRA
+      </h1>
+    </a>
+
+    <button id="menu-btn" class="relative z-50 flex flex-col gap-1.5 md:hidden focus:outline-none group">
+      <span id="line1" class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
+      <span id="line2" class="block w-6 h-0.5 bg-white transition-opacity duration-300 group-hover:bg-gray-300"></span>
+      <span id="line3" class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
     </button>
 
-    <ul id="menu-items" class="fixed inset-0 bg-[#21222e] h-96 w-screen flex flex-col justify-center items-center align-middle gap-5 text-2xl tracking-widest opacity-0 pointer-events-none transition-opacity duration-300
-        md:static md:h-auto md:w-auto md:bg-transparent md:flex-row md:gap-10 md:text-sm md:opacity-100 md:pointer-events-auto">
+    <ul id="menu-items" class="fixed inset-0 z-40 bg-[#21222e] h-screen w-screen flex flex-col justify-start items-center pt-32 gap-8 text-2xl tracking-widest opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto
+        md:static md:h-auto md:w-auto md:bg-transparent md:flex-row md:justify-end md:pt-0 md:gap-10 md:text-xs md:font-medium md:tracking-[0.15em] md:opacity-100 md:pointer-events-auto md:overflow-visible text-white">
         
-      <li><a href="/" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">HOME</a></li>
-      <li><a href="#suites" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SUITES</a></li>
-      <li><a href="#selectedw" class="hover:text-gray-400 transition-colors" onclick="closeMenu()">SELECTED WORK</a></li>
-      <li><a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20vengo%20de%20la%20web%20y%20me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20estrat%C3%A9gico." class="hover:text-gray-400 transition-colors" onclick="closeMenu()">CONTACTO</a></li>
+      <li><a href="/" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">HOME</a></li>
+      <li><a href="#suites" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">SUITES</a></li>
+      <li><a href="#selectedw" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">SELECTED WORK</a></li>
+      <li><a href="https://wa.me/522221978263..." class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">CONTACTO</a></li>
     </ul>
 
   </nav>
-      <section id="hero" class="flex flex-col-reverse pt-6 justify-center gap-8 md:flex md:flex-row md:mt-6 md:pb-6 xl:pt-60 xl:pb-16 xl:gap-11 xl:self-center">
-        <div class="titleandname text-[32px] flex justify-center text-center flex-col gap-2 md:text-start lg:gap-4 xl:gap-8">
-          <h1 class="text-[55px] leading-16 md:text-7xl lg:text-5xl xl:leading-45 xl:text-[180px] text-center text-gray-600">SHOWCASE <br> EXCELLENCE.</h1>
-        </div>
-       </section>
-    </header>
-  <main>
-    <section id="what-we-do" class="professional mb-12 lg:m-44 xl:mt-52 xl:mx-6  flex flex-col mt-10 justify-center gap-10 lg:gap-20 p-10 pt-0">
-      <p class="text-center text-[18px] lg:text-6xl lg:leading-20">Construimos galerías digitales para <br> <strong class="text-[22px] lg:text-6xl">activos de alto rendimiento</strong>. </p>
-      <div id="carrusel-show" class="carousel-viewport relative overflow-hidden bg-transparent py-12">
-      <div class="carousel-track flex w-max" id="track">
-          <div class="flex gap-8 px-4">
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/home3d.png" alt="3D Home" class="hover:scale-110"></div>
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/auto3d.png" alt="3D Auto" class="hover:scale-110"></div>
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/weight3d.png" alt="3D Fitness" class="hover:scale-110"></div>
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/music3d.png" alt="3D Music" class="hover:scale-110"></div>
-          </div>
-          <div class="flex gap-8 px-4" aria-hidden="true">
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/home3d.png" alt="" class="hover:scale-110"></div>
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/auto3d.png" alt="" class="hover:scale-110"></div>
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/weight3d.png" alt="" class="hover:scale-110"></div>
-            <div class="carousel-item w-64 lg:w-80"><img src="./src/images/music3d.png" alt="" class="hover:scale-110"></div>
-          </div>
-        </div>
-    </div>
-    <div id="sectores" class="mt-32 flex">
-    <div>
-        <h2 class="text-center uppercase text-[18px] lg:text-4xl italic font-semibold lg:mb-14">Sectores de especialización</h2>
+  <section id="hero" class="relative z-10 container mx-auto px-4 flex flex-col justify-center items-center text-center h-full pt-20 pb-12 gap-10 md:gap-14 lg:gap-16">
+    
+    <div class="flex flex-col items-center animate-fade-in-up"> <h1 class="font-black text-gray-100 uppercase
+                 text-5xl leading-[0.9] tracking-tighter
+                 md:text-8xl md:leading-[0.85]
+                 lg:text-9xl lg:leading-[0.85]
+                 xl:text-[11rem] xl:leading-[.95]">
+        Showcase <br class="hidden md:block" /> Excellence
+      </h1>
     </div>
 
-    <article class="sector-card">
-        <img class="sector-card__img" src="./src/images/realstatecard.png" alt="Inmobiliario">
-        <div class="sector-card__overlay">
-            <h2 class="sector-card__title">INMOBILIARIO</h2>
-            <div class="sector-card__info">
-                <p>Visualización 3D y experiencias inmersivas de alta gama.</p>
-            </div>
-        </div>
-    </article>
+    <div class="mt-4 md:mt-0">
+          <a href="https://wa.me/522221978263?text=Hola%20NEUTRA..." target="_blank" rel="noopener noreferrer">
+      
+      <button id="startpro" class="group relative px-8 py-4 overflow-hidden rounded-sm bg-white text-black font-bold text-lg md:text-xl tracking-[0.15em] uppercase border border-white transition-all duration-300">
+        
+        <span class="absolute inset-0 w-full h-full bg-[#21222e] transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0"></span>
+        
+        <span class="relative z-10 transition-colors duration-300 group-hover:text-white">
+          Comenzar Proyecto
+        </span>
 
-    <article class="sector-card">
-        <img class="sector-card__img" src="./src/images/autoscard.png" alt="Automotriz">
-        <div class="sector-card__overlay">
-            <h2 class="sector-card__title">AUTOMOTRIZ</h2>
-            <div class="sector-card__info">
-                <p>Showrooms digitales y configuradores de vehículos premium.</p>
-            </div>
-        </div>
-    </article>
+      </button>
+    </a>
+    </div>
 
-    <article class="sector-card">
-        <img class="sector-card__img" src="./src/images/fitwomancard.png" alt="Deportivo">
-        <div class="sector-card__overlay">
-            <h2 class="sector-card__title">DEPORTIVO</h2>
-            <div class="sector-card__info">
-                <p>Ecosistemas digitales para el rendimiento y branding de élite.</p>
-            </div>
-        </div>
-    </article>
-
-    <article class="sector-card">
-        <img class="sector-card__img" src="./src/images/musiccard.png" alt="Musical">
-        <div class="sector-card__overlay">
-            <h2 class="sector-card__title">MUSICAL</h2>
-            <div class="sector-card__info">
-                <p>Identidad visual y plataformas interactivas para la industria.</p>
-            </div>
-        </div>
-    </article>
-</div>
-        <p class="text-center text-[14px] lg:text-4xl tracking-widest animate-pulse"><span>Preparados para el <strong class="text-center">Escenario Global</strong>.</span></p>
-        <a class="text-center" href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información">
-          <button class="rounded-[10px] font-normal w-64 lg:w-100 lg:h-24 text-center self-center p-2 text-[20px] lg:text-3xl hover:cursor-pointer">COMENZAR PROYECTO</button>
-        </a>
-    </section>
-    <section id="suites" class="flex flex-col gap-1 justify-center mt-20 pb-8">
-      <h4 class="font-extralight text-4xl md:text-[75px] text-white -tracking-tighter">SUITES</h4>
-
-        <div class="relative w-full py-10 max-w-7xl mx-auto">
-          
-          <div id="carousel-container" 
-          class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 pb-12 
-            md:px-12 
-            lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:snap-none lg:px-0 lg:pb-0 lg:w-full
-            min-[768px]:[@media(max-height:600px)]:flex 
-            min-[768px]:[@media(max-height:600px)]:overflow-x-auto 
-            min-[768px]:[@media(max-height:600px)]:snap-x">
-
-            <div class="snap-center shrink-0 w-[85vw]  md:w-100 lg:w-auto h-170 bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col justify-between relative group hover:border-neutral-400 transition-colors duration-500 shadow-lg">
-              <div>
-                <h3 class="text-2xl font-bold tracking-wider mb-1">ESSENTIAL</h3>
-                <p class="text-neutral-500 text-xs italic mb-8">Presencia Digital Estática</p>
-              
-              <div class="grid grid-cols-[100px_1fr] gap-y-6 text-sm content-start h-full">
-                
-                <div class="text-neutral-500 text-xs py-1">Diseño:</div>
-                <div>
-                  <div class="font-bold uppercase tracking-wide text-xs">RETÍCULA LIMPIA</div>
-                  <p class="text-neutral-500 text-[10px] leading-tight mt-1">Estructura visual ordenada y minimalista, sin narrativa compleja.</p>
-                </div>
-                
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">CMS:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">CATÁLOGO LIMITADO</div>
-                  <p class="text-neutral-500 text-[10px] leading-tight mt-1">Carga manual de hasta 15 activos (propiedades/autos).</p>
-                </div>
-                
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Gestión:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs text-blue-800">BAJO SOLICITUD</div>
-                  <p class="text-neutral-500 text-[10px] leading-tight mt-1">Actualizaciones requieren contactar a soporte técnico (costo por evento).</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Contacto:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">BÁSICO</div>
-                  <p class="text-neutral-500 text-[10px] leading-tight mt-1">Formulario de correo estándar.</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Idiomas:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">ESPAÑOL</div>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Hosting:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">COMPARTIDO</div>
-                  <p class="text-neutral-500 text-[10px] leading-tight mt-1">Certificado SSL estándar incluido.</p>
-                </div>
-
-              </div>
-            </div>
-
-              <div class="border-t flex justify-around items-center border-neutral-800 pt-6 mt-2">
-                <div>
-                  <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
-                  <p class="text-2xl  font-light">$14,999 <span class="text-sm text-neutral-500">MXN</span></p>
-                </div>
-                <div><a href="https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20la%20Suite%20Essential%20para%20establecer%20mi%20presencia%20digital.%20Vengo%20de%20la%20web%20y%20me%20gustar%C3%ADa%20conocer%20los%20pasos%20para%20iniciar%20el%20despliegue%20de%20mi%20sitio."><button class="start">START</button></div></a>
-              </div>
-          </div>
-
-          <div class="snap-center shrink-0 w-[85vw] md:w-100 lg:w-auto h-170 bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col justify-between relative group hover:border-neutral-400 transition-colors duration-500 shadow-lg">    
-            <div>
-              <h3 class="text-2xl font-bold  tracking-wider mb-1">VANTAGE</h3>
-              <p class="text-neutral-400 text-xs italic mb-8">Infraestructura High-Performance</p>
-              
-              <div class="grid grid-cols-[100px_1fr] gap-y-6 text-sm content-start h-full">
-                
-                <div class="text-neutral-500 text-xs py-1">Diseño:</div>
-                <div>
-                  <div class=" font-bold uppercase tracking-wide text-xs">ESTÉTICA EDITORIAL</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Diseño inmersivo enfocado en glorificar el producto (Dark Mode).</p>
-                </div>
-                
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/10">CMS:</div>
-                <div class="border-t border-white/10 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">DINÁMICO & ILIMITADO</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Base de datos escalable para inventario completo.</p>
-                </div>
-                
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/10">Gestión:</div>
-                <div class="border-t border-white/10 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs text-green-700">PANEL AUTÓNOMO</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Tú controlas tu inventario. Sube, edita y vende sin intermediarios.</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/10">Contacto:</div>
-                <div class="border-t border-white/10 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">DIRECTO (ONE-TAP)</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Conexión inmediata a WhatsApp y Teléfono.</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/10">Idiomas:</div>
-                <div class="border-t border-white/10 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">BILINGÜE</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Español / Inglés (Mercado internacional).</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/10">Hosting:</div>
-                <div class="border-t border-white/10 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">GLOBAL EDGE</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Servidores mundiales para carga instantánea (0.5s).</p>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="border-t flex justify-around items-center border-neutral-800 pt-6 mt-2">
-              <div>
-                <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
-                <p class="text-2xl  font-light">$24,999 <span class="text-sm text-neutral-500">MXN</span></p>
-              </div>
-              <div><a href="https://wa.me/522221978263?text=Qu%C3%A9%20tal%2C%20Neutra.%20Busco%20escalar%20mi%20inventario%20con%20la%20Suite%20Vantage.%20Me%20interesa%20la%20infraestructura%20Global%20Edge%20y%20la%20gesti%C3%B3n%20aut%C3%B3noma%20del%20CMS.%20%C2%BFPodemos%20agendar%20una%20breve%20llamada%20de%20diagn%C3%B3stico%3F"><button class="start">START</button></div></a>
-            </div>
-          </div>
-
-          <div class="snap-center shrink-0 w-[85vw] md:w-100 lg:w-auto h-170 bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col justify-between relative group hover:border-neutral-400 transition-colors duration-500 shadow-lg">
-            <div>
-              <h3 class="text-2xl font-bold  tracking-wider mb-1">AUTHORITY</h3>
-              <p class="text-neutral-500 text-xs italic mb-8">Ecosistema Digital Completo</p>
-              
-              <div class="grid grid-cols-[100px_1fr] gap-y-6 text-sm content-start h-full">
-                
-                <div class="text-neutral-500 text-xs py-1">Diseño:</div>
-                <div>
-                  <div class=" font-bold uppercase tracking-wide text-xs">CINEMATOGRÁFICO</div>
-                  <p class="text-neutral-500 text-[10px] leading-tight mt-1">Experiencia con movimiento, video y micro-interacciones.</p>
-                </div>
-                
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">CMS:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">FILTROS AVANZADOS</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Buscador inteligente y categorización compleja.</p>
-                </div>
-                
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Gestión:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs text-purple-400">SERVICIO CONCIERGE</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Nosotros gestionamos todo por ti. Soporte prioritario 24/7.</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Contacto:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">INTEGRACIÓN CRM</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Conexión de datos directa a Salesforce, HubSpot, etc.</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Idiomas:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">MULTILENGUAJE</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">Localización global automática.</p>
-                </div>
-
-                <div class="text-neutral-500 text-xs py-1 border-t border-white/5">Hosting:</div>
-                <div class="border-t border-white/5 py-1">
-                  <div class=" font-bold uppercase tracking-wide text-xs">DEDICADO EMPRESARIAL</div>
-                  <p class="text-neutral-400 text-[10px] leading-tight mt-1">SLA Garantizado y Arquitectura aislada.</p>
-                </div>
-
-              </div>
-            </div>
-            <div class="border-t flex justify-around items-center border-neutral-800 pt-6 mt-2">
-              <div>
-                <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
-                <p class="text-2xl  font-light">$49,999 <span class="text-sm text-neutral-500">MXN</span></p>
-              </div>
-              <div><a href="https://wa.me/522221978263?text=Hola.%20Estoy%20interesado%20en%20el%20ecosistema%20Authority%20de%20Neutra.%20Requerimos%20una%20soluci%C3%B3n%20de%20alto%20rendimiento%20con%20integraci%C3%B3n%20CRM%20y%20experiencia%20cinematogr%C3%A1fica.%20Por%20favor%2C%20conf%C3%ADrmenme%20disponibilidad%20para%20una%20sesi%C3%B3n%20estrat%C3%A9gica."><button class="start">START</button></div></a>
-            </div>
-          </div>
-  </div>
   </section>
+</header>
+  <main class="w-full bg-[#21222e] text-white overflow-x-hidden"> 
+  <section id="what-we-do" class="w-full py-32 lg:py-48 flex flex-col justify-center items-center">
+    
+    <div class="px-6 max-w-5xl text-center relative z-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent -z-10 pointer-events-none"></div>
+
+      <h2 class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
+        Nuestra Misión
+      </h2>
+
+      <p class="text-2xl md:text-4xl lg:text-6xl font-extralight leading-tight text-white">
+        Construimos galerías digitales para <br class="hidden lg:block"> 
+        <span class="font-normal text-white relative inline-block mt-2">
+          activos de alto rendimiento.
+          <span class="absolute -bottom-2 left-0 w-full h-px bg-linear-to-r from-transparent via-white/50 to-transparent"></span>
+        </span>
+      </p>
+      
+      <p class="mt-8 text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+        Transformamos inventario físico en propiedad intelectual digital. Sin ruido, solo impacto.
+      </p>
+
+    </div>
+  </section>
+
+    <section id="sectores" class="w-full max-w-[1920px] mx-auto px-4 md:px-8 pb-20 lg:pb-32 bg-[#21222e]"> 
+        
+        <div class="mb-12 lg:mb-20 pt-10">
+          <h2 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">Sectores de Especialización</h2>
+          <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
+        </div>
+
+        <div class="w-full grid grid-cols-1 gap-4 max-w-5xl mx-auto">
+          
+          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+                          transition-[height] duration-500 ease-out
+                          h-[120px] 
+                          hover:h-[320px] 
+                          [&.is-expanded]:h-[320px]">
+            
+            <img class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/realstatecard.png" alt="Inmobiliario" loading="eager"  fetchpriority="high">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+
+            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+                
+                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Inmobiliario</h2>
+                </div>
+
+                <div class="overflow-hidden transition-all duration-500 
+                            max-h-0 opacity-0 
+                            group-hover:max-h-24 group-hover:opacity-100 
+                            group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                        Visualización 3D y experiencias inmersivas de alta gama.
+                    </p>
+                </div>
+            </div>
+          </article>
+
+          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+                          transition-[height] duration-500 ease-out
+                          h-[120px] 
+                          hover:h-[320px] 
+                          [&.is-expanded]:h-[320px]">
+            <img class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/autoscard.png" alt="Automotriz" loading="eager"  fetchpriority="high">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Automotriz</h2>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                        Showrooms digitales y configuradores premium.
+                    </p>
+                </div>
+            </div>
+          </article>
+
+          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+                          transition-[height] duration-500 ease-out
+                          h-[120px] 
+                          hover:h-[320px] 
+                          [&.is-expanded]:h-[320px]">
+            <img class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/fitwomancard.png" alt="Deportivo" loading="eager"  fetchpriority="high">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Deportivo</h2>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                        Ecosistemas digitales para rendimiento de élite.
+                    </p>
+                </div>
+            </div>
+          </article>
+
+          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+                          transition-[height] duration-500 ease-out
+                          h-[120px] 
+                          hover:h-[320px] 
+                          [&.is-expanded]:h-[320px]">
+            <img class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/musiccard.png" alt="Musical" loading="eager"  fetchpriority="high">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Musical</h2>
+                </div>
+                <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                        Identidad visual y plataformas interactivas.
+                    </p>
+                </div>
+            </div>
+          </article>
+
+        </div>
+    </section>
+
+  <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20">
+    
+    <div class="text-center mb-16">
+      <h4 class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</h4>
+      <p class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
+    </div>
+
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 px-4 -mx-4
+                md:px-0 md:mx-0
+                lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:snap-none lg:pb-0">
+
+      <div class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+        <div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-2xl font-bold tracking-wider">ESSENTIAL</h3>
+            <span class="px-2 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-wide rounded">Starter</span>
+          </div>
+          <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Presencia Digital Estática</p>
+          
+          <div class="flex flex-col gap-4 text-sm">
+            <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
+              <span class="text-neutral-400 text-xs font-medium">Diseño</span>
+              <div>
+                <p class="font-bold text-xs uppercase">Retícula Limpia</p>
+                <p class="text-neutral-500 text-[10px] leading-tight">Estructura visual ordenada, minimalista.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+              <span class="text-neutral-400 text-xs font-medium">CMS</span>
+              <div>
+                <p class="font-bold text-xs uppercase">Catálogo Limitado</p>
+                <p class="text-neutral-500 text-[10px] leading-tight">Carga manual (15 activos).</p>
+              </div>
+            </div>
+             <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+              <span class="text-neutral-400 text-xs font-medium">Gestión</span>
+              <div>
+                <p class="font-bold text-xs uppercase text-blue-800">Bajo Solicitud</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-neutral-200 pt-6 mt-8">
+          <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
+          <div class="flex justify-between items-end">
+            <p class="text-3xl font-light tracking-tight">$14,999 <span class="text-sm text-neutral-400">MXN</span></p>
+            <a href="https://wa.me/522221978263..." class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">START</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-neutral-900 text-white border border-white/20 rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:border-white/50 shadow-2xl">
+        <div class="absolute top-0 right-0 bg-white text-black text-[10px] font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MOST POPULAR</div>
+        <div>
+          <h3 class="text-2xl font-bold tracking-wider mb-2">VANTAGE</h3>
+          <p class="text-neutral-400 text-xs italic mb-8 border-b border-white/10 pb-4">Infraestructura High-Performance</p>
+          
+          <div class="flex flex-col gap-4 text-sm">
+             <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
+              <span class="text-neutral-500 text-xs font-medium">Diseño</span>
+              <div>
+                <p class="font-bold text-xs uppercase">Estética Editorial</p>
+                <p class="text-neutral-400 text-[10px] leading-tight">Dark Mode inmersivo.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-white/10 pt-3">
+              <span class="text-neutral-500 text-xs font-medium">CMS</span>
+              <div>
+                <p class="font-bold text-xs uppercase">Dinámico & Ilimitado</p>
+                <p class="text-neutral-400 text-[10px] leading-tight">Base de datos escalable.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-white/10 pt-3">
+              <span class="text-neutral-500 text-xs font-medium">Gestión</span>
+              <div>
+                <p class="font-bold text-xs uppercase text-green-400">Autónomo</p>
+                <p class="text-neutral-400 text-[10px] leading-tight">Control total sin intermediarios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/20 pt-6 mt-8">
+          <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
+          <div class="flex justify-between items-end">
+            <p class="text-3xl font-light tracking-tight">$24,999 <span class="text-sm text-neutral-500">MXN</span></p>
+            <a href="https://wa.me/522221978263..." class="bg-white text-black px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors">START</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+        <div>
+          <h3 class="text-2xl font-bold tracking-wider mb-2">AUTHORITY</h3>
+          <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Ecosistema Digital Completo</p>
+          
+          <div class="flex flex-col gap-4 text-sm">
+             <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
+              <span class="text-neutral-400 text-xs font-medium">Diseño</span>
+              <div>
+                <p class="font-bold text-xs uppercase">Cinematográfico</p>
+                <p class="text-neutral-500 text-[10px] leading-tight">Video y micro-interacciones.</p>
+              </div>
+            </div>
+             <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+              <span class="text-neutral-400 text-xs font-medium">CMS</span>
+              <div>
+                <p class="font-bold text-xs uppercase">Filtros Avanzados</p>
+                <p class="text-neutral-500 text-[10px] leading-tight">Buscador inteligente.</p>
+              </div>
+            </div>
+             <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+              <span class="text-neutral-400 text-xs font-medium">Gestión</span>
+              <div>
+                <p class="font-bold text-xs uppercase text-purple-600">Concierge</p>
+                <p class="text-neutral-500 text-[10px] leading-tight">Soporte prioritario 24/7.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-neutral-200 pt-6 mt-8">
+          <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
+          <div class="flex justify-between items-end">
+            <p class="text-3xl font-light tracking-tight">$49,999 <span class="text-sm text-neutral-400">MXN</span></p>
+            <a href="https://wa.me/522221978263..." class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">START</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
   <!-- <section id="selectedw" class="flex flex-col gap-1 lg:h-175 justify-start align-top pb-8">
     <h4 class="font-extralight text-white text-4xl md:text-[75px] -tracking-tighter">SELECTED WORK</h4>
 
