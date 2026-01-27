@@ -43,9 +43,12 @@ gsap.ticker.lagSmoothing(0);
 
 // 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION" - STABLE VERSION)
 
+// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION" - STABLE MOBILE)
+
 function initAnimations() {
     
-    // A. REVEAL BÁSICO (Fade Up - UNA SOLA VEZ)
+    // A. REVEAL BÁSICO (Fade Up - Funciona en Mobile y Desktop)
+    // Esto SÍ lo queremos en móvil porque se ve elegante al entrar
     const revealElements = document.querySelectorAll('h1, h2, h3, p, button, .js-sector-card');
     
     revealElements.forEach(element => {
@@ -59,9 +62,8 @@ function initAnimations() {
                 scrollTrigger: {
                     trigger: element,
                     start: "top 85%", 
-                    // CAMBIO CLAVE:
-                    toggleActions: "play none none none", // Solo reproduce al entrar, nunca reversa
-                    once: true // Una vez que pasa, GSAP deja de vigilar este elemento (Ahorra CPU)
+                    toggleActions: "play none none none",
+                    once: true
                 },
                 y: 0,
                 opacity: 1,
@@ -71,27 +73,31 @@ function initAnimations() {
         );
     });
 
-    // B. PARALLAX EN IMÁGENES (Este SÍ debe ser continuo)
-    // El parallax funciona mejor si siempre está activo, da sensación de profundidad constante.
-    const parallaxImages = document.querySelectorAll('img');
+    // B. PARALLAX EN IMÁGENES (SOLO DESKTOP)
+    // Aquí está la corrección: Envolvemos esto en un 'if'
+    if (window.innerWidth > 1024) {
+        
+        const parallaxImages = document.querySelectorAll('img');
+        
+        parallaxImages.forEach(img => {
+            // Verificamos si es una imagen que debe tener efecto
+            if(img.closest('.js-sector-card') || img.closest('#selectedw')) {
+                gsap.fromTo(img,
+                    { y: -30 }, 
+                    {
+                        y: 30, 
+                        scrollTrigger: {
+                            trigger: img.parentElement,
+                            scrub: true 
+                        },
+                        ease: "none"
+                    }
+                );
+            }
+        });
+    }
     
-    parallaxImages.forEach(img => {
-        if(img.closest('.js-sector-card') || img.closest('#selectedw')) {
-            gsap.fromTo(img,
-                { y: -30 }, 
-                {
-                    y: 30, 
-                    scrollTrigger: {
-                        trigger: img.parentElement,
-                        scrub: true // Esto lo dejamos continuo, es interacción física, no aparición
-                    },
-                    ease: "none"
-                }
-            );
-        }
-    });
-    
-    // C. LÍNEAS DE SEPARACIÓN (Dibujo - UNA SOLA VEZ)
+    // C. LÍNEAS DE SEPARACIÓN (Funciona en ambos)
     const lines = document.querySelectorAll('.h-px, .border-t, .border-b');
     lines.forEach(line => {
         gsap.fromTo(line,
@@ -101,8 +107,8 @@ function initAnimations() {
                 scrollTrigger: {
                     trigger: line,
                     start: "top 90%",
-                    toggleActions: "play none none none", // Solo una vez
-                    once: true // Liberar memoria después
+                    toggleActions: "play none none none",
+                    once: true
                 },
                 duration: 1.5,
                 ease: "expo.out"
@@ -110,7 +116,6 @@ function initAnimations() {
         );
     });
 }
-
 
 // CONTROL DEL PRELOADER
 window.addEventListener('load', () => {
