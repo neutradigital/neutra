@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSectorCards();
     initCustomCursor();
+    initContactForm();
 });
 
 
@@ -294,6 +295,75 @@ function initCustomCursor() {
         });
         el.addEventListener('mouseleave', () => {
             document.body.classList.remove('hovering');
+        });
+    });
+}
+
+function initContactForm() {
+    const form = document.getElementById('project-form');
+    const result = document.getElementById('form-result');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnLoading = document.getElementById('btn-loading');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita recargar la página
+
+        // UI: Estado de carga
+        submitBtn.disabled = true;
+        btnText.classList.add('hidden');
+        btnLoading.classList.remove('hidden');
+        result.classList.add('hidden');
+
+        // Empaquetar datos
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        // Enviar a Web3Forms
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                // ÉXITO
+                result.innerHTML = "Solicitud recibida. Analizaremos tu perfil en breve.";
+                result.classList.remove('hidden', 'text-red-400', 'border-red-500/50', 'bg-red-500/10');
+                result.classList.add('text-green-400', 'border-green-500/50', 'bg-green-500/10');
+                form.reset(); // Limpiar campos
+            } else {
+                // ERROR DE API
+                console.log(response);
+                result.innerHTML = json.message;
+                result.classList.remove('hidden', 'text-green-400', 'border-green-500/50', 'bg-green-500/10');
+                result.classList.add('text-red-400', 'border-red-500/50', 'bg-red-500/10');
+            }
+        })
+        .catch(error => {
+            // ERROR DE RED
+            console.log(error);
+            result.innerHTML = "Error de conexión. Intente nuevamente.";
+            result.classList.remove('hidden');
+            result.classList.add('text-red-400', 'border-red-500/50', 'bg-red-500/10');
+        })
+        .finally(() => {
+            // UI: Restaurar botón
+            submitBtn.disabled = false;
+            btnText.classList.remove('hidden');
+            btnLoading.classList.add('hidden');
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                result.classList.add('hidden');
+            }, 5000);
         });
     });
 }
