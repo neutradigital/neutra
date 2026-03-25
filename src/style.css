@@ -330,13 +330,17 @@ h4 {
   padding: 10px;
 }
 
-#selectedw {
+#trusted-partners {
   font-weight: bold;
   font-size: 30px;
 }
 
-#selectedw h4 {
+#trusted-partners h2 {
   color: white;
+}
+
+.logo-premium-glow {
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px var(--color-primary));
 }
 
 p {

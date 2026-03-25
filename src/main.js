@@ -29,6 +29,24 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+// Habilitar scroll suave para enlaces internos (Anclas)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const target = document.querySelector(targetId);
+        if (target) {
+            e.preventDefault();
+            lenis.scrollTo(target, {
+                offset: 0,
+                duration: 1.5,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+        }
+    });
+});
+
 // 2. INTEGRACIÓN GSAP + SCROLLTRIGGER
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,7 +100,7 @@ function initAnimations() {
         
         parallaxImages.forEach(img => {
             // Verificamos si es una imagen que debe tener efecto
-            if(img.closest('.js-sector-card') || img.closest('#selectedw')) {
+            if(img.closest('.js-sector-card') || img.closest('#trusted-partners')) {
                 gsap.fromTo(img,
                     { y: -30 }, 
                     {

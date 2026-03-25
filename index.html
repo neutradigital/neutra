@@ -1,469 +1,546 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/logos/n.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet">
-    <link rel="preload" as="image" href="./src/images/camilo.png">
-    <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="./src/style.css"></noscript>
-    <link rel="preload" href="/fonts/tu-fuente-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/tu-fuente-light.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./src/images/background_neutra1.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="./src/images/hero-fallback.jpg" as="image">
-    <title>NEUTRA</title>
-  </head>
-  <body>
-    <div id="preloader" class="fixed inset-0 z-[100] bg-[#21222e] flex flex-col justify-center items-center transition-opacity duration-700 ease-out">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./src/logos/n.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/style.css" rel="stylesheet">
+  <link rel="preload" as="image" href="./src/images/camilo.png">
+  <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./src/style.css">
+  </noscript>
+  <link rel="preload" href="/fonts/tu-fuente-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/tu-fuente-light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./src/images/background_neutra1.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="./src/images/hero-fallback.jpg" as="image">
+  <title>NEUTRA</title>
+</head>
+
+<body>
+  <div id="preloader"
+    class="fixed inset-0 z-[100] bg-[#21222e] flex flex-col justify-center items-center transition-opacity duration-700 ease-out">
     <h1 id="text-pre" class="text-white text-3xl font-bold tracking-[0.3em] animate-pulse">NEUTRA</h1>
-    
+
     <div class="mt-4 w-32 h-0.5 bg-white/20 overflow-hidden rounded-full">
-        <div class="w-full h-full bg-white animate-loading-bar origin-left"></div>
+      <div class="w-full h-full bg-white animate-loading-bar origin-left"></div>
     </div>
   </div>
-    <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
-  
-  <div class="absolute inset-0 w-full h-full -z-10 bg-black/30"> <video 
-        autoplay 
-        loop 
-        muted 
-        playsinline 
+  <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
+
+    <div class="absolute inset-0 w-full h-full -z-10 bg-black/30"> <video autoplay loop muted playsinline
         class="w-full h-full object-cover">
-      <source src="./src/images/background_neutra1.mp4" type="video/mp4" />
-    </video>
-  </div>
+        <source src="./src/images/background_neutra1.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5 md:px-12 bg-[#21222e]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-  
-    <a href="index.html" class="relative z-50">
-      <h1 id="brand" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white">
-        NEUTRA
-      </h1>
-    </a>
+    <nav
+      class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5 md:px-12 bg-[#21222e]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
 
-    <button id="menu-btn" class="relative z-50 flex flex-col gap-1.5 md:hidden focus:outline-none group">
-      <span id="line1" class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
-      <span id="line2" class="block w-6 h-0.5 bg-white transition-opacity duration-300 group-hover:bg-gray-300"></span>
-      <span id="line3" class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
-    </button>
+      <a href="index.html" class="relative z-50">
+        <h1 id="brand" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white">
+          NEUTRA
+        </h1>
+      </a>
 
-    <ul id="menu-items" class="fixed inset-0 z-40 bg-[#21222e] h-screen w-screen flex flex-col justify-start items-center pt-32 gap-8 text-2xl tracking-widest opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto
+      <button id="menu-btn" class="relative z-50 flex flex-col gap-1.5 md:hidden focus:outline-none group">
+        <span id="line1"
+          class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
+        <span id="line2"
+          class="block w-6 h-0.5 bg-white transition-opacity duration-300 group-hover:bg-gray-300"></span>
+        <span id="line3"
+          class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
+      </button>
+
+      <ul id="menu-items"
+        class="fixed inset-0 z-40 bg-[#21222e] h-screen w-screen flex flex-col justify-start items-center pt-32 gap-8 text-2xl tracking-widest opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto
         md:static md:h-auto md:w-auto md:bg-transparent md:flex-row md:justify-end md:pt-0 md:gap-10 md:text-xs md:font-medium md:tracking-[0.15em] md:opacity-100 md:pointer-events-auto md:overflow-visible text-white">
-        
-      <li><a href="/" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">HOME</a></li>
-      <li><a href="#suites" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">SUITES</a></li>
-      <li><a href="#selectedw" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">SELECTED WORK</a></li>
-      <li><a href="#contacto" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">CONTACTO</a></li>
-    </ul>
 
-  </nav>
-  <section id="hero" class="relative z-10 container mx-auto px-4 flex flex-col justify-center items-center text-center h-full pt-20 pb-12 gap-10 md:gap-14 lg:gap-16">
-    
-    <div class="flex flex-col items-center animate-fade-in-up"> <h1 class="font-black text-gray-100 uppercase
+        <li><a href="/" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">HOME</a></li>
+        <li><a href="#suites" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">SUITES</a></li>
+        <li><a href="#trusted-partners" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">TRUSTED PARTNERS</a></li>
+        <li><a href="#contacto" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">CONTACTO</a></li>
+      </ul>
+
+    </nav>
+    <section id="hero"
+      class="relative z-10 container mx-auto px-4 flex flex-col justify-center items-center text-center h-full pt-20 pb-12 gap-10 md:gap-14 lg:gap-16">
+
+      <div class="flex flex-col items-center animate-fade-in-up">
+        <h1 class="font-black text-gray-100 uppercase
                  text-5xl leading-[0.9] tracking-tighter
                  md:text-8xl md:leading-[0.85]
                  lg:text-9xl lg:leading-[0.85]
                  xl:text-[11rem] xl:leading-[.95]">
-        Showcase <br class="hidden md:block" /> Excellence
-      </h1>
-    </div>
+          Showcase <br class="hidden md:block" /> Excellence
+        </h1>
+      </div>
 
-<div class="mt-4 md:mt-0">
-  <a href="https://wa.me/522221978263?text=Hola%20equipo%20Neutra.%20Vengo%20de%20su%20sitio%20web%20y%20tengo%20un%20proyecto%20que%20requiere%20una%20ejecuci%C3%B3n%20de%20alto%20nivel.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20inicial." target="_blank" rel="noopener noreferrer">
-    
-    <button id="startpro" class="group relative px-8 py-4 overflow-hidden rounded-sm bg-white text-black font-bold text-lg md:text-xl tracking-[0.15em] uppercase border border-white transition-all duration-300">
-      
-      <span class="absolute inset-0 w-full h-full bg-[#21222e] transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0"></span>
-      
-      <span class="relative z-10 transition-colors duration-300 group-hover:text-white">
-        Comenzar Proyecto
-      </span>
+      <div class="mt-4 md:mt-0">
+        <a href="https://wa.me/522221978263?text=Hola%20equipo%20Neutra.%20Vengo%20de%20su%20sitio%20web%20y%20tengo%20un%20proyecto%20que%20requiere%20una%20ejecuci%C3%B3n%20de%20alto%20nivel.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20inicial."
+          target="_blank" rel="noopener noreferrer">
 
-    </button>
-  </a>
-</div>
+          <button id="startpro"
+            class="group relative px-8 py-4 overflow-hidden rounded-sm bg-white text-black font-bold text-lg md:text-xl tracking-[0.15em] uppercase border border-white transition-all duration-300">
 
-  </section>
-</header>
-  <main class="w-full bg-[#21222e] text-white overflow-x-hidden"> 
-  <section id="what-we-do" class="w-full py-32 lg:py-48 flex flex-col justify-center items-center">
-    
-    <div class="px-6 max-w-5xl text-center relative z-10">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent -z-10 pointer-events-none"></div>
+            <span
+              class="absolute inset-0 w-full h-full bg-[#21222e] transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0"></span>
 
-      <h2 class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
-        Nuestra Misión
-      </h2>
+            <span class="relative z-10 transition-colors duration-300 group-hover:text-white">
+              Comenzar Proyecto
+            </span>
 
-      <p class="text-2xl md:text-4xl lg:text-6xl font-extralight leading-tight text-white">
-        Construimos galerías digitales para <br class="hidden lg:block"> 
-        <span class="font-normal text-white relative inline-block mt-2">
-          activos de alto rendimiento.
-          <span class="absolute -bottom-2 left-0 w-full h-px bg-linear-to-r from-transparent via-white/50 to-transparent"></span>
-        </span>
-      </p>
-      
-      <p class="mt-8 text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-        Transformamos inventario físico en propiedad intelectual digital. Sin ruido, solo impacto.
-      </p>
+          </button>
+        </a>
+      </div>
 
-    </div>
-  </section>
+    </section>
+  </header>
+  <main class="w-full bg-[#21222e] text-white overflow-x-hidden">
+    <section id="what-we-do" class="w-full py-32 lg:py-48 flex flex-col justify-center items-center">
 
-    <section id="sectores" class="w-full max-w-[1920px] mx-auto px-4 md:px-8 pb-20 lg:pb-32 bg-[#21222e]"> 
-        
-        <div class="mb-12 lg:mb-20 pt-10">
-          <h2 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">Sectores de Especialización</h2>
-          <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
+      <div class="px-6 max-w-5xl text-center relative z-10">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent -z-10 pointer-events-none">
         </div>
 
-        <div class="w-full grid grid-cols-1 gap-4 max-w-5xl mx-auto">
-          
-          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+        <h2 class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
+          Nuestra Misión
+        </h2>
+
+        <p class="text-2xl md:text-4xl lg:text-6xl font-extralight leading-tight text-white">
+          Construimos galerías digitales para <br class="hidden lg:block">
+          <span class="font-normal text-white relative inline-block mt-2">
+            activos de alto rendimiento.
+            <span
+              class="absolute -bottom-2 left-0 w-full h-px bg-linear-to-r from-transparent via-white/50 to-transparent"></span>
+          </span>
+        </p>
+
+        <p class="mt-8 text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+          Transformamos inventario físico en propiedad intelectual digital. Sin ruido, solo impacto.
+        </p>
+
+      </div>
+    </section>
+
+    <section id="sectores" class="w-full max-w-[1920px] mx-auto px-4 md:px-8 pb-20 lg:pb-32 bg-[#21222e]">
+
+      <div class="mb-12 lg:mb-20 pt-10">
+        <h2 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">Sectores de
+          Especialización</h2>
+        <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
+      </div>
+
+      <div class="w-full grid grid-cols-1 gap-4 max-w-5xl mx-auto">
+
+        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
                           transition-[height] duration-500 ease-out
                           h-[120px] 
                           hover:h-[320px] 
                           [&.is-expanded]:h-[320px]">
-            
-            <img class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/realstatecard.png" alt="Inmobiliario" loading="eager"  fetchpriority="high">
-            
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
 
-            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-                
-                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Inmobiliario</h2>
-                </div>
+          <img
+            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
+            src="./src/images/realstatecard.png" alt="Inmobiliario" loading="eager" fetchpriority="high">
 
-                <div class="overflow-hidden transition-all duration-500 
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+
+          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+
+            <div
+              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">
+                Inmobiliario</h2>
+            </div>
+
+            <div class="overflow-hidden transition-all duration-500 
                             max-h-0 opacity-0 
                             group-hover:max-h-24 group-hover:opacity-100 
                             group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                        Visualización 3D y experiencias inmersivas de alta gama.
-                    </p>
-                </div>
+              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                Visualización 3D y experiencias inmersivas de alta gama.
+              </p>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
                           transition-[height] duration-500 ease-out
                           h-[120px] 
                           hover:h-[320px] 
                           [&.is-expanded]:h-[320px]">
-            <img class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/autoscard.png" alt="Automotriz" loading="eager"  fetchpriority="high">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Automotriz</h2>
-                </div>
-                <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                        Showrooms digitales y configuradores premium.
-                    </p>
-                </div>
+          <img
+            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
+            src="./src/images/autoscard.png" alt="Automotriz" loading="eager" fetchpriority="high">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+            <div
+              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Automotriz
+              </h2>
             </div>
-          </article>
+            <div
+              class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                Showrooms digitales y configuradores premium.
+              </p>
+            </div>
+          </div>
+        </article>
 
-          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
                           transition-[height] duration-500 ease-out
                           h-[120px] 
                           hover:h-[320px] 
                           [&.is-expanded]:h-[320px]">
-            <img class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/fitwomancard.png" alt="Deportivo" loading="eager"  fetchpriority="high">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Deportivo</h2>
-                </div>
-                <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                        Ecosistemas digitales para rendimiento de élite.
-                    </p>
-                </div>
+          <img
+            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
+            src="./src/images/fitwomancard.png" alt="Deportivo" loading="eager" fetchpriority="high">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+            <div
+              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Deportivo
+              </h2>
             </div>
-          </article>
+            <div
+              class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                Ecosistemas digitales para rendimiento de élite.
+              </p>
+            </div>
+          </div>
+        </article>
 
-          <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
+        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
                           transition-[height] duration-500 ease-out
                           h-[120px] 
                           hover:h-[320px] 
                           [&.is-expanded]:h-[320px]">
-            <img class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40" src="./src/images/musiccard.png" alt="Musical" loading="eager"  fetchpriority="high">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-                <div class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-                    <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Musical</h2>
-                </div>
-                <div class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-                    <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                        Identidad visual y plataformas interactivas.
-                    </p>
-                </div>
+          <img
+            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
+            src="./src/images/musiccard.png" alt="Musical" loading="eager" fetchpriority="high">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
+          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
+            <div
+              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
+              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Musical
+              </h2>
             </div>
-          </article>
+            <div
+              class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
+              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
+                Identidad visual y plataformas interactivas.
+              </p>
+            </div>
+          </div>
+        </article>
 
-        </div>
+      </div>
     </section>
 
-  <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20">
-    
-    <div class="text-center mb-16">
-      <h4 class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</h4>
-      <p class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
-    </div>
+    <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20">
 
-    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 px-4 -mx-4
+      <div class="text-center mb-16">
+        <h4 class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</h4>
+        <p class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
+      </div>
+
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 px-4 -mx-4
                 md:px-0 md:mx-0
                 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:snap-none lg:pb-0">
 
-      <div class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-        <div>
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-2xl font-bold tracking-wider">ESSENTIAL</h3>
-            <span class="px-2 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-wide rounded">Starter</span>
+        <div
+          class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-2xl font-bold tracking-wider">ESSENTIAL</h3>
+              <span class="px-2 py-1 bg-gray-100 text-[10px] font-bold uppercase tracking-wide rounded">Starter</span>
+            </div>
+            <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Presencia Digital Estática
+            </p>
+
+            <div class="flex flex-col gap-4 text-sm">
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
+                <span class="text-neutral-400 text-xs font-medium">Diseño</span>
+                <div>
+                  <p class="font-bold text-xs uppercase">Retícula Limpia</p>
+                  <p class="text-neutral-500 text-[10px] leading-tight">Estructura visual ordenada, minimalista.</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+                <span class="text-neutral-400 text-xs font-medium">CMS</span>
+                <div>
+                  <p class="font-bold text-xs uppercase">Catálogo Limitado</p>
+                  <p class="text-neutral-500 text-[10px] leading-tight">Carga manual (15 activos).</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+                <span class="text-neutral-400 text-xs font-medium">Gestión</span>
+                <div>
+                  <p class="font-bold text-xs uppercase text-blue-800">Bajo Solicitud</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Presencia Digital Estática</p>
-          
-          <div class="flex flex-col gap-4 text-sm">
-            <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
-              <span class="text-neutral-400 text-xs font-medium">Diseño</span>
-              <div>
-                <p class="font-bold text-xs uppercase">Retícula Limpia</p>
-                <p class="text-neutral-500 text-[10px] leading-tight">Estructura visual ordenada, minimalista.</p>
-              </div>
-            </div>
-            <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
-              <span class="text-neutral-400 text-xs font-medium">CMS</span>
-              <div>
-                <p class="font-bold text-xs uppercase">Catálogo Limitado</p>
-                <p class="text-neutral-500 text-[10px] leading-tight">Carga manual (15 activos).</p>
-              </div>
-            </div>
-             <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
-              <span class="text-neutral-400 text-xs font-medium">Gestión</span>
-              <div>
-                <p class="font-bold text-xs uppercase text-blue-800">Bajo Solicitud</p>
-              </div>
+
+          <div class="border-t border-neutral-200 pt-6 mt-8">
+            <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
+            <div class="flex justify-between items-end">
+              <p class="text-3xl font-light tracking-tight">$14,999 <span class="text-sm text-neutral-400">MXN</span>
+              </p>
+              <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Estoy%20listo%20para%20establecer%20mi%20presencia%20digital%20con%20la%20Suite%20Essential.%20Me%20gustar%C3%ADa%20confirmar%20los%20requisitos%20para%20iniciar%20el%20despliegue."
+                class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">START</a>
             </div>
           </div>
         </div>
 
-        <div class="border-t border-neutral-200 pt-6 mt-8">
-          <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
-          <div class="flex justify-between items-end">
-            <p class="text-3xl font-light tracking-tight">$14,999 <span class="text-sm text-neutral-400">MXN</span></p>
-            <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Estoy%20listo%20para%20establecer%20mi%20presencia%20digital%20con%20la%20Suite%20Essential.%20Me%20gustar%C3%ADa%20confirmar%20los%20requisitos%20para%20iniciar%20el%20despliegue." class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">START</a>
+        <div
+          class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-neutral-900 text-white border border-white/20 rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:border-white/50 shadow-2xl">
+          <div
+            class="absolute top-0 right-0 z-20 bg-white text-black text-[10px] font-bold px-4 py-1.5 leading-none tracking-wider rounded-bl-xl rounded-tr-2xl whitespace-nowrap shadow-sm">
+            MOST POPULAR
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold tracking-wider mb-2">VANTAGE</h3>
+            <p class="text-neutral-400 text-xs italic mb-8 border-b border-white/10 pb-4">Infraestructura
+              High-Performance</p>
+
+            <div class="flex flex-col gap-4 text-sm">
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
+                <span class="text-neutral-500 text-xs font-medium">Diseño</span>
+                <div>
+                  <p class="font-bold text-xs uppercase">Estética Editorial</p>
+                  <p class="text-neutral-400 text-[10px] leading-tight">Dark Mode inmersivo.</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-white/10 pt-3">
+                <span class="text-neutral-500 text-xs font-medium">CMS</span>
+                <div>
+                  <p class="font-bold text-xs uppercase">Dinámico & Ilimitado</p>
+                  <p class="text-neutral-400 text-[10px] leading-tight">Base de datos escalable.</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-white/10 pt-3">
+                <span class="text-neutral-500 text-xs font-medium">Gestión</span>
+                <div>
+                  <p class="font-bold text-xs uppercase text-green-400">Autónomo</p>
+                  <p class="text-neutral-400 text-[10px] leading-tight">Control total sin intermediarios.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-white/20 pt-6 mt-8">
+            <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
+            <div class="flex justify-between items-end">
+              <p class="text-3xl font-light tracking-tight">$24,999 <span class="text-sm text-neutral-500">MXN</span>
+              </p>
+              <a href="https://wa.me/522221978263?text=Qu%C3%A9%20tal%2C%20Neutra.%20Busco%20escalar%20mi%20inventario%20con%20la%20Suite%20Vantage.%20Me%20interesa%20la%20gesti%C3%B3n%20aut%C3%B3noma%20y%20la%20infraestructura%20de%20alto%20rendimiento.%20%C2%BFPodemos%20agendar%20una%20breve%20validaci%C3%B3n%3F"
+                class="bg-white text-black px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors">START</a>
+            </div>
           </div>
         </div>
+
+        <div
+          class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+          <div>
+            <h3 class="text-2xl font-bold tracking-wider mb-2">AUTHORITY</h3>
+            <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Ecosistema Digital Completo
+            </p>
+
+            <div class="flex flex-col gap-4 text-sm">
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
+                <span class="text-neutral-400 text-xs font-medium">Diseño</span>
+                <div>
+                  <p class="font-bold text-xs uppercase">Cinematográfico</p>
+                  <p class="text-neutral-500 text-[10px] leading-tight">Video y micro-interacciones.</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+                <span class="text-neutral-400 text-xs font-medium">CMS</span>
+                <div>
+                  <p class="font-bold text-xs uppercase">Filtros Avanzados</p>
+                  <p class="text-neutral-500 text-[10px] leading-tight">Buscador inteligente.</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
+                <span class="text-neutral-400 text-xs font-medium">Gestión</span>
+                <div>
+                  <p class="font-bold text-xs uppercase text-purple-600">Concierge</p>
+                  <p class="text-neutral-500 text-[10px] leading-tight">Soporte prioritario 24/7.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-neutral-200 pt-6 mt-8">
+            <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
+            <div class="flex justify-between items-end">
+              <p class="text-3xl font-light tracking-tight">$49,999 <span class="text-sm text-neutral-400">MXN</span>
+              </p>
+              <a href="https://wa.me/522221978263?text=Hola.%20Mi%20marca%20requiere%20el%20ecosistema%20Authority.%20Necesitamos%20integraci%C3%B3n%20CRM%20y%20la%20experiencia%20cinematogr%C3%A1fica%20completa.%20Solicito%20disponibilidad%20para%20una%20sesi%C3%B3n%20estrat%C3%A9gica%20con%20un%20consultor."
+                class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">START</a>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-neutral-900 text-white border border-white/20 rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:border-white/50 shadow-2xl">
-        <div class="absolute top-0 right-0 z-20 bg-white text-black text-[10px] font-bold px-4 py-1.5 leading-none tracking-wider rounded-bl-xl rounded-tr-2xl whitespace-nowrap shadow-sm">
-  MOST POPULAR
-</div>
-        <div>
-          <h3 class="text-2xl font-bold tracking-wider mb-2">VANTAGE</h3>
-          <p class="text-neutral-400 text-xs italic mb-8 border-b border-white/10 pb-4">Infraestructura High-Performance</p>
-          
-          <div class="flex flex-col gap-4 text-sm">
-             <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
-              <span class="text-neutral-500 text-xs font-medium">Diseño</span>
-              <div>
-                <p class="font-bold text-xs uppercase">Estética Editorial</p>
-                <p class="text-neutral-400 text-[10px] leading-tight">Dark Mode inmersivo.</p>
-              </div>
-            </div>
-            <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-white/10 pt-3">
-              <span class="text-neutral-500 text-xs font-medium">CMS</span>
-              <div>
-                <p class="font-bold text-xs uppercase">Dinámico & Ilimitado</p>
-                <p class="text-neutral-400 text-[10px] leading-tight">Base de datos escalable.</p>
-              </div>
-            </div>
-            <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-white/10 pt-3">
-              <span class="text-neutral-500 text-xs font-medium">Gestión</span>
-              <div>
-                <p class="font-bold text-xs uppercase text-green-400">Autónomo</p>
-                <p class="text-neutral-400 text-[10px] leading-tight">Control total sin intermediarios.</p>
-              </div>
-            </div>
-          </div>
+  </main>
+  <section id="trusted-partners"
+    class="flex flex-col gap-8 py-20 px-4 md:px-8 text-white min-h-[60vh] justify-center items-center">
+    <h2 class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">TRUSTED PARTNERS</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full max-w-5xl mx-auto items-start">
+      <article class="flex flex-col items-center text-center gap-6 h-full">
+        <div class="h-24 md:h-32 flex items-center justify-center w-full">
+          <a href="https://www.stefanycanoarq.com" target="_blank" class="inline-block transition-transform hover:scale-105 duration-300">
+            <img src="./src/logos/favicon_sca.svg" alt="SCA Logo"
+              class="logo-premium-glow w-28 md:w-40 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
+          </a>
         </div>
-
-        <div class="border-t border-white/20 pt-6 mt-8">
-          <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
-          <div class="flex justify-between items-end">
-            <p class="text-3xl font-light tracking-tight">$24,999 <span class="text-sm text-neutral-500">MXN</span></p>
-            <a href="https://wa.me/522221978263?text=Qu%C3%A9%20tal%2C%20Neutra.%20Busco%20escalar%20mi%20inventario%20con%20la%20Suite%20Vantage.%20Me%20interesa%20la%20gesti%C3%B3n%20aut%C3%B3noma%20y%20la%20infraestructura%20de%20alto%20rendimiento.%20%C2%BFPodemos%20agendar%20una%20breve%20validaci%C3%B3n%3F" class="bg-white text-black px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors">START</a>
-          </div>
+        <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
+          curada para la arquitecta Stefany Cano</p>
+      </article>
+      <article class="flex flex-col items-center text-center gap-6 h-full">
+        <div class="h-24 md:h-32 flex items-center justify-center w-full">
+          <a href="https://www.calcul8.pro" target="_blank" class="inline-block transition-transform hover:scale-105 duration-300">
+            <img src="./src/logos/favicon_calcul8.svg" alt="Calcul8 Logo"
+              class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
+          </a>
         </div>
-      </div>
-
-      <div class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-        <div>
-          <h3 class="text-2xl font-bold tracking-wider mb-2">AUTHORITY</h3>
-          <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Ecosistema Digital Completo</p>
-          
-          <div class="flex flex-col gap-4 text-sm">
-             <div class="grid grid-cols-[80px_1fr] gap-2 items-start">
-              <span class="text-neutral-400 text-xs font-medium">Diseño</span>
-              <div>
-                <p class="font-bold text-xs uppercase">Cinematográfico</p>
-                <p class="text-neutral-500 text-[10px] leading-tight">Video y micro-interacciones.</p>
-              </div>
-            </div>
-             <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
-              <span class="text-neutral-400 text-xs font-medium">CMS</span>
-              <div>
-                <p class="font-bold text-xs uppercase">Filtros Avanzados</p>
-                <p class="text-neutral-500 text-[10px] leading-tight">Buscador inteligente.</p>
-              </div>
-            </div>
-             <div class="grid grid-cols-[80px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
-              <span class="text-neutral-400 text-xs font-medium">Gestión</span>
-              <div>
-                <p class="font-bold text-xs uppercase text-purple-600">Concierge</p>
-                <p class="text-neutral-500 text-[10px] leading-tight">Soporte prioritario 24/7.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="border-t border-neutral-200 pt-6 mt-8">
-          <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión desde</p>
-          <div class="flex justify-between items-end">
-            <p class="text-3xl font-light tracking-tight">$49,999 <span class="text-sm text-neutral-400">MXN</span></p>
-            <a href="https://wa.me/522221978263?text=Hola.%20Mi%20marca%20requiere%20el%20ecosistema%20Authority.%20Necesitamos%20integraci%C3%B3n%20CRM%20y%20la%20experiencia%20cinematogr%C3%A1fica%20completa.%20Solicito%20disponibilidad%20para%20una%20sesi%C3%B3n%20estrat%C3%A9gica%20con%20un%20consultor." class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">START</a>
-          </div>
-        </div>
-      </div>
-
+        <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
+          cálculos y herramientas para ingenieros</p>
+      </article>
     </div>
   </section>
+  <section id="contacto"
+    class="w-full max-w-[1920px] mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e] text-white border-t border-white/5">
 
-</main>
-  <!-- <section id="selectedw" class="flex flex-col gap-1 lg:h-175 justify-start align-top pb-8">
-    <h4 class="font-extralight text-white text-4xl md:text-[75px] -tracking-tighter">SELECTED WORK</h4>
+    <div class="max-w-5xl mx-auto">
 
-    <div class="flex flex-col lg:flex-row h-80 lg:h-2/3 justify-center lg:gap-60 gap-1 mt-10 lg:mt-0 items-center">
-      <article class="flex flex-col justify-center"><h1>CASO DE ÉXITO 1</h1></article>
-      <article class="flex flex-col justify-center"><h1>CASO DE ÉXITO 2</h1></article>
-      <article class="flex flex-col justify-center"><h1>CASO DE ÉXITO 3</h1></article>
-    </div>
+      <div class="mb-16 text-center md:text-left">
+        <h4 class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h4>
+        <p class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu visión. Sé específico.</p>
+      </div>
 
-  </section> -->
-      <section id="contacto" class="w-full max-w-[1920px] mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e] text-white border-t border-white/5">
-        
-        <div class="max-w-5xl mx-auto">
-            
-            <div class="mb-16 text-center md:text-left">
-                <h4 class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h4>
-                <p class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu visión. Sé específico.</p>
+      <form id="project-form" class="space-y-12">
+
+        <input type="hidden" name="access_key" value="bbee927e-886d-47cb-aeee-07bde7291ba3">
+
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          <div class="group relative">
+            <input type="text" name="name" required
+              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
+            <label
+              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+              Nombre Completo
+            </label>
+          </div>
+
+          <div class="group relative">
+            <input type="text" name="company" required
+              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
+            <label
+              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+              Empresa / Marca
+            </label>
+          </div>
+
+          <div class="group relative">
+            <input type="email" name="email" required
+              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
+            <label
+              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+              Correo Corporativo
+            </label>
+          </div>
+
+          <div class="group relative">
+            <select name="budget" required
+              class="w-full bg-[#21222e] border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors appearance-none text-gray-300">
+              <option value="" disabled selected hidden>Rango de Inversión</option>
+              <option value="Essential (15k - 25k)">Suite Essential ($15k - $25k MXN)</option>
+              <option value="Vantage (25k - 50k)">Suite Vantage ($25k - $50k MXN)</option>
+              <option value="Authority (50k+)">Suite Authority ($50k+ MXN)</option>
+              <option value="Custom Enterprise">Proyecto Enterprise (A medida)</option>
+            </select>
+            <div class="absolute right-0 top-4 pointer-events-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-4 h-4 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
             </div>
+          </div>
 
-            <form id="project-form" class="space-y-12">
-                
-                <input type="hidden" name="access_key" value="bbee927e-886d-47cb-aeee-07bde7291ba3">
-                
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    
-                    <div class="group relative">
-                        <input type="text" name="name" required 
-                              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
-                        <label class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-                            Nombre Completo
-                        </label>
-                    </div>
-
-                    <div class="group relative">
-                        <input type="text" name="company" required 
-                              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
-                        <label class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-                            Empresa / Marca
-                        </label>
-                    </div>
-
-                    <div class="group relative">
-                        <input type="email" name="email" required 
-                              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
-                        <label class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-                            Correo Corporativo
-                        </label>
-                    </div>
-
-                    <div class="group relative">
-                        <select name="budget" required 
-                                class="w-full bg-[#21222e] border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors appearance-none text-gray-300">
-                            <option value="" disabled selected hidden>Rango de Inversión</option>
-                            <option value="Essential (15k - 25k)">Suite Essential ($15k - $25k MXN)</option>
-                            <option value="Vantage (25k - 50k)">Suite Vantage ($25k - $50k MXN)</option>
-                            <option value="Authority (50k+)">Suite Authority ($50k+ MXN)</option>
-                            <option value="Custom Enterprise">Proyecto Enterprise (A medida)</option>
-                        </select>
-                        <div class="absolute right-0 top-4 pointer-events-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-white">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="group relative mt-12">
-                    <textarea name="message" rows="4" required 
-                              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent resize-none"></textarea>
-                    <label class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-                        Detalles del Proyecto
-                    </label>
-                </div>
-
-                <div class="flex justify-end pt-8">
-                    <button type="submit" id="submit-btn" class="group relative px-12 py-4 bg-white text-black font-bold tracking-[0.2em] uppercase text-xs overflow-hidden transition-all hover:bg-gray-200">
-                        <span id="btn-text">Enviar Solicitud</span>
-                        <span id="btn-loading" class="hidden animate-pulse">Procesando...</span>
-                    </button>
-                </div>
-
-                <div id="form-result" class="hidden text-center p-4 border border-green-500/50 bg-green-500/10 text-green-400 text-sm tracking-widest uppercase">
-                    Solicitud recibida. Nuestro equipo analizará tu perfil en breve.
-                </div>
-
-            </form>
         </div>
-    </section>
-   <footer id="contacto" class="bg-white border-t border-gray-100 pt-12 pb-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      
-      <div class="space-y-4">
-        <h2 class="text-xl font-bold tracking-tighter text-gray-900">NEUTRA</h2>
-        <p class="text-sm text-gray-500 max-w-xs">
-          Transformando servicios digitales complejos en soluciones estratégicas productizadas.
-        </p>
-      </div>
 
-      <div class="flex flex-col space-y-3">
-        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3>
-        <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información" 
-           class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
-           <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-           WhatsApp: 222 197 8263
-        </a>
-        <a class="text-gray-600" href="hola@neutra.mx">hola@neutra.mx</a>
-        <p class="text-gray-600 text-sm">Coatepec, Veracruz, MX</p>
-      </div>
+        <div class="group relative mt-12">
+          <textarea name="message" rows="4" required
+            class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent resize-none"></textarea>
+          <label
+            class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+            Detalles del Proyecto
+          </label>
+        </div>
 
-      <div class="flex flex-col space-y-3">
-        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
-        <a href="/privacidad.html" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
-        <a href="/terminos.html" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de Servicio</a>
-      </div>
+        <div class="flex justify-end pt-8">
+          <button type="submit" id="submit-btn"
+            class="group relative px-12 py-4 bg-white text-black font-bold tracking-[0.2em] uppercase text-xs overflow-hidden transition-all hover:bg-gray-200">
+            <span id="btn-text">Enviar Solicitud</span>
+            <span id="btn-loading" class="hidden animate-pulse">Procesando...</span>
+          </button>
+        </div>
 
+        <div id="form-result"
+          class="hidden text-center p-4 border border-green-500/50 bg-green-500/10 text-green-400 text-sm tracking-widest uppercase">
+          Solicitud recibida. Nuestro equipo analizará tu perfil en breve.
+        </div>
+
+      </form>
     </div>
+  </section>
+  <footer id="contacto" class="bg-white border-t border-gray-100 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold tracking-tighter text-gray-900">NEUTRA</h2>
+          <p class="text-sm text-gray-500 max-w-xs">
+            Transformando servicios digitales complejos en soluciones estratégicas productizadas.
+          </p>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3>
+          <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información"
+            class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            WhatsApp: 222 197 8263
+          </a>
+          <a class="text-gray-600" href="hola@neutra.mx">hola@neutra.mx</a>
+          <p class="text-gray-600 text-sm">Coatepec, Veracruz, MX</p>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
+          <a href="/privacidad.html" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de
+            Privacidad</a>
+          <a href="/terminos.html" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de
+            Servicio</a>
+        </div>
+
+      </div>
 
       <div class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
         <p class="text-xs text-gray-400">
@@ -473,15 +550,17 @@
           Estrategia con enfoque y claridad.
         </p>
       </div>
-    </div>  
+    </div>
   </footer>
-   <div id="cursor-dot" class="hidden lg:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none" 
-       style="background-color: #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
-    <div id="cursor-outline" class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none transition-transform duration-200 ease-out" 
-       style="border: 1px solid #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <div id="cursor-dot" class="hidden lg:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none"
+    style="background-color: #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
+  <div id="cursor-outline"
+    class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none transition-transform duration-200 ease-out"
+    style="border: 1px solid #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
