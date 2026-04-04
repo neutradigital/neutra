@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSectorCards();
     initCustomCursor();
     initContactForm();
+    initSlideOver();
 });
 
 
@@ -21,6 +22,9 @@ const lenis = new Lenis({
     smoothTouch: false, // Recomendado false en móviles para mantener sensación nativa
     touchMultiplier: 2,
 });
+
+// Exponer lenis globalmente para que initSlideOver pueda detenerlo
+window.lenis = lenis;
 
 // Loop de animación (Necesario para que Lenis funcione)
 function raf(time) {
@@ -60,80 +64,115 @@ gsap.ticker.lagSmoothing(0);
 
 // 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION")
 
-// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION" - STABLE VERSION)
-
-// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION" - STABLE MOBILE)
+// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION")
 
 function initAnimations() {
-    
-    // A. REVEAL BÁSICO (Fade Up - Funciona en Mobile y Desktop)
-    // Esto SÍ lo queremos en móvil porque se ve elegante al entrar
+
+    // A. REVEAL BÁSICO (Fade Up)
+    // Solo targeteamos elementos que NO son bento cards (esos tienen su propio sistema)
     const revealElements = document.querySelectorAll('h1, h2, h3, p, button, .js-sector-card');
-    
+
     revealElements.forEach(element => {
-        gsap.fromTo(element, 
-            { 
-                y: 50, 
-                opacity: 0, 
-                willChange: "transform" 
-            },
+        gsap.fromTo(element,
+            { y: 40, opacity: 0 },
             {
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 85%", 
+                    start: "top 88%",
                     toggleActions: "play none none none",
-                    once: true
+                    once: true,
                 },
                 y: 0,
                 opacity: 1,
-                duration: 1.2,
-                ease: "power3.out"
+                duration: 1.0,
+                ease: "power3.out",
+                // Limpiar willChange después de la animación para liberar memoria GPU
+                onComplete: () => { element.style.willChange = 'auto'; }
             }
         );
     });
 
-    // B. PARALLAX EN IMÁGENES (SOLO DESKTOP)
-    // Aquí está la corrección: Envolvemos esto en un 'if'
-    if (window.innerWidth > 1024) {
-        
-        const parallaxImages = document.querySelectorAll('img');
-        
-        parallaxImages.forEach(img => {
-            // Verificamos si es una imagen que debe tener efecto
-            if(img.closest('.js-sector-card') || img.closest('#trusted-partners')) {
-                gsap.fromTo(img,
-                    { y: -30 }, 
-                    {
-                        y: 30, 
-                        scrollTrigger: {
-                            trigger: img.parentElement,
-                            scrub: true 
-                        },
-                        ease: "none"
+    // B. BENTO CARDS: Reveal on Scroll (IntersectionObserver — sin GSAP, cero overhead)
+    // Estado inicial: opacity-0 translate-y-4 está en el HTML
+    const bentoCards = document.querySelectorAll('.js-bento-card');
+    if (bentoCards.length > 0) {
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, idx) => {
+                    if (entry.isIntersecting) {
+                        // Stagger ligero: cada card aparece 60ms después de la anterior
+                        const card = entry.target;
+                        const delay = Array.from(bentoCards).indexOf(card) * 60;
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.25,1,0.5,1)';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                            // Limpiar willChange después para liberar memoria
+                            setTimeout(() => { card.style.willChange = 'auto'; }, 800);
+                        }, delay);
+                        revealObserver.unobserve(card);
                     }
-                );
-            }
-        });
+                });
+            },
+            { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+        );
+        bentoCards.forEach(card => revealObserver.observe(card));
     }
-    
-    // C. LÍNEAS DE SEPARACIÓN (Funciona en ambos)
-    const lines = document.querySelectorAll('.h-px, .border-t, .border-b');
+
+    // D. PARALLAX DESKTOP — solo en md+ (>= 768px), completamente pasivo
+    // La imagen tiene h-[115%] y arranca en -translate-y-[7.5%].
+    // Al hacer scroll, ajustamos translateY dentro del contenedor overflow-hidden.
+    // Resultado: la imagen flota suavemente sin mover ningún elemento de layout.
+    if (window.matchMedia('(min-width: 768px)').matches) {
+        const bentoImgs = document.querySelectorAll('#activosVisuales img');
+        let rafScheduled = false;
+
+        const updateParallax = () => {
+            bentoImgs.forEach(img => {
+                const rect = img.closest('article').getBoundingClientRect();
+                const viewH = window.innerHeight;
+                // progress: 0 cuando el tope de la card toca el fondo, 1 cuando su base toca el tope
+                const progress = 1 - (rect.bottom / (viewH + rect.height));
+                const clampedProgress = Math.min(1, Math.max(0, progress));
+                // Rango de movimiento: ±7.5% → imagen de 115% siempre llena el contenedor
+                const shift = -7.5 + clampedProgress * 15; // va de -7.5% a +7.5%
+                img.style.transform = `translateY(${shift}%)`;
+            });
+            rafScheduled = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!rafScheduled) {
+                rafScheduled = true;
+                requestAnimationFrame(updateParallax);
+            }
+        }, { passive: true });
+
+        // Ejecutar una vez al cargar para posición inicial correcta
+        requestAnimationFrame(updateParallax);
+    }
+
+
+
+    // C. LÍNEAS DE SEPARACIÓN
+    const lines = document.querySelectorAll('.h-px');
     lines.forEach(line => {
         gsap.fromTo(line,
-            { scaleX: 0, transformOrigin: "left center" }, 
+            { scaleX: 0, transformOrigin: "left center" },
             {
-                scaleX: 1, 
+                scaleX: 1,
                 scrollTrigger: {
                     trigger: line,
-                    start: "top 90%",
+                    start: "top 92%",
                     toggleActions: "play none none none",
-                    once: true
+                    once: true,
                 },
-                duration: 1.5,
+                duration: 1.2,
                 ease: "expo.out"
             }
         );
     });
+
 }
 
 // CONTROL DEL PRELOADER
@@ -384,4 +423,288 @@ function initContactForm() {
             }, 5000);
         });
     });
+}
+
+/**
+ * ------------------------------------------------------------------
+ * SISTEMA 3: SLIDE-OVER METODOLOGÍA
+ * ------------------------------------------------------------------
+ */
+function initSlideOver() {
+    const slideWrapper = document.getElementById('slide-over-wrapper');
+    const slideBackdrop = document.getElementById('slide-over-backdrop');
+    const slidePanel = document.getElementById('slide-over-panel');
+    const slideScrollBody = document.getElementById('slide-scroll-body');
+    const closeBtn = document.getElementById('close-slide-over');
+    const triggers = document.querySelectorAll('.js-slide-trigger');
+    const titleEl = document.getElementById('slide-title');
+    const phasesCol = document.getElementById('slide-phases-col');
+    const stickyCol = document.getElementById('slide-sticky-col');
+
+    if (!slideWrapper || !slideBackdrop || !slidePanel || !slideScrollBody) return;
+
+    // CRÍTICO: Evitar que Lenis intercepte los eventos de scroll dentro del panel.
+    slideScrollBody.addEventListener('wheel', (e) => { e.stopPropagation(); }, { passive: true });
+    slideScrollBody.addEventListener('touchmove', (e) => { e.stopPropagation(); }, { passive: true });
+
+    // ── CATÁLOGO DE SERVICIOS (estructura por fases) ─────────────
+    const slideData = {
+        'identidad': {
+            title: 'Identidad Estructural',
+            phases: [
+                {
+                    label: 'Fase 1',
+                    title: 'Auditoría Orgánica',
+                    text: 'Analizamos a fondo el ecosistema actual de tu marca, su posicionamiento, competidores y los objetivos comerciales a largo plazo para detectar brechas y oportunidades reales.',
+                    image: './src/ourWork/ourwork7.jpg'
+                },
+                {
+                    label: 'Fase 2',
+                    title: 'Arquitectura Visual',
+                    text: 'Diseñamos las reglas fundamentales: paletas de color, tipografías y proporciones matemáticas que sostendrán la autoridad visual del proyecto de forma inmutable.',
+                    image: './src/ourWork/ourwork4.jpg'
+                },
+                {
+                    label: 'Fase 3',
+                    title: 'Manual de Operaciones',
+                    text: 'Entregamos el reglamento oficial de uso para que tu marca se mantenga unificada e inquebrantable sin importar el medio, el formato o el ejecutor.',
+                    image: './src/ourWork/ourwork3.jpg'
+                }
+            ]
+        },
+        'fotografia': {
+            title: 'Dirección Fotográfica',
+            phases: [
+                {
+                    label: 'Fase 1',
+                    title: 'Conceptualización',
+                    text: 'Aterrizamos la narrativa visual, referencias de iluminación y seleccionamos locaciones que fortalezcan el branding empresarial desde el primer encuadre.',
+                    image: './src/ourWork/ourwork2.jpg'
+                },
+                {
+                    label: 'Fase 2',
+                    title: 'Ejecución en Set',
+                    text: 'Operamos con equipo de alto rango, controlando meticulosamente cada variable: composición, temperatura de luz y dirección de talent para asegurar capturas premium.',
+                    image: './src/ourWork/ourwork5.jpg'
+                },
+                {
+                    label: 'Fase 3',
+                    title: 'Tratamiento Editorial',
+                    text: 'Post-producción intensiva: retoque milimétrico, calibración de color corporativo (Color Grading) y optimización multi-formato para todos los canales del ecosistema.',
+                    image: './src/ourWork/ourwork6.jpg'
+                }
+            ]
+        },
+        'frontend': {
+            title: 'Ingeniería Frontend',
+            phases: [
+                {
+                    label: 'Fase 1',
+                    title: 'Wireframing Riguroso',
+                    text: 'Mapeamos la arquitectura de información y los flujos de usuario (UX) para garantizar una navegación sin fricciones antes de escribir una sola línea de código.',
+                    image: './src/ourWork/ourwork1.jpg'
+                },
+                {
+                    label: 'Fase 2',
+                    title: 'Código Puro & Tailwind',
+                    text: 'Construimos interfaces con Tailwind CSS v4 e integramos animaciones calculadas con GPU-acceleration para mantener una fluidez de 60fps en cualquier dispositivo.',
+                    image: './src/ourWork/ourwork7.jpg'
+                },
+                {
+                    label: 'Fase 3',
+                    title: 'Performance & QA',
+                    text: 'Auditorías Lighthouse, minificación de assets, lazy loading y pruebas de estrés multiplataforma para garantizar tiempos de carga menores a 1.5 segundos en producción.',
+                    image: './src/ourWork/ourwork4.jpg'
+                }
+            ]
+        }
+    };
+
+
+    // Estado interno: rastrear si el panel está abierto
+    let isSlideOpen = false;
+
+    // Observer de scroll-spy activo (guardamos ref para desconectarlo al cerrar)
+    let spyObserver = null;
+
+    const openSlideOver = (serviceId) => {
+        const data = slideData[serviceId];
+        if (!data) return;
+
+        // ── LIMPIEZA DE ESTADO DEL ACORDEÓN ────────────────────────
+        document.querySelectorAll('.is-open').forEach(row => row.classList.remove('is-open'));
+        if (document.activeElement) document.activeElement.blur();
+
+        // ── RENDERIZADO DEL TÍTULO ──────────────────────────────────
+        titleEl.textContent = data.title;
+
+        // ── RENDERIZADO DE FASES (Columna Izquierda) ───────────────
+        const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+        phasesCol.innerHTML = data.phases.map((phase, i) => `
+            <div class="phase-block ${isDesktop ? 'min-h-[70vh] flex flex-col justify-center' : 'pb-10'} transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-30'}"
+                 data-index="${i}">
+                <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase mb-3">${phase.label}</p>
+                <h4 class="text-white text-2xl md:text-3xl font-light tracking-tight mb-4 max-w-sm">${phase.title}</h4>
+                <p class="text-gray-400 text-base leading-relaxed max-w-lg">${phase.text}</p>
+                ${!isDesktop ? `
+                <div class="mt-6 aspect-video overflow-hidden rounded-lg bg-gray-900">
+                    <img src="${phase.image}" alt="${phase.title}" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                </div>` : ''}
+            </div>
+        `).join('');
+
+        // ── RENDERIZADO DE IMÁGENES SUPERPUESTAS (Columna Derecha, solo desktop) ──
+        if (isDesktop) {
+            stickyCol.innerHTML = data.phases.map((phase, i) => `
+                <img src="${phase.image}"
+                     alt="${phase.title}"
+                     data-index="${i}"
+                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'}"
+                     loading="lazy" decoding="async">
+            `).join('');
+        } else {
+            stickyCol.innerHTML = '';
+        }
+
+        // ── INTERSECTION OBSERVER (Scroll-Spy, solo desktop) ────────
+        // Desconectar observer anterior si existe
+        if (spyObserver) spyObserver.disconnect();
+
+        if (isDesktop) {
+            const phaseBlocks = phasesCol.querySelectorAll('.phase-block');
+            const stickyImgs = stickyCol.querySelectorAll('img');
+
+            spyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const activeIndex = parseInt(entry.target.dataset.index);
+
+                    // a) Actualizar opacidad de bloques de texto
+                    phaseBlocks.forEach((block, i) => {
+                        block.classList.toggle('opacity-100', i === activeIndex);
+                        block.classList.toggle('opacity-30', i !== activeIndex);
+                    });
+
+                    // b) Cambiar imagen activa en columna sticky
+                    stickyImgs.forEach((img, i) => {
+                        img.classList.toggle('opacity-100', i === activeIndex);
+                        img.classList.toggle('opacity-0', i !== activeIndex);
+                    });
+                });
+            }, {
+                root: slideScrollBody,   // Scoped al scroll del panel, no al window
+                threshold: 0.5           // Activa cuando el 50% del bloque es visible
+            });
+
+            phaseBlocks.forEach(block => spyObserver.observe(block));
+        }
+
+        // FIX iOS Safari: webkit-overflow-scrolling activa scroll acelerado por hardware
+        slideScrollBody.style.webkitOverflowScrolling = 'touch';
+
+        // Activar Clases Visuales y Aislamiento de Capas
+        slideWrapper.classList.remove('pointer-events-none');
+        slideBackdrop.classList.remove('opacity-0');
+        slidePanel.classList.remove('translate-x-full');
+
+        // SCROLL-LOCK: Bloquear scroll del fondo (único método garantizado en iOS)
+        document.body.style.overflow = 'hidden';
+
+        // Bloquear lenis
+        if (window.lenis && typeof window.lenis.stop === 'function') {
+            window.lenis.stop();
+        }
+
+        // HISTORY API: inyectar estado falso para interceptar el botón "Atrás" del móvil
+        if (!isSlideOpen) {
+            window.history.pushState({ slideOpen: true }, '');
+        }
+        isSlideOpen = true;
+    };
+
+    const closeSlideOver = () => {
+        if (!isSlideOpen) return;
+        isSlideOpen = false;
+
+        // Desconectar el observer de scroll-spy para evitar memory leaks
+        if (spyObserver) {
+            spyObserver.disconnect();
+            spyObserver = null;
+        }
+
+        // Desactivar Clases Visuales
+        slideBackdrop.classList.add('opacity-0');
+        slidePanel.classList.add('translate-x-full');
+
+        // Esconder wrapper tras la transición
+        setTimeout(() => {
+            slideWrapper.classList.add('pointer-events-none');
+        }, 500);
+
+        // SCROLL-LOCK: Restaurar scroll del fondo
+        document.body.style.overflow = '';
+
+        // Restaurar lenis
+        if (window.lenis && typeof window.lenis.start === 'function') {
+            window.lenis.start();
+        }
+    };
+
+    // ── Event Listeners ────────────────────────────────────────────
+
+    // Botones "Explorar Metodología"
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const serviceId = trigger.getAttribute('data-service');
+            openSlideOver(serviceId);
+        });
+    });
+
+    // Botón X y backdrop
+    closeBtn.addEventListener('click', closeSlideOver);
+    slideBackdrop.addEventListener('click', closeSlideOver);
+
+    // Cerrar con Escape (desktop)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeSlideOver();
+    });
+
+    // ── HISTORY API: interceptar el botón "Atrás" del navegador ────
+    // Si el usuario presiona Back mientras el slide está abierto,
+    // impedimos la navegación real y cerramos el panel.
+    window.addEventListener('popstate', (event) => {
+        if (isSlideOpen) {
+            // El estado ya fue removido por el popstate; cerramos el panel
+            closeSlideOver();
+        }
+    });
+
+    // ── SWIPE-TO-CLOSE: Deslizar el panel hacia la derecha > 75px ──
+    // Solo activo cuando el toque empieza dentro del panel negro.
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    slidePanel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    slidePanel.addEventListener('touchend', (e) => {
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        const deltaY = Math.abs(e.changedTouches[0].clientY - touchStartY);
+
+        // Swipe horizontal intencional: >75px hacia la derecha
+        // y el movimiento vertical es menor que el horizontal (no es un scroll)
+        if (deltaX > 75 && deltaY < Math.abs(deltaX)) {
+            // Si hay un estado en el historial, navegamos hacia atrás para limpiarlo
+            // antes de cerrar, evitando que quede un estado huérfano
+            if (isSlideOpen && window.history.state?.slideOpen) {
+                window.history.back();
+            } else {
+                closeSlideOver();
+            }
+        }
+    }, { passive: true });
 }

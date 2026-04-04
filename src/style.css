@@ -24,6 +24,7 @@
   animation: loading-bar 1s infinite ease-in-out;
 }
 
+
 #text-pre {
   font-family: 'Michroma';
 }
@@ -298,6 +299,10 @@ p span {
         scrollbar-width: none;  /* Firefox */
 }
 
+/* Oculta scrollbar del carrusel móvil manteniendo funcionalidad */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 .info-card div{
   color: var(--color-bg-main);
 }
@@ -481,12 +486,9 @@ footer h4 {
 /* --- BLOQUE SECTORES NEUTRA BLINDADO --- */
 
 #sectores {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
     width: 100%;
-    max-width: 1200px; /* Opcional: control de ancho para desktop */
-    margin: 0 auto;
+    /* Aísla la sección del layout global: sus repaintados no escalan en cascada */
+    contain: layout style;
 }
 
 .sector-card {

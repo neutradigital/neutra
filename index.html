@@ -75,8 +75,9 @@
                  text-5xl leading-[0.9] tracking-tighter
                  md:text-8xl md:leading-[0.85]
                  lg:text-9xl lg:leading-[0.85]
-                 xl:text-[11rem] xl:leading-[.95]">
-          Showcase <br class="hidden md:block" /> Excellence
+                 xl:text-[6rem] xl:leading-[.95]">
+          Las marcas que dominan su mercado
+          no tuvieron suerte
         </h1>
       </div>
 
@@ -91,7 +92,7 @@
               class="absolute inset-0 w-full h-full bg-[#21222e] transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0"></span>
 
             <span class="relative z-10 transition-colors duration-300 group-hover:text-white">
-              Comenzar Proyecto
+              Desarrollar Estrategia
             </span>
 
           </button>
@@ -122,124 +123,112 @@
         </p>
 
         <p class="mt-8 text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
-          Desde su concepción hasta un rebranding estratégico. Integramos diseño de marca, dirección fotográfica y desarrollo web de alto rendimiento para que tu empresa proyecte autoridad y se comunique con excelencia absoluta en cualquier entorno donde tenga presencia.
+          Desde su concepción hasta un rebranding estratégico. Integramos diseño de marca, dirección fotográfica y
+          desarrollo web de alto rendimiento para que tu empresa proyecte autoridad y se comunique con excelencia
+          absoluta en cualquier entorno donde tenga presencia.
         </p>
 
       </div>
     </section>
 
-    <section id="sectores" class="w-full max-w-[1920px] mx-auto px-4 md:px-8 pb-20 lg:pb-32 bg-[#21222e]">
-
-      <div class="mb-12 lg:mb-20 pt-10">
-        <h2 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">Sectores de
-          Especialización</h2>
+    <section id="activosVisuales" class="w-full mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e]">
+      
+      <div class="mb-12 lg:mb-20">
+        <h3 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
+          NUESTROS PILARES
+        </h3>
         <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
       </div>
 
-      <div class="w-full grid grid-cols-1 gap-4 max-w-5xl mx-auto">
+      <!-- Matriz Interactiva de Servicios -->
+      <div class="w-full max-w-7xl mx-auto flex flex-col">
 
-        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
-                          transition-[height] duration-500 ease-out
-                          h-[120px] 
-                          hover:h-[320px] 
-                          [&.is-expanded]:h-[320px]">
-
-          <img
-            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
-            src="./src/images/realstatecard.png" alt="Inmobiliario" loading="eager" fetchpriority="high">
-
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-
-          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-
-            <div
-              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">
-                Inmobiliario</h2>
-            </div>
-
-            <div class="overflow-hidden transition-all duration-500 
-                            max-h-0 opacity-0 
-                            group-hover:max-h-24 group-hover:opacity-100 
-                            group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                Visualización 3D y experiencias inmersivas de alta gama.
-              </p>
+        <!-- Fila 01 -->
+        <div class="group cursor-pointer border-gray-800 border-t border-b relative" onclick="this.classList.toggle('is-open')">
+          <div class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+            <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
+              01 <span class="text-gray-700 mx-2">/</span> Identidad Estructural
+            </h2>
+          </div>
+          
+          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+            <div class="overflow-hidden">
+              <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
+                <div class="md:w-1/2 flex flex-col items-start w-full">
+                  <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
+                    No diseñamos logotipos; definimos el reglamento visual de tu autoridad. Construimos los cimientos estéticos y estratégicos que dictarán cómo el mundo percibe tu marca.
+                  </p>
+                  <button type="button" class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1" data-service="identidad" onclick="event.stopPropagation()">
+                    Explorar Metodología &rarr;
+                  </button>
+                </div>
+                <div class="md:w-1/2 w-full">
+                  <div class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
+                    <img src="./src/ourWork/ourwork7.jpg" alt="Identidad Estructural" class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
-                          transition-[height] duration-500 ease-out
-                          h-[120px] 
-                          hover:h-[320px] 
-                          [&.is-expanded]:h-[320px]">
-          <img
-            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
-            src="./src/images/autoscard.png" alt="Automotriz" loading="eager" fetchpriority="high">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-            <div
-              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Automotriz
-              </h2>
-            </div>
-            <div
-              class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                Showrooms digitales y configuradores premium.
-              </p>
+        <!-- Fila 02 -->
+        <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')">
+          <div class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+            <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
+              02 <span class="text-gray-700 mx-2">/</span> Dirección Fotográfica
+            </h2>
+          </div>
+          
+          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+            <div class="overflow-hidden">
+              <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
+                <div class="md:w-1/2 flex flex-col items-start w-full">
+                  <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
+                    Traducimos tu identidad en activos visuales de estándar internacional. Capturamos la esencia de tu empresa para alimentar tu ecosistema con material gráfico diseñado para impactar.
+                  </p>
+                  <button type="button" class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1" data-service="fotografia" onclick="event.stopPropagation()">
+                    Explorar Metodología &rarr;
+                  </button>
+                </div>
+                <div class="md:w-1/2 w-full">
+                  <div class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
+                    <img src="./src/ourWork/ourwork2.jpg" alt="Dirección Fotográfica" class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
-                          transition-[height] duration-500 ease-out
-                          h-[120px] 
-                          hover:h-[320px] 
-                          [&.is-expanded]:h-[320px]">
-          <img
-            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
-            src="./src/images/fitwomancard.png" alt="Deportivo" loading="eager" fetchpriority="high">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-            <div
-              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Deportivo
-              </h2>
-            </div>
-            <div
-              class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                Ecosistemas digitales para rendimiento de élite.
-              </p>
+        <!-- Fila 03 -->
+        <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')">
+          <div class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+            <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
+              03 <span class="text-gray-700 mx-2">/</span> Ingeniería Frontend
+            </h2>
+          </div>
+          
+          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+            <div class="overflow-hidden">
+              <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
+                <div class="md:w-1/2 flex flex-col items-start w-full">
+                  <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
+                    El contenedor donde tu autoridad cobra vida. Desarrollamos plataformas web de precisión en Tailwind. Aquí el branding y la fotografía se fusionan en una experiencia digital ultrarrápida.
+                  </p>
+                  <button type="button" class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1" data-service="frontend" onclick="event.stopPropagation()">
+                    Explorar Metodología &rarr;
+                  </button>
+                </div>
+                <div class="md:w-1/2 w-full">
+                  <div class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
+                    <img src="./src/ourWork/ourwork1.jpg" alt="Ingeniería Frontend" class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </article>
-
-        <article class="js-sector-card group relative w-full overflow-hidden rounded-xl bg-[#171717] cursor-pointer shadow-2xl border border-white/5 
-                          transition-[height] duration-500 ease-out
-                          h-[120px] 
-                          hover:h-[320px] 
-                          [&.is-expanded]:h-[320px]">
-          <img
-            class="mobile-target-img absolute -top-[10%] left-0 w-full h-[120%] object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 opacity-60 group-hover:opacity-40"
-            src="./src/images/musiccard.png" alt="Musical" loading="eager" fetchpriority="high">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90"></div>
-          <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none">
-            <div
-              class="border-l-2 border-white pl-6 mb-1 transition-all duration-300 group-hover:mb-4 group-[.is-expanded]:mb-4 group-hover:border-neutral-400 group-[.is-expanded]:border-neutral-400">
-              <h2 class="text-2xl md:text-4xl font-bold tracking-widest text-white uppercase drop-shadow-md">Musical
-              </h2>
-            </div>
-            <div
-              class="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-[.is-expanded]:max-h-24 group-[.is-expanded]:opacity-100">
-              <p class="text-gray-300 text-sm md:text-base font-light leading-relaxed max-w-xl pl-6">
-                Identidad visual y plataformas interactivas.
-              </p>
-            </div>
-          </div>
-        </article>
+        </div>
 
       </div>
     </section>
@@ -393,6 +382,66 @@
       </div>
     </section>
 
+    <!-- Slide-Over: Metodología -->
+    <!-- WRAPPER: aislamiento de capas, invisible a pointer-events por defecto -->
+    <div id="slide-over-wrapper" class="fixed inset-0 z-[100] isolate pointer-events-none">
+
+      <!-- BACKDROP: fondo oscuro semitransparente -->
+      <div id="slide-over-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0"></div>
+
+      <!-- PANEL: columna flex de altura fija — NO tiene overflow en sí mismo -->
+      <div id="slide-over-panel"
+           class="absolute top-0 right-0
+                  h-[100dvh] w-full md:w-[85vw] lg:w-[80vw] xl:w-[75vw]
+                  bg-[#0a0a0a] shadow-2xl
+                  flex flex-col
+                  transform transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                  translate-x-full z-10 pointer-events-auto">
+
+        <!-- HEADER FIJO: shrink-0 asegura que nunca se comprima -->
+        <div class="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-[#0a0a0a] border-b border-white/5 shrink-0">
+          <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase">NUESTRO PROCESO</p>
+          <button id="close-slide-over"
+                  class="text-white hover:text-gray-400 transition-all hover:scale-110 cursor-pointer text-4xl leading-none font-extralight focus:outline-none">
+            &times;
+          </button>
+        </div>
+
+        <!-- SCROLLABLE BODY: flex-1 toma el espacio restante, overflow-y-auto activa el scroll -->
+        <!-- overscroll-contain atrapa el evento de scroll en este contenedor (previene scroll-bleed) -->
+        <!-- -webkit-overflow-scrolling:touch es aplicado vía JS al abrir para iOS Safari -->
+        <div id="slide-scroll-body"
+             class="flex-1 min-h-0 overflow-y-auto overscroll-contain px-8 lg:px-20 xl:px-24 pt-10 pb-32">
+
+          <!-- Título del Servicio -->
+          <div class="mb-16">
+            <h3 id="slide-title" class="text-4xl md:text-5xl font-light uppercase tracking-tight text-white leading-none">Servicio</h3>
+            <div class="h-px w-16 bg-white/20 mt-6"></div>
+          </div>
+
+          <!-- Layout Editorial: Scroll-Spy en desktop, apilado en móvil -->
+          <!-- En desktop (lg+): grid 2 columnas. Derecha = sticky con imágenes superpuestas -->
+          <!-- En móvil: columna única; cada fase muestra su propia imagen debajo del texto -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-16 relative items-start">
+
+            <!-- COLUMNA IZQUIERDA: Bloques de fases (fuente del scroll) -->
+            <div id="slide-phases-col" class="flex flex-col lg:col-span-5">
+              <!-- Inyectado por JS — cada .phase-block tendrá min-h-[70vh] en desktop -->
+            </div>
+
+            <!-- COLUMNA DERECHA: Imagen Sticky (solo visible en lg+) -->
+            <!-- relative es para los hijos absolute; sticky se ancla dentro del grid -->
+            <div id="slide-sticky-col" class="hidden lg:block lg:col-span-7 lg:sticky lg:top-8 h-[60vh] relative overflow-hidden rounded-xl bg-gray-900">
+              <!-- Imágenes superpuestas inyectadas por JS con opacity transition -->
+            </div>
+
+          </div>
+        </div><!-- /SCROLLABLE BODY -->
+
+      </div><!-- /PANEL -->
+    </div><!-- /WRAPPER -->
+
+
   </main>
   <section id="trusted-partners"
     class="flex flex-col gap-8 py-20 px-4 md:px-8 text-white min-h-[60vh] justify-center items-center">
@@ -401,23 +450,37 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full max-w-5xl mx-auto items-start">
       <article class="flex flex-col items-center text-center gap-6 h-full">
         <div class="h-24 md:h-32 flex items-center justify-center w-full">
-          <a href="https://www.stefanycanoarq.com" target="_blank" class="inline-block transition-transform hover:scale-105 duration-300">
+          <a href="https://www.stefanycanoarq.com" target="_blank"
+            class="inline-block transition-transform hover:scale-105 duration-300">
             <img src="./src/logos/favicon_sca.svg" alt="SCA Logo"
-              class="logo-premium-glow w-28 md:w-40 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
+              class="logo-premium-glow w-28 md:w-40 h-auto max-h-24 md:max-h-32 scale-170 object-contain"
+              loading="lazy">
           </a>
         </div>
         <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
-          curada para la arquitecta Stefany Cano</p>
+          curada para la arquitecta <strong>Stefany Cano</strong></p>
       </article>
       <article class="flex flex-col items-center text-center gap-6 h-full">
         <div class="h-24 md:h-32 flex items-center justify-center w-full">
-          <a href="https://www.calcul8.pro" target="_blank" class="inline-block transition-transform hover:scale-105 duration-300">
+          <a href="https://www.calcul8.pro" target="_blank"
+            class="inline-block transition-transform hover:scale-105 duration-300">
             <img src="./src/logos/favicon_calcul8.svg" alt="Calcul8 Logo"
               class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
           </a>
         </div>
         <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
           cálculos y herramientas para ingenieros</p>
+      </article>
+      <article class="flex flex-col items-center text-center gap-6 h-full">
+        <div class="h-24 md:h-32 flex items-center justify-center w-full">
+          <a href="https://www.instagram.com/evileproject" target="_blank"
+            class="inline-block transition-transform hover:scale-105 duration-300">
+            <img src="./src/logos/evileistipo.svg" alt="Calcul8 Logo"
+              class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
+          </a>
+        </div>
+        <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Dirección, edición fotográfica
+          y concepto para <strong>Evile Project</strong></p>
       </article>
     </div>
   </section>
