@@ -29,10 +29,15 @@
   </div>
   <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
 
-    <div class="absolute inset-0 w-full h-full -z-10 bg-black/30"> <video autoplay loop muted playsinline
-        class="w-full h-full object-cover">
-        <source src="./src/images/background_neutra1.mp4" type="video/mp4" />
-      </video>
+    <div class="absolute inset-0 w-full h-full -z-10">
+      <img src="./src/ourWork/ourwork2.jpg" class="w-full h-full object-cover">
+      <!-- Overlay multicapa: oscurece el fondo para maximizar contraste del texto -->
+      <div class="absolute inset-0 bg-black/55"></div>
+      <div class="absolute inset-0"
+        style="background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(0,0,0,0.45) 0%, transparent 100%);"></div>
+      <div class="absolute inset-0"
+        style="background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, rgba(0,0,0,0.4) 100%);">
+      </div>
     </div>
 
     <nav
@@ -71,14 +76,23 @@
       class="relative z-10 container mx-auto px-4 flex flex-col justify-center items-center text-center h-full pt-20 pb-12 gap-10 md:gap-14 lg:gap-16">
 
       <div class="flex flex-col items-center animate-fade-in-up">
-        <h1 class="font-black text-gray-100 uppercase
+        <!-- Eyebrow label premium -->
+        <span class="hero-eyebrow">Digital Growth Partner</span>
+
+        <h1 class="font-black uppercase
                  text-5xl leading-[0.9] tracking-tighter
                  md:text-8xl md:leading-[0.85]
-                 lg:text-9xl lg:leading-[0.85]
-                 xl:text-[6rem] xl:leading-[.95]">
+                 lg:text-[7rem] lg:leading-[0.88]
+                 xl:text-[7.5rem] xl:leading-[.92]">
           Las marcas que dominan su mercado
           no tuvieron suerte
         </h1>
+
+        <!-- Subtítulo de apoyo -->
+        <p
+          class="mt-6 md:mt-8 text-white/60 text-sm md:text-base font-light tracking-[0.2em] uppercase max-w-md text-center md:max-w-xl">
+          Identidad &middot; Fotografía &middot; Ingeniería Frontend
+        </p>
       </div>
 
       <div class="mt-4 md:mt-0">
@@ -86,7 +100,7 @@
           target="_blank" rel="noopener noreferrer">
 
           <button id="startpro"
-            class="group relative px-8 py-4 overflow-hidden rounded-sm bg-white text-black font-bold text-lg md:text-xl tracking-[0.15em] uppercase border border-white transition-all duration-300">
+            class="group relative px-8 py-4 overflow-hidden rounded-sm bg-white text-black font-bold text-sm md:text-xl tracking-[0.15em] uppercase border border-white transition-all duration-300">
 
             <span
               class="absolute inset-0 w-full h-full bg-[#21222e] transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0"></span>
@@ -132,7 +146,7 @@
     </section>
 
     <section id="activosVisuales" class="w-full mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e]">
-      
+
       <div class="mb-12 lg:mb-20">
         <h3 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
           NUESTROS PILARES
@@ -144,27 +158,36 @@
       <div class="w-full max-w-7xl mx-auto flex flex-col">
 
         <!-- Fila 01 -->
-        <div class="group cursor-pointer border-gray-800 border-t border-b relative" onclick="this.classList.toggle('is-open')">
-          <div class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+        <div class="group cursor-pointer border-gray-800 border-t border-b relative"
+          onclick="this.classList.toggle('is-open')">
+          <div
+            class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
               01 <span class="text-gray-700 mx-2">/</span> Identidad Estructural
             </h2>
           </div>
-          
-          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+
+          <div
+            class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
             <div class="overflow-hidden">
               <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
                 <div class="md:w-1/2 flex flex-col items-start w-full">
                   <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
-                    No diseñamos logotipos; definimos el reglamento visual de tu autoridad. Construimos los cimientos estéticos y estratégicos que dictarán cómo el mundo percibe tu marca.
+                    No diseñamos logotipos; definimos el reglamento visual de tu autoridad. Construimos los cimientos
+                    estéticos y estratégicos que dictarán cómo el mundo percibe tu marca.
                   </p>
-                  <button type="button" class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1" data-service="identidad" onclick="event.stopPropagation()">
+                  <button type="button"
+                    class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
+                    data-service="identidad" onclick="event.stopPropagation()">
                     Explorar Metodología &rarr;
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
-                  <div class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="./src/ourWork/ourwork7.jpg" alt="Identidad Estructural" class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu" loading="lazy" decoding="async">
+                  <div
+                    class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
+                    <img src="./src/images/rsqz_logo_design.jpeg" alt="Identidad Estructural"
+                      class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
+                      loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -174,26 +197,34 @@
 
         <!-- Fila 02 -->
         <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')">
-          <div class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+          <div
+            class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
               02 <span class="text-gray-700 mx-2">/</span> Dirección Fotográfica
             </h2>
           </div>
-          
-          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+
+          <div
+            class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
             <div class="overflow-hidden">
               <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
                 <div class="md:w-1/2 flex flex-col items-start w-full">
                   <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
-                    Traducimos tu identidad en activos visuales de estándar internacional. Capturamos la esencia de tu empresa para alimentar tu ecosistema con material gráfico diseñado para impactar.
+                    Traducimos tu identidad en activos visuales de estándar internacional. Capturamos la esencia de tu
+                    empresa para alimentar tu ecosistema con material gráfico diseñado para impactar.
                   </p>
-                  <button type="button" class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1" data-service="fotografia" onclick="event.stopPropagation()">
+                  <button type="button"
+                    class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
+                    data-service="fotografia" onclick="event.stopPropagation()">
                     Explorar Metodología &rarr;
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
-                  <div class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="./src/ourWork/ourwork2.jpg" alt="Dirección Fotográfica" class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu" loading="lazy" decoding="async">
+                  <div
+                    class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
+                    <img src="./src/ourWork/ourwork2.jpg" alt="Dirección Fotográfica"
+                      class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
+                      loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -203,26 +234,34 @@
 
         <!-- Fila 03 -->
         <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')">
-          <div class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+          <div
+            class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
               03 <span class="text-gray-700 mx-2">/</span> Ingeniería Frontend
             </h2>
           </div>
-          
-          <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
+
+          <div
+            class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] md:group-hover:grid-rows-[1fr] group-[.is-open]:grid-rows-[1fr]">
             <div class="overflow-hidden">
               <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
                 <div class="md:w-1/2 flex flex-col items-start w-full">
                   <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
-                    El contenedor donde tu autoridad cobra vida. Desarrollamos plataformas web de precisión en Tailwind. Aquí el branding y la fotografía se fusionan en una experiencia digital ultrarrápida.
+                    El contenedor donde tu autoridad cobra vida. Desarrollamos plataformas web de precisión en Tailwind.
+                    Aquí el branding y la fotografía se fusionan en una experiencia digital ultrarrápida.
                   </p>
-                  <button type="button" class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1" data-service="frontend" onclick="event.stopPropagation()">
+                  <button type="button"
+                    class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
+                    data-service="frontend" onclick="event.stopPropagation()">
                     Explorar Metodología &rarr;
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
-                  <div class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="./src/ourWork/ourwork1.jpg" alt="Ingeniería Frontend" class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu" loading="lazy" decoding="async">
+                  <div
+                    class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
+                    <img src="./src/ourWork/ourwork1.jpg" alt="Ingeniería Frontend"
+                      class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
+                      loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -387,11 +426,11 @@
     <div id="slide-over-wrapper" class="fixed inset-0 z-[100] isolate pointer-events-none">
 
       <!-- BACKDROP: fondo oscuro semitransparente -->
-      <div id="slide-over-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0"></div>
+      <div id="slide-over-backdrop"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0"></div>
 
       <!-- PANEL: columna flex de altura fija — NO tiene overflow en sí mismo -->
-      <div id="slide-over-panel"
-           class="absolute top-0 right-0
+      <div id="slide-over-panel" class="absolute top-0 right-0
                   h-[100dvh] w-full md:w-[85vw] lg:w-[80vw] xl:w-[75vw]
                   bg-[#0a0a0a] shadow-2xl
                   flex flex-col
@@ -399,10 +438,11 @@
                   translate-x-full z-10 pointer-events-auto">
 
         <!-- HEADER FIJO: shrink-0 asegura que nunca se comprima -->
-        <div class="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-[#0a0a0a] border-b border-white/5 shrink-0">
+        <div
+          class="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-[#0a0a0a] border-b border-white/5 shrink-0">
           <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase">NUESTRO PROCESO</p>
           <button id="close-slide-over"
-                  class="text-white hover:text-gray-400 transition-all hover:scale-110 cursor-pointer text-4xl leading-none font-extralight focus:outline-none">
+            class="text-white hover:text-gray-400 transition-all hover:scale-110 cursor-pointer text-4xl leading-none font-extralight focus:outline-none">
             &times;
           </button>
         </div>
@@ -411,11 +451,12 @@
         <!-- overscroll-contain atrapa el evento de scroll en este contenedor (previene scroll-bleed) -->
         <!-- -webkit-overflow-scrolling:touch es aplicado vía JS al abrir para iOS Safari -->
         <div id="slide-scroll-body"
-             class="flex-1 min-h-0 overflow-y-auto overscroll-contain px-8 lg:px-20 xl:px-24 pt-10 pb-32">
+          class="flex-1 min-h-0 overflow-y-auto overscroll-contain px-8 lg:px-20 xl:px-24 pt-10 pb-32">
 
           <!-- Título del Servicio -->
           <div class="mb-16">
-            <h3 id="slide-title" class="text-4xl md:text-5xl font-light uppercase tracking-tight text-white leading-none">Servicio</h3>
+            <h3 id="slide-title"
+              class="text-4xl md:text-5xl font-light uppercase tracking-tight text-white leading-none">Servicio</h3>
             <div class="h-px w-16 bg-white/20 mt-6"></div>
           </div>
 
@@ -431,7 +472,8 @@
 
             <!-- COLUMNA DERECHA: Imagen Sticky (solo visible en lg+) -->
             <!-- relative es para los hijos absolute; sticky se ancla dentro del grid -->
-            <div id="slide-sticky-col" class="hidden lg:block lg:col-span-7 lg:sticky lg:top-8 h-[60vh] relative overflow-hidden rounded-xl bg-gray-900">
+            <div id="slide-sticky-col"
+              class="hidden lg:block lg:col-span-7 lg:sticky lg:top-8 h-[60vh] relative overflow-hidden rounded-xl bg-gray-900">
               <!-- Imágenes superpuestas inyectadas por JS con opacity transition -->
             </div>
 
@@ -618,7 +660,7 @@
   <div id="cursor-dot" class="hidden lg:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none"
     style="background-color: #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
   <div id="cursor-outline"
-    class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none transition-transform duration-200 ease-out"
+    class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none"
     style="border: 1px solid #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
