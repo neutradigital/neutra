@@ -6,15 +6,15 @@
   <link rel="icon" type="image/svg+xml" href="./src/logos/n.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="/src/style.css" rel="stylesheet">
-  <link rel="preload" as="image" href="./src/images/camilo.png">
+  <link rel="preload" as="image" href="/assets/images/camilo.png">
   <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="./src/style.css">
   </noscript>
   <link rel="preload" href="/fonts/tu-fuente-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/tu-fuente-light.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./src/images/background_neutra1.mp4" as="video" type="video/mp4">
-  <link rel="preload" href="./src/images/hero-fallback.jpg" as="image">
+  <link rel="preload" href="/assets/images/background_neutra1.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="/assets/images/hero-fallback.jpg" as="image">
   <title>NEUTRA</title>
 </head>
 
@@ -30,7 +30,7 @@
   <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
 
     <div class="absolute inset-0 w-full h-full -z-10">
-      <img src="./src/ourWork/ourwork2.jpg" class="w-full h-full object-cover">
+      <img src="/assets/ourWork/ourwork2.jpg" class="w-full h-full object-cover">
       <!-- Overlay multicapa: oscurece el fondo para maximizar contraste del texto -->
       <div class="absolute inset-0 bg-black/55"></div>
       <div class="absolute inset-0"
@@ -196,7 +196,7 @@
                 <div class="md:w-1/2 w-full">
                   <div
                     class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="./src/images/rsqz_logo_design.jpeg" alt="Identidad Estructural"
+                    <img src="/assets/images/rsqz_logo_design.jpeg" alt="Identidad Estructural"
                       class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
                       loading="lazy" decoding="async">
                   </div>
@@ -233,7 +233,7 @@
                 <div class="md:w-1/2 w-full">
                   <div
                     class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="./src/ourWork/ourwork2.jpg" alt="Dirección Fotográfica"
+                    <img src="/assets/ourWork/ourwork2.jpg" alt="Dirección Fotográfica"
                       class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
                       loading="lazy" decoding="async">
                   </div>
@@ -270,7 +270,7 @@
                 <div class="md:w-1/2 w-full">
                   <div
                     class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="./src/images/coding_frontend.jpeg" alt="Ingeniería Frontend"
+                    <img src="/assets/images/coding_frontend.jpeg" alt="Ingeniería Frontend"
                       class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
                       loading="lazy" decoding="async">
                   </div>
@@ -657,7 +657,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
 
         <div class="space-y-4">
-          <img src="./src/logos/neutralogotipo.svg" alt="" class="w-50">
+          <img src="./src/logos/neutralogotipo.svg" alt="" class="w-100 lg:w-50">
           <p class="text-sm text-gray-500 max-w-xs">
             Construimos el ecosistema que convierte tu marca en tu mejor activo.
           </p>

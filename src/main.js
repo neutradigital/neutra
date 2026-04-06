@@ -414,19 +414,19 @@ function initSlideOver() {
                     label: 'Fase 1',
                     title: 'Auditoría Orgánica',
                     text: 'Analizamos a fondo el ecosistema actual de tu marca, su posicionamiento, competidores y los objetivos comerciales a largo plazo para detectar brechas y oportunidades reales.',
-                    image: './src/images/auditoria_neutra.jpg'
+                    image: '/assets/images/auditoria_neutra.jpg'
                 },
                 {
                     label: 'Fase 2',
                     title: 'Arquitectura Visual',
                     text: 'Diseñamos las reglas fundamentales: paletas de color, tipografías y proporciones matemáticas que sostendrán la autoridad visual del proyecto de forma inmutable.',
-                    image: './src/images/proceso_identidad.jpg'
+                    image: '/assets/images/proceso_identidad.jpg'
                 },
                 {
                     label: 'Fase 3',
                     title: 'Manual de Operaciones',
                     text: 'Entregamos el reglamento oficial de uso para que tu marca se mantenga unificada e inquebrantable sin importar el medio, el formato o el ejecutor.',
-                    image: './src/images/reglamento_brand.jpg'
+                    image: '/assets/images/reglamento_brand.jpg'
                 }
             ]
         },
@@ -437,19 +437,19 @@ function initSlideOver() {
                     label: 'Fase 1',
                     title: 'Conceptualización',
                     text: 'Aterrizamos la narrativa visual, referencias de iluminación y seleccionamos locaciones que fortalezcan el branding empresarial desde el primer encuadre.',
-                    image: './src/ourWork/ourwork7.jpg'
+                    image: '/assets/ourWork/ourwork7.jpg'
                 },
                 {
                     label: 'Fase 2',
                     title: 'Ejecución en Set',
                     text: 'Operamos con equipo de alto rango, controlando meticulosamente cada variable: composición, temperatura de luz y dirección de talent para asegurar capturas premium.',
-                    image: './src/ourWork/ourwork5.jpg'
+                    image: '/assets/ourWork/ourwork5.jpg'
                 },
                 {
                     label: 'Fase 3',
                     title: 'Tratamiento Editorial',
                     text: 'Post-producción intensiva: retoque milimétrico, calibración de color corporativo (Color Grading) y optimización multi-formato para todos los canales del ecosistema.',
-                    image: './src/images/detailing_foto.jpg'
+                    image: '/assets/images/detailing_foto.jpg'
                 }
             ]
         },
@@ -460,19 +460,19 @@ function initSlideOver() {
                     label: 'Fase 1',
                     title: 'Wireframing Riguroso',
                     text: 'Mapeamos la arquitectura de información y los flujos de usuario (UX) para garantizar una navegación sin fricciones antes de escribir una sola línea de código.',
-                    image: './src/images/process_ux.jpeg'
+                    image: '/assets/images/process_ux.jpeg'
                 },
                 {
                     label: 'Fase 2',
                     title: 'Código Puro & Tailwind',
                     text: 'Construimos interfaces con Tailwind CSS v4 e integramos animaciones calculadas con GPU-acceleration para mantener una fluidez de 60fps en cualquier dispositivo.',
-                    image: './src/images/code_process.jpeg'
+                    image: '/assets/images/code_process.jpeg'
                 },
                 {
                     label: 'Fase 3',
                     title: 'Performance & QA',
                     text: 'Auditorías Lighthouse, minificación de assets, lazy loading y pruebas de estrés multiplataforma para garantizar tiempos de carga menores a 1.5 segundos en producción.',
-                    video: './src/videos/video_qa.mp4'
+                    video: '/assets/videos/video_qa.mp4'
                 }
             ]
         }
