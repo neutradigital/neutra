@@ -437,7 +437,7 @@ function initSlideOver() {
                     label: 'Fase 1',
                     title: 'Conceptualización',
                     text: 'Aterrizamos la narrativa visual, referencias de iluminación y seleccionamos locaciones que fortalezcan el branding empresarial desde el primer encuadre.',
-                    image: './src/ourWork/ourwork2.jpg'
+                    image: './src/ourWork/ourwork7.jpg'
                 },
                 {
                     label: 'Fase 2',
@@ -449,7 +449,7 @@ function initSlideOver() {
                     label: 'Fase 3',
                     title: 'Tratamiento Editorial',
                     text: 'Post-producción intensiva: retoque milimétrico, calibración de color corporativo (Color Grading) y optimización multi-formato para todos los canales del ecosistema.',
-                    image: './src/ourWork/ourwork6.jpg'
+                    image: './src/images/detailing_foto.jpg'
                 }
             ]
         },
@@ -460,19 +460,19 @@ function initSlideOver() {
                     label: 'Fase 1',
                     title: 'Wireframing Riguroso',
                     text: 'Mapeamos la arquitectura de información y los flujos de usuario (UX) para garantizar una navegación sin fricciones antes de escribir una sola línea de código.',
-                    image: './src/ourWork/ourwork1.jpg'
+                    image: './src/images/process_ux.jpeg'
                 },
                 {
                     label: 'Fase 2',
                     title: 'Código Puro & Tailwind',
                     text: 'Construimos interfaces con Tailwind CSS v4 e integramos animaciones calculadas con GPU-acceleration para mantener una fluidez de 60fps en cualquier dispositivo.',
-                    image: './src/ourWork/ourwork7.jpg'
+                    image: './src/images/code_process.jpeg'
                 },
                 {
                     label: 'Fase 3',
                     title: 'Performance & QA',
                     text: 'Auditorías Lighthouse, minificación de assets, lazy loading y pruebas de estrés multiplataforma para garantizar tiempos de carga menores a 1.5 segundos en producción.',
-                    image: './src/ourWork/ourwork4.jpg'
+                    video: './src/videos/video_qa.mp4'
                 }
             ]
         }
@@ -506,21 +506,24 @@ function initSlideOver() {
                 <h4 class="text-white text-2xl md:text-3xl font-light tracking-tight mb-4 max-w-sm">${phase.title}</h4>
                 <p class="text-gray-400 text-base leading-relaxed max-w-lg">${phase.text}</p>
                 ${!isDesktop ? `
-                <div class="mt-6 aspect-video overflow-hidden rounded-lg bg-gray-900">
-                    <img src="${phase.image}" alt="${phase.title}" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                <div class="mt-6 aspect-square overflow-hidden rounded-lg bg-gray-900">
+                    ${phase.video
+                        ? `<video src="${phase.video}" class="w-full h-full object-cover" autoplay muted loop playsinline></video>`
+                        : `<img src="${phase.image}" alt="${phase.title}" class="w-full h-full object-cover" loading="lazy" decoding="async">`
+                    }
                 </div>` : ''}
             </div>
         `).join('');
 
         // ── RENDERIZADO DE IMÁGENES SUPERPUESTAS (Columna Derecha, solo desktop) ──
         if (isDesktop) {
-            stickyCol.innerHTML = data.phases.map((phase, i) => `
-                <img src="${phase.image}"
-                     alt="${phase.title}"
-                     data-index="${i}"
-                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'}"
-                     loading="lazy" decoding="async">
-            `).join('');
+            stickyCol.innerHTML = data.phases.map((phase, i) => {
+                const baseClass = `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'}`;
+                if (phase.video) {
+                    return `<video src="${phase.video}" data-index="${i}" class="${baseClass}" autoplay muted loop playsinline></video>`;
+                }
+                return `<img src="${phase.image}" alt="${phase.title}" data-index="${i}" class="${baseClass}" loading="lazy" decoding="async">`;
+            }).join('');
         } else {
             stickyCol.innerHTML = '';
         }
@@ -531,7 +534,7 @@ function initSlideOver() {
 
         if (isDesktop) {
             const phaseBlocks = phasesCol.querySelectorAll('.phase-block');
-            const stickyImgs = stickyCol.querySelectorAll('img');
+            const stickyImgs = stickyCol.querySelectorAll('img, video');
 
             spyObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -556,6 +559,28 @@ function initSlideOver() {
             });
 
             phaseBlocks.forEach(block => spyObserver.observe(block));
+        }
+
+        if (!isDesktop) {
+            const mobilePhaseBlocks = phasesCol.querySelectorAll('.phase-block');
+
+            spyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const activeIndex = parseInt(entry.target.dataset.index);
+
+                    mobilePhaseBlocks.forEach((block, i) => {
+                        block.classList.toggle('opacity-100', i === activeIndex);
+                        block.classList.toggle('opacity-30', i !== activeIndex);
+                    });
+                });
+            }, {
+                root: slideScrollBody,
+                rootMargin: '0px 0px -35% 0px',
+                threshold: 0.25
+            });
+
+            mobilePhaseBlocks.forEach(block => spyObserver.observe(block));
         }
 
         // FIX iOS Safari: webkit-overflow-scrolling activa scroll acelerado por hardware
