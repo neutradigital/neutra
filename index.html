@@ -5,6 +5,103 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./src/logos/n.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       SEO PRIMARY METADATA
+  ═══════════════════════════════════════════════ -->
+  <title>Neutra | Digital Growth Partner &amp; Premium Brand Architecture</title>
+  <meta name="description" content="Elevamos empresas a través de identidad estructural, dirección fotográfica de alto rendimiento e ingeniería frontend. Tu ecosistema digital, estandarizado." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Neutra Digital" />
+  <link rel="canonical" href="https://www.neutra.mx/" />
+
+  <!-- ═══════════════════════════════════════════════
+       OPEN GRAPH (LinkedIn, WhatsApp, Facebook)
+  ═══════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Neutra" />
+  <meta property="og:title" content="Neutra | Digital Growth Partner &amp; Premium Brand Architecture" />
+  <meta property="og:description" content="We elevate companies through structural identity, high-performance photographic direction, and frontend engineering. Your digital ecosystem, standardized." />
+  <meta property="og:url" content="https://www.neutra.mx/" />
+  <meta property="og:image" content="https://www.neutra.mx/assets/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Neutra — Digital Growth Partner. Identidad, fotografía e ingeniería frontend de nivel internacional." />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- ═══════════════════════════════════════════════
+       TWITTER CARDS
+  ═══════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neutra | Digital Growth Partner &amp; Premium Brand Architecture" />
+  <meta name="twitter:description" content="We elevate companies through structural identity, high-performance photographic direction, and frontend engineering. Your digital ecosystem, standardized." />
+  <meta name="twitter:image" content="https://www.neutra.mx/assets/images/og-cover.jpg" />
+  <meta name="twitter:image:alt" content="Neutra — Digital Growth Partner" />
+
+  <!-- ═══════════════════════════════════════════════
+       STRUCTURED DATA — Schema.org / JSON-LD
+  ═══════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Neutra",
+    "alternateName": "Neutra Digital",
+    "description": "Agencia de crecimiento digital especializada en identidad de marca, dirección fotográfica de alto rendimiento e ingeniería frontend. Elevamos la percepción de tu empresa a través de un ecosistema digital estandarizado.",
+    "url": "https://www.neutra.mx",
+    "logo": "https://www.neutra.mx/src/logos/neutralogotipo.svg",
+    "image": "https://www.neutra.mx/assets/images/og-cover.jpg",
+    "telephone": "+522221978263",
+    "email": "hola@neutra.mx",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Coatepec",
+      "addressRegion": "Veracruz",
+      "addressCountry": "MX"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Mexico"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios Neutra",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Brand Design",
+            "description": "Diseño de identidad estructural: logotipo, paleta de color, tipografía, manual de marca y brandbook ejecutivo."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Photography",
+            "description": "Dirección fotográfica comercial: brief, concepto, mood, locación y edición de imágenes de estándar internacional."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Development",
+            "description": "Ingeniería frontend de alto rendimiento: plataformas web con Astro, Tailwind CSS v4, SEO técnico, animaciones y sistemas de diseño escalables."
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.instagram.com/neutra.mx"
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       ASSETS & PERFORMANCE
+  ═══════════════════════════════════════════════ -->
   <link href="/src/style.css" rel="stylesheet">
   <link rel="preload" as="image" href="/assets/images/camilo.png">
   <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -15,13 +112,14 @@
   <link rel="preload" href="/fonts/tu-fuente-light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/images/background_neutra1.mp4" as="video" type="video/mp4">
   <link rel="preload" href="/assets/images/hero-fallback.jpg" as="image">
-  <title>NEUTRA</title>
 </head>
 
 <body>
-  <div id="preloader"
+  <!-- Preloader: uses <p> to preserve the single <h1> rule —
+       it is hidden from screen readers while loading via aria-hidden set by JS -->
+  <div id="preloader" aria-hidden="true" role="presentation"
     class="fixed inset-0 z-[100] bg-[#21222e] flex flex-col justify-center items-center transition-opacity duration-700 ease-out">
-    <h1 id="text-pre" class="text-white text-3xl font-bold tracking-[0.3em] animate-pulse">NEUTRA</h1>
+    <p id="text-pre" class="text-white text-3xl font-bold tracking-[0.3em] animate-pulse">NEUTRA</p>
 
     <div class="mt-4 w-32 h-0.5 bg-white/20 overflow-hidden rounded-full">
       <div class="w-full h-full bg-white animate-loading-bar origin-left"></div>
@@ -30,7 +128,7 @@
   <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
 
     <div class="absolute inset-0 w-full h-full -z-10">
-      <img src="/assets/ourWork/ourwork2.jpg" class="w-full h-full object-cover">
+      <img src="/assets/ourWork/ourwork2.jpg" alt="Dirección fotográfica de alto nivel para marcas premium — Neutra Digital" class="w-full h-full object-cover">
       <!-- Overlay multicapa: oscurece el fondo para maximizar contraste del texto -->
       <div class="absolute inset-0 bg-black/55"></div>
       <div class="absolute inset-0"
@@ -43,13 +141,14 @@
     <nav
       class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5 md:px-12 bg-[#21222e]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
 
-      <a href="index.html" class="relative z-50">
-        <h1 id="brand" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white">
+      <a href="index.html" class="relative z-50" aria-label="Neutra — Ir al inicio">
+        <span id="brand" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white">
           NEUTRA
-        </h1>
+        </span>
       </a>
 
-      <button id="menu-btn" class="relative z-50 flex flex-col gap-1.5 md:hidden focus:outline-none group">
+      <button id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-items"
+        class="relative z-50 flex flex-col gap-1.5 md:hidden focus:outline-none group">
         <span id="line1"
           class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
         <span id="line2"
@@ -134,9 +233,9 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent -z-10 pointer-events-none">
         </div>
 
-        <h2 class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
+        <p class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
           Digital Growth Partner
-        </h2>
+        </p>
 
         <p class="text-2xl md:text-4xl lg:text-6xl font-extralight leading-tight text-white">
           Elevamos la percepción de tu marca a través de una <br class="hidden lg:block">
@@ -159,9 +258,9 @@
     <section id="pilares" class="w-full mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e]">
 
       <div class="mb-12 lg:mb-20">
-        <h3 class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
+        <p class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
           NUESTROS PILARES
-        </h3>
+        </p>
         <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
       </div>
 
@@ -170,7 +269,8 @@
 
         <!-- Fila 01 -->
         <div class="group cursor-pointer border-gray-800 border-t border-b relative"
-          onclick="this.classList.toggle('is-open')">
+          onclick="this.classList.toggle('is-open')" role="button" tabindex="0"
+          aria-expanded="false" aria-label="Expandir servicio: Identidad Estructural">
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
@@ -189,14 +289,16 @@
                   </p>
                   <button type="button"
                     class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
-                    data-service="identidad" onclick="event.stopPropagation()">
+                    data-service="identidad" onclick="event.stopPropagation()"
+                    aria-label="Explorar metodología de Identidad Estructural">
                     Explorar Metodología &rarr;
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
                   <div
                     class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="/assets/images/rsqz_logo_design.jpeg" alt="Identidad Estructural"
+                    <img src="/assets/images/rsqz_logo_design.jpeg"
+                      alt="Diseño de identidad de marca y sistema visual para empresa RSQZ — Neutra Brand Design"
                       class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
                       loading="lazy" decoding="async">
                   </div>
@@ -207,7 +309,9 @@
         </div>
 
         <!-- Fila 02 -->
-        <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')">
+        <div class="group cursor-pointer border-gray-800 border-b relative"
+          onclick="this.classList.toggle('is-open')" role="button" tabindex="0"
+          aria-expanded="false" aria-label="Expandir servicio: Dirección Fotográfica">
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
@@ -226,14 +330,16 @@
                   </p>
                   <button type="button"
                     class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
-                    data-service="fotografia" onclick="event.stopPropagation()">
+                    data-service="fotografia" onclick="event.stopPropagation()"
+                    aria-label="Explorar metodología de Dirección Fotográfica">
                     Explorar Metodología &rarr;
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
                   <div
                     class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="/assets/ourWork/ourwork2.jpg" alt="Dirección Fotográfica"
+                    <img src="/assets/ourWork/ourwork2.jpg"
+                      alt="Dirección fotográfica de arte para el sector inmobiliario y de lujo — Neutra Photography"
                       class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
                       loading="lazy" decoding="async">
                   </div>
@@ -244,7 +350,9 @@
         </div>
 
         <!-- Fila 03 -->
-        <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')">
+        <div class="group cursor-pointer border-gray-800 border-b relative"
+          onclick="this.classList.toggle('is-open')" role="button" tabindex="0"
+          aria-expanded="false" aria-label="Expandir servicio: Ingeniería Frontend">
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
@@ -263,14 +371,16 @@
                   </p>
                   <button type="button"
                     class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
-                    data-service="frontend" onclick="event.stopPropagation()">
+                    data-service="frontend" onclick="event.stopPropagation()"
+                    aria-label="Explorar metodología de Ingeniería Frontend">
                     Explorar Metodología &rarr;
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
                   <div
                     class="aspect-video md:aspect-[21/9] overflow-hidden rounded-lg mt-4 md:mt-0 relative bg-gray-900 w-full">
-                    <img src="/assets/images/coding_frontend.jpeg" alt="Ingeniería Frontend"
+                    <img src="/assets/images/coding_frontend.jpeg"
+                      alt="Ingeniería frontend de alto rendimiento con Astro y Tailwind CSS para plataformas web premium — Neutra"
                       class="w-full h-full object-cover origin-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform group-hover:scale-105 transform-gpu"
                       loading="lazy" decoding="async">
                   </div>
@@ -283,10 +393,10 @@
       </div>
     </section>
 
-    <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20">
+    <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20" aria-label="Ecosistemas y planes de servicio">
 
       <div class="text-center mb-16">
-        <h4 class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</h4>
+        <p class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</p>
         <p class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
       </div>
 
@@ -478,6 +588,7 @@
           class="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-[#0a0a0a] border-b border-white/5 shrink-0">
           <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase">NUESTRO PROCESO</p>
           <button id="close-slide-over"
+            aria-label="Cerrar panel de metodología"
             class="text-white hover:text-gray-400 transition-all hover:scale-110 cursor-pointer text-4xl leading-none font-extralight focus:outline-none">
             &times;
           </button>
@@ -491,8 +602,8 @@
 
           <!-- Título del Servicio -->
           <div class="mb-16">
-            <h3 id="slide-title"
-              class="text-4xl md:text-5xl font-light uppercase tracking-tight text-white leading-none">Servicio</h3>
+            <h2 id="slide-title"
+              class="text-4xl md:text-5xl font-light uppercase tracking-tight text-white leading-none">Servicio</h2>
             <div class="h-px w-16 bg-white/20 mt-6"></div>
           </div>
 
@@ -520,56 +631,69 @@
     </div><!-- /WRAPPER -->
 
 
-  </main>
-  <section id="trusted-partners"
-    class="flex flex-col gap-8 py-20 px-4 md:px-8 text-white min-h-[60vh] justify-center items-center">
-    <h2 class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">TRUSTED PARTNERS</h2>
+    <!-- ═══════════════════════════════════════════════
+         TRUSTED PARTNERS (inside <main> for crawler coherence)
+    ═══════════════════════════════════════════════ -->
+    <section id="trusted-partners"
+      class="flex flex-col gap-8 py-20 px-4 md:px-8 text-white min-h-[60vh] justify-center items-center"
+      aria-label="Clientes y partners de Neutra">
+      <h2 class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">TRUSTED PARTNERS</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full max-w-5xl mx-auto items-start">
-      <article class="flex flex-col items-center text-center gap-6 h-full">
-        <div class="h-24 md:h-32 flex items-center justify-center w-full">
-          <a href="https://www.stefanycanoarq.com" target="_blank"
-            class="inline-block transition-transform hover:scale-105 duration-300">
-            <img src="./src/logos/favicon_sca.svg" alt="SCA Logo"
-              class="logo-premium-glow w-28 md:w-40 h-auto max-h-24 md:max-h-32 scale-170 object-contain"
-              loading="lazy">
-          </a>
-        </div>
-        <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
-          digital
-          curada para la arquitecta <strong>Stefany Cano</strong></p>
-      </article>
-      <article class="flex flex-col items-center text-center gap-6 h-full">
-        <div class="h-24 md:h-32 flex items-center justify-center w-full">
-          <a href="https://www.calcul8.pro" target="_blank"
-            class="inline-block transition-transform hover:scale-105 duration-300">
-            <img src="./src/logos/favicon_calcul8.svg" alt="Calcul8 Logo"
-              class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
-          </a>
-        </div>
-        <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
-          cálculos y herramientas para ingenieros</p>
-      </article>
-      <article class="flex flex-col items-center text-center gap-6 h-full">
-        <div class="h-24 md:h-32 flex items-center justify-center w-full">
-          <a href="https://www.instagram.com/evileproject" target="_blank"
-            class="inline-block transition-transform hover:scale-105 duration-300">
-            <img src="./src/logos/evileistipo.svg" alt="Calcul8 Logo"
-              class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
-          </a>
-        </div>
-        <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Dirección, edición fotográfica
-          y concepto para la marca streetwear <strong>Evile Project</strong></p>
-      </article>
-    </div>
-  </section>
-  <section id="contacto"
-    class="w-full max-w-[1920px] mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e] text-white border-t border-white/5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full max-w-5xl mx-auto items-start">
+        <article class="flex flex-col items-center text-center gap-6 h-full">
+          <div class="h-24 md:h-32 flex items-center justify-center w-full">
+            <a href="https://www.stefanycanoarq.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Visitar sitio web de Stefany Cano Arquitecta — cliente Neutra"
+              class="inline-block transition-transform hover:scale-105 duration-300">
+              <img src="./src/logos/favicon_sca.svg"
+                alt="Logo de Stefany Cano Arquitecta — identidad digital y plataforma web desarrollada por Neutra"
+                class="logo-premium-glow w-28 md:w-40 h-auto max-h-24 md:max-h-32 scale-170 object-contain"
+                loading="lazy">
+            </a>
+          </div>
+          <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
+            digital
+            curada para la arquitecta <strong>Stefany Cano</strong></p>
+        </article>
+        <article class="flex flex-col items-center text-center gap-6 h-full">
+          <div class="h-24 md:h-32 flex items-center justify-center w-full">
+            <a href="https://www.calcul8.pro" target="_blank" rel="noopener noreferrer"
+              aria-label="Visitar Calcul8.pro — plataforma de cálculo para ingenieros desarrollada por Neutra"
+              class="inline-block transition-transform hover:scale-105 duration-300">
+              <img src="./src/logos/favicon_calcul8.svg"
+                alt="Logo de Calcul8 — plataforma de automatización y cálculo para ingenieros, desarrollada por Neutra"
+                class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
+            </a>
+          </div>
+          <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
+            cálculos y herramientas para ingenieros</p>
+        </article>
+        <article class="flex flex-col items-center text-center gap-6 h-full">
+          <div class="h-24 md:h-32 flex items-center justify-center w-full">
+            <a href="https://www.instagram.com/evileproject" target="_blank" rel="noopener noreferrer"
+              aria-label="Visitar perfil de Instagram de Evile Project — marca streetwear dirigida por Neutra"
+              class="inline-block transition-transform hover:scale-105 duration-300">
+              <img src="./src/logos/evileistipo.svg"
+                alt="Logo de Evile Project — marca de streetwear con dirección fotográfica y concepto visual por Neutra"
+                class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
+            </a>
+          </div>
+          <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Dirección, edición fotográfica
+            y concepto para la marca streetwear <strong>Evile Project</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CONTACT FORM
+    ═══════════════════════════════════════════════ -->
+    <section id="contacto"
+      class="w-full max-w-[1920px] mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e] text-white border-t border-white/5">
 
     <div class="max-w-5xl mx-auto">
 
       <div class="mb-16 text-center md:text-left">
-        <h4 class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h4>
+        <h2 class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h2>
         <p class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu visión. Sé específico.</p>
       </div>
 
@@ -651,20 +775,22 @@
 
       </form>
     </div>
-  </section>
-  <footer id="contacto" class="bg-white border-t border-gray-100 pt-12 pb-8">
+    </section><!-- /contacto -->
+  </main>
+
+  <footer id="footer" class="bg-white border-t border-gray-100 pt-12 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
 
         <div class="space-y-4">
-          <img src="./src/logos/neutralogotipo.svg" alt="" class="w-100 lg:w-50">
+          <img src="./src/logos/neutralogotipo.svg" alt="Neutra Digital Growth Partner — logotipo" class="w-100 lg:w-50">
           <p class="text-sm text-gray-500 max-w-xs">
             Construimos el ecosistema que convierte tu marca en tu mejor activo.
           </p>
         </div>
 
         <div class="flex flex-col space-y-3">
-          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3>
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3><!-- h3 válido: dentro de footer, fuera del outline de encabezados principal -->
           <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información"
             class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -675,7 +801,7 @@
         </div>
 
         <div class="flex flex-col space-y-3">
-          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3><!-- h3 válido: dentro de footer -->
           <a href="/privacidad.html" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de
             Privacidad</a>
           <a href="/terminos.html" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de
