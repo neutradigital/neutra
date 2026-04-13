@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "title": "Neutra | Digital Growth Partner & Premium Brand Architecture",
+    "description": "We elevate companies through structural brand identity, high-performance photographic direction, and precision frontend engineering. Your digital ecosystem, standardized."
+  },
+  "nav": {
+    "home": "HOME",
+    "suites": "SUITES",
+    "trustedPartners": "TRUSTED PARTNERS",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "eyebrow": "Digital Growth Partner — Neutra",
+    "h1Line1": "The brands",
+    "h1Line2": "that dominate",
+    "h1Line3": "didn't get",
+    "h1Line4": "lucky.",
+    "subtitle": "Identity &middot; Photographic Direction &middot; Digital Experience<br><br>One ecosystem. <strong>One partner.</strong>",
+    "ecosystem": "The ecosystem",
+    "cta": "Schedule Assessment"
+  },
+  "whatWeDo": {
+    "label": "Digital Growth Partner",
+    "headingPre": "We elevate your brand's perception through an",
+    "headingHighlight": "unbreakable visual identity",
+    "body": "From its inception to a full strategic rebrand. We integrate brand design, photographic direction, and high-performance web development so your company projects undeniable authority and communicates with absolute excellence in every environment where it operates."
+  },
+  "pillars": {
+    "label": "OUR PILLARS",
+    "service1": {
+      "name": "Structural Identity",
+      "desc": "We don't design logos; we engineer the visual rules of your authority. We build the aesthetic and strategic foundation that will dictate how the world perceives your brand.",
+      "cta": "Explore Methodology →"
+    },
+    "service2": {
+      "name": "Photographic Direction",
+      "desc": "We translate your identity into international-standard visual assets. We capture the essence of your business to fuel your ecosystem with graphic material engineered to make an impact.",
+      "cta": "Explore Methodology →"
+    },
+    "service3": {
+      "name": "Frontend Engineering",
+      "desc": "The container where your authority comes alive. We build precision web platforms with Tailwind CSS. Here branding and photography fuse into an ultra-fast digital experience.",
+      "cta": "Explore Methodology →"
+    }
+  },
+  "slideOver": {
+    "processLabel": "OUR PROCESS",
+    "identidad": {
+      "title": "Structural Identity",
+      "phases": [
+        {
+          "label": "Phase 1",
+          "title": "Organic Audit",
+          "text": "We conduct a deep analysis of your brand's current ecosystem — its positioning, competitive landscape, and long-term commercial objectives — to uncover real gaps and high-value opportunities."
+        },
+        {
+          "label": "Phase 2",
+          "title": "Visual Architecture",
+          "text": "We design the foundational rules: color palettes, typefaces, and mathematical proportions that will sustain the visual authority of your project in an immutable, unbreakable form."
+        },
+        {
+          "label": "Phase 3",
+          "title": "Operations Manual",
+          "text": "We deliver the official usage guidelines to ensure your brand remains unified and consistent regardless of the medium, format, or the team executing it."
+        }
+      ]
+    },
+    "fotografia": {
+      "title": "Photographic Direction",
+      "phases": [
+        {
+          "label": "Phase 1",
+          "title": "Conceptualization",
+          "text": "We ground the visual narrative, lighting references, and select locations that reinforce the corporate brand from the very first frame."
+        },
+        {
+          "label": "Phase 2",
+          "title": "On-Set Execution",
+          "text": "We operate with top-tier equipment, meticulously controlling every variable: composition, light temperature, and talent direction to guarantee premium-grade captures."
+        },
+        {
+          "label": "Phase 3",
+          "title": "Editorial Treatment",
+          "text": "Intensive post-production: precision retouching, corporate color calibration (Color Grading), and multi-format optimization across every channel in your ecosystem."
+        }
+      ]
+    },
+    "frontend": {
+      "title": "Frontend Engineering",
+      "phases": [
+        {
+          "label": "Phase 1",
+          "title": "Rigorous Wireframing",
+          "text": "We map the information architecture and user flows (UX) to guarantee frictionless navigation before writing a single line of code."
+        },
+        {
+          "label": "Phase 2",
+          "title": "Pure Code & Tailwind",
+          "text": "We build interfaces with Tailwind CSS v4 and integrate GPU-accelerated animations to maintain 60fps fluidity across every device."
+        },
+        {
+          "label": "Phase 3",
+          "title": "Performance & QA",
+          "text": "Lighthouse audits, asset minification, lazy loading, and cross-platform stress testing to guarantee sub-1.5-second load times in production."
+        }
+      ]
+    }
+  },
+  "suites": {
+    "label": "SUITES",
+    "sublabel": "Select your scalability tier",
+    "categoryPhoto": "Photography",
+    "esencial": {
+      "desc": "For brands that need a solid foundation to build on",
+      "branding": "Foundation Identity",
+      "brandingDesc": "Logo, color palette, typography + core brand manual.",
+      "webcap": "4–5 sections",
+      "webDesc": "Astro + Tailwind v4. Domain & deployment included.",
+      "photoTitle": "Visual Direction",
+      "photoDesc": "Brief + selection and editing of 15 images.",
+      "investment": "Investment · delivery 3–4 weeks",
+      "cta": "START"
+    },
+    "growth": {
+      "badge": "MOST CHOSEN",
+      "desc": "For brands ready to scale with a complete ecosystem",
+      "branding": "Complete System",
+      "brandingDesc": "Brandbook + brand applications + written strategy.",
+      "webcap": "High Performance",
+      "webDesc": "CMS, animations, technical SEO + store or portfolio.",
+      "photoTitle": "Full Direction",
+      "photoDesc": "Concept, mood, location + 30 edited images.",
+      "investment": "Investment · 50/50 · delivery 5–7 weeks",
+      "cta": "START"
+    },
+    "elite": {
+      "badge": "High Performance",
+      "desc": "For brands competing at the international level",
+      "branding": "Strategy from Scratch",
+      "brandingDesc": "Research, positioning, naming + executive brandbook.",
+      "webcap": "Custom UI/UX",
+      "webDesc": "Scalable design system + advanced analytics.",
+      "photoTitle": "Campaign Production",
+      "photoDesc": "50+ images · brand video · ad-ready assets.",
+      "investment": "Investment · 3 phases · delivery 10–14 weeks",
+      "cta": "START"
+    }
+  },
+  "partners": {
+    "title": "TRUSTED PARTNERS",
+    "sca": "Digital identity and curated digital platform for architect <strong>Stefany Cano</strong>",
+    "calcul8": "Automation and optimization of engineering calculations and technical tools",
+    "evile": "Photographic direction, editing, and brand concept for streetwear label <strong>Evile Project</strong>"
+  },
+  "contact": {
+    "title": "START A PROJECT",
+    "subtitle": "Tell us about your vision. Be specific.",
+    "name": "Full Name",
+    "company": "Company / Brand",
+    "email": "Corporate Email",
+    "budget": "Investment Range",
+    "budgetEsencial": "ESSENTIAL ($35k – $55k MXN)",
+    "budgetGrowth": "GROWTH ($80k – $130k MXN)",
+    "budgetElite": "ELITE ($180k – $300k MXN)",
+    "budgetOther": "OTHER SERVICE",
+    "project": "Project Details",
+    "submit": "Submit Request",
+    "loading": "Processing...",
+    "success": "Request received. We'll analyze your profile shortly.",
+    "error": "Connection error. Please try again."
+  },
+  "footer": {
+    "tagline": "We build the ecosystem that turns your brand into your greatest asset.",
+    "contactTitle": "Contact",
+    "whatsapp": "WhatsApp: 222 197 8263",
+    "location": "Coatepec, Veracruz, MX",
+    "legalTitle": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2026 NEUTRA. All rights reserved.",
+    "tagline2": "Strategy with focus and clarity."
+  }
+}

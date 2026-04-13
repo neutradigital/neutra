@@ -9,8 +9,9 @@
   <!-- ═══════════════════════════════════════════════
        SEO PRIMARY METADATA
   ═══════════════════════════════════════════════ -->
-  <title>Neutra | Digital Growth Partner &amp; Premium Brand Architecture</title>
-  <meta name="description" content="Elevamos empresas a través de identidad estructural, dirección fotográfica de alto rendimiento e ingeniería frontend. Tu ecosistema digital, estandarizado." />
+  <title data-i18n-title="meta.title">Neutra | Digital Growth Partner &amp; Arquitectura de Marca Premium</title>
+  <meta name="description" data-i18n-content="meta.description"
+    content="Elevamos empresas a través de identidad estructural, dirección fotográfica de alto rendimiento e ingeniería frontend. Tu ecosistema digital, estandarizado." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Neutra Digital" />
   <link rel="canonical" href="https://www.neutra.mx/" />
@@ -21,12 +22,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Neutra" />
   <meta property="og:title" content="Neutra | Digital Growth Partner &amp; Premium Brand Architecture" />
-  <meta property="og:description" content="We elevate companies through structural identity, high-performance photographic direction, and frontend engineering. Your digital ecosystem, standardized." />
+  <meta property="og:description"
+    content="We elevate companies through structural identity, high-performance photographic direction, and frontend engineering. Your digital ecosystem, standardized." />
   <meta property="og:url" content="https://www.neutra.mx/" />
   <meta property="og:image" content="https://www.neutra.mx/assets/images/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Neutra — Digital Growth Partner. Identidad, fotografía e ingeniería frontend de nivel internacional." />
+  <meta property="og:image:alt"
+    content="Neutra — Digital Growth Partner. Identidad, fotografía e ingeniería frontend de nivel internacional." />
+  <!-- og:locale is dynamically updated by i18n.js -->
   <meta property="og:locale" content="es_MX" />
 
   <!-- ═══════════════════════════════════════════════
@@ -34,7 +38,8 @@
   ═══════════════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Neutra | Digital Growth Partner &amp; Premium Brand Architecture" />
-  <meta name="twitter:description" content="We elevate companies through structural identity, high-performance photographic direction, and frontend engineering. Your digital ecosystem, standardized." />
+  <meta name="twitter:description"
+    content="We elevate companies through structural identity, high-performance photographic direction, and frontend engineering. Your digital ecosystem, standardized." />
   <meta name="twitter:image" content="https://www.neutra.mx/assets/images/og-cover.jpg" />
   <meta name="twitter:image:alt" content="Neutra — Digital Growth Partner" />
 
@@ -125,10 +130,13 @@
       <div class="w-full h-full bg-white animate-loading-bar origin-left"></div>
     </div>
   </div>
+
   <header id="home" class="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
 
     <div class="absolute inset-0 w-full h-full -z-10">
-      <img src="/assets/ourWork/ourwork2.jpg" alt="Dirección fotográfica de alto nivel para marcas premium — Neutra Digital" class="w-full h-full object-cover">
+      <img src="/assets/ourWork/ourwork2.jpg"
+        alt="Dirección fotográfica de alto nivel para marcas premium — Neutra Digital"
+        class="w-full h-full object-cover">
       <!-- Overlay multicapa: oscurece el fondo para maximizar contraste del texto -->
       <div class="absolute inset-0 bg-black/55"></div>
       <div class="absolute inset-0"
@@ -161,42 +169,64 @@
         class="fixed inset-0 z-40 bg-[#21222e] h-screen w-screen flex flex-col justify-start items-center pt-32 gap-8 text-2xl tracking-widest opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto
         md:static md:h-auto md:w-auto md:bg-transparent md:flex-row md:justify-end md:pt-0 md:gap-10 md:text-xs md:font-medium md:tracking-[0.15em] md:opacity-100 md:pointer-events-auto md:overflow-visible text-white">
 
-        <li><a href="/" class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">HOME</a></li>
-        <li><a href="#suites" class="hover:text-gray-400 transition-colors duration-300"
+        <li><a href="/" data-i18n="nav.home" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">HOME</a></li>
+        <li><a href="#suites" data-i18n="nav.suites" class="hover:text-gray-400 transition-colors duration-300"
             onclick="closeMenu()">SUITES</a></li>
-        <li><a href="#trusted-partners" class="hover:text-gray-400 transition-colors duration-300"
+        <li><a href="#trusted-partners" data-i18n="nav.trustedPartners"
+            class="hover:text-gray-400 transition-colors duration-300"
             onclick="closeMenu()">TRUSTED PARTNERS</a></li>
-        <li><a href="#contacto" class="hover:text-gray-400 transition-colors duration-300"
+        <li><a href="#contacto" data-i18n="nav.contact" class="hover:text-gray-400 transition-colors duration-300"
             onclick="closeMenu()">CONTACTO</a></li>
+
+        <!-- ── Language Toggle ────────────────────────────── -->
+        <li class="flex items-center gap-2 mt-2 md:mt-0 md:ml-4">
+          <button
+            id="btn-lang-en"
+            onclick="setLang('en')"
+            aria-label="Switch to English"
+            class="font-mono text-[11px] tracking-[0.15em] transition-all duration-300 cursor-pointer hover:opacity-80 text-white/40 font-normal">EN</button>
+          <span class="text-white/20 text-xs font-light">/</span>
+          <button
+            id="btn-lang-es"
+            onclick="setLang('es')"
+            aria-label="Cambiar a Español"
+            class="font-mono text-[11px] tracking-[0.15em] transition-all duration-300 cursor-pointer hover:opacity-80 text-white font-bold opacity-100">ES</button>
+        </li>
+
       </ul>
 
     </nav>
+
     <section id="hero"
       class="relative z-10 container mx-auto px-4 flex flex-col justify-end h-full pt-20 pb-16 md:pb-20 lg:pb-24 gap-10 md:gap-14 lg:gap-16">
 
       <div class="flex flex-col animate-fade-in-up">
         <!-- Eyebrow label premium -->
-        <span class="text-[10px] font-bold tracking-[0.5em] text-white/40 uppercase mb-4 md:mb-6">Digital Growth Partner
+        <span data-i18n="hero.eyebrow"
+          class="text-[10px] font-bold tracking-[0.5em] text-white/40 uppercase mb-4 md:mb-6">Digital Growth
+          Partner
           — Neutra</span>
 
         <h1 class="font-black uppercase tracking-tighter text-[13vw] md:text-[10vw] lg:text-[8.5vw] leading-[0.82]">
-          <span class="block text-white">Las marcas</span>
-          <span class="block text-white">que dominan</span>
-          <span class="block text-white/30">no tuvieron</span>
-          <span class="block text-white italic">suerte.</span>
+          <span data-i18n="hero.h1Line1" class="block text-white">Las marcas</span>
+          <span data-i18n="hero.h1Line2" class="block text-white">que dominan</span>
+          <span data-i18n="hero.h1Line3" class="block text-white/30">no tuvieron</span>
+          <span data-i18n="hero.h1Line4" class="block text-white italic">suerte.</span>
         </h1>
       </div>
 
       <div class="mt-4 md:mt-0 flex flex-col sm:flex-row sm:items-end sm:justify-between w-full gap-8 sm:gap-0">
 
         <!-- Subtítulo de apoyo -->
-        <p class="text-white/70 text-sm md:text-base lg:text-2xl font-light max-w-sm lg:max-w-2xl leading-relaxed tracking-wide">
+        <p data-i18n-html="hero.subtitle"
+          class="text-white/70 text-sm md:text-base lg:text-2xl font-light max-w-sm lg:max-w-2xl leading-relaxed tracking-wide">
           Identidad &middot; Dirección fotográfica &middot; Experiencia digital<br><br>
           Un solo ecosistema. <strong>Un solo partner.</strong>
         </p>
 
         <div class="flex items-center gap-6 text-left">
-          <a href="#pilares"
+          <a href="#pilares" data-i18n="hero.ecosystem"
             class="text-white/30 hover:text-white/70 text-[10px] tracking-[0.3em] uppercase hidden md:flex items-center gap-2 transition-colors duration-300">
             El ecosistema
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -214,7 +244,7 @@
               <span
                 class="absolute inset-0 w-full h-full bg-[#21222e] transform translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-y-0"></span>
 
-              <span class="relative z-10 transition-colors duration-300 group-hover:text-white">
+              <span data-i18n="hero.cta" class="relative z-10 transition-colors duration-300 group-hover:text-white">
                 Agendar diagnóstico
               </span>
 
@@ -225,6 +255,7 @@
 
     </section>
   </header>
+
   <main class="w-full bg-[#21222e] text-white overflow-x-hidden">
     <section id="what-we-do" class="w-full py-32 lg:py-48 flex flex-col justify-center items-center">
 
@@ -233,20 +264,23 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent -z-10 pointer-events-none">
         </div>
 
-        <p class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
+        <p data-i18n="whatWeDo.label"
+          class="text-sm md:text-base font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 animate-fade-in">
           Digital Growth Partner
         </p>
 
         <p class="text-2xl md:text-4xl lg:text-6xl font-extralight leading-tight text-white">
-          Elevamos la percepción de tu marca a través de una <br class="hidden lg:block">
+          <span data-i18n="whatWeDo.headingPre">Elevamos la percepción de tu marca a través de una</span>
+          <br class="hidden lg:block">
           <span class="font-normal text-white relative inline-block mt-2">
-            identidad visual inquebrantable
+            <span data-i18n="whatWeDo.headingHighlight">identidad visual inquebrantable</span>
             <span
               class="absolute -bottom-2 left-0 w-full h-px bg-linear-to-r from-transparent via-white/50 to-transparent"></span>
           </span>
         </p>
 
-        <p class="mt-8 text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+        <p data-i18n="whatWeDo.body"
+          class="mt-8 text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
           Desde su concepción hasta un rebranding estratégico. Integramos diseño de marca, dirección fotográfica y
           desarrollo web de alto rendimiento para que tu empresa proyecte autoridad y se comunique con excelencia
           absoluta en cualquier entorno donde tenga presencia.
@@ -258,7 +292,8 @@
     <section id="pilares" class="w-full mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e]">
 
       <div class="mb-12 lg:mb-20">
-        <p class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
+        <p data-i18n="pillars.label"
+          class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
           NUESTROS PILARES
         </p>
         <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
@@ -274,7 +309,7 @@
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
-              01 <span class="text-gray-700 mx-2">/</span> Identidad Estructural
+              01 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service1.name">Identidad Estructural</span>
             </h2>
           </div>
 
@@ -283,7 +318,8 @@
             <div class="overflow-hidden">
               <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
                 <div class="md:w-1/2 flex flex-col items-start w-full">
-                  <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
+                  <p data-i18n="pillars.service1.desc"
+                    class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
                     No diseñamos logotipos; definimos el reglamento visual de tu autoridad. Construimos los cimientos
                     estéticos y estratégicos que dictarán cómo el mundo percibe tu marca.
                   </p>
@@ -291,7 +327,7 @@
                     class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
                     data-service="identidad" onclick="event.stopPropagation()"
                     aria-label="Explorar metodología de Identidad Estructural">
-                    Explorar Metodología &rarr;
+                    <span data-i18n="pillars.service1.cta">Explorar Metodología →</span>
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
@@ -315,7 +351,7 @@
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
-              02 <span class="text-gray-700 mx-2">/</span> Dirección Fotográfica
+              02 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service2.name">Dirección Fotográfica</span>
             </h2>
           </div>
 
@@ -324,7 +360,8 @@
             <div class="overflow-hidden">
               <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
                 <div class="md:w-1/2 flex flex-col items-start w-full">
-                  <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
+                  <p data-i18n="pillars.service2.desc"
+                    class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
                     Traducimos tu identidad en activos visuales de estándar internacional. Capturamos la esencia de tu
                     empresa para alimentar tu ecosistema con material gráfico diseñado para impactar.
                   </p>
@@ -332,7 +369,7 @@
                     class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
                     data-service="fotografia" onclick="event.stopPropagation()"
                     aria-label="Explorar metodología de Dirección Fotográfica">
-                    Explorar Metodología &rarr;
+                    <span data-i18n="pillars.service2.cta">Explorar Metodología →</span>
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
@@ -356,7 +393,7 @@
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
-              03 <span class="text-gray-700 mx-2">/</span> Ingeniería Frontend
+              03 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service3.name">Ingeniería Frontend</span>
             </h2>
           </div>
 
@@ -365,7 +402,8 @@
             <div class="overflow-hidden">
               <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
                 <div class="md:w-1/2 flex flex-col items-start w-full">
-                  <p class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
+                  <p data-i18n="pillars.service3.desc"
+                    class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed">
                     El contenedor donde tu autoridad cobra vida. Desarrollamos plataformas web de precisión en Tailwind.
                     Aquí el branding y la fotografía se fusionan en una experiencia digital ultrarrápida.
                   </p>
@@ -373,7 +411,7 @@
                     class="js-slide-trigger mt-6 text-sm font-semibold tracking-widest uppercase text-white hover:text-gray-300 transition-colors inline-flex items-center gap-2 cursor-pointer border-b border-transparent hover:border-white pb-1"
                     data-service="frontend" onclick="event.stopPropagation()"
                     aria-label="Explorar metodología de Ingeniería Frontend">
-                    Explorar Metodología &rarr;
+                    <span data-i18n="pillars.service3.cta">Explorar Metodología →</span>
                   </button>
                 </div>
                 <div class="md:w-1/2 w-full">
@@ -393,17 +431,21 @@
       </div>
     </section>
 
-    <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20" aria-label="Ecosistemas y planes de servicio">
+    <section id="suites" class="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-20 py-20"
+      aria-label="Ecosistemas y planes de servicio">
 
       <div class="text-center mb-16">
-        <p class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</p>
-        <p class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
+        <p data-i18n="suites.label"
+          class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</p>
+        <p data-i18n="suites.sublabel"
+          class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
       </div>
 
       <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 px-4 -mx-4
                 md:px-0 md:mx-0
                 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:snap-none lg:pb-0">
 
+        <!-- ESENCIAL -->
         <div
           class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
           <div>
@@ -412,37 +454,39 @@
               <span
                 class="px-2 py-1 bg-gray-100 text-black text-[10px] font-bold uppercase tracking-wide rounded">Entry</span>
             </div>
-            <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Para marcas que necesitan
+            <p data-i18n="suites.esencial.desc"
+              class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Para marcas que necesitan
               un punto de partida sólido</p>
 
             <div class="flex flex-col gap-4 text-sm">
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start">
                 <span class="text-neutral-400 text-xs font-medium">Branding</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">Identidad base</p>
-                  <p class="text-neutral-500 text-[10px] leading-tight">Logo, paleta, tipografía + manual esencial.</p>
+                  <p data-i18n="suites.esencial.branding" class="font-bold text-xs uppercase">Identidad base</p>
+                  <p data-i18n="suites.esencial.brandingDesc" class="text-neutral-500 text-[10px] leading-tight">Logo, paleta, tipografía + manual esencial.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
                 <span class="text-neutral-400 text-xs font-medium">Web</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">4–5 secciones</p>
-                  <p class="text-neutral-500 text-[10px] leading-tight">Astro + Tailwind v4. Dominio y deploy incluidos.
+                  <p data-i18n="suites.esencial.webcap" class="font-bold text-xs uppercase">4–5 secciones</p>
+                  <p data-i18n="suites.esencial.webDesc" class="text-neutral-500 text-[10px] leading-tight">Astro + Tailwind v4. Dominio y deploy incluidos.
                   </p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
-                <span class="text-neutral-400 text-xs font-medium">Fotografía</span>
+                <span data-i18n="suites.categoryPhoto" class="text-neutral-400 text-xs font-medium">Fotografía</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">Dirección visual</p>
-                  <p class="text-neutral-500 text-[10px] leading-tight">Brief + selección y edición de 15 imágenes.</p>
+                  <p data-i18n="suites.esencial.photoTitle" class="font-bold text-xs uppercase">Dirección visual</p>
+                  <p data-i18n="suites.esencial.photoDesc" class="text-neutral-500 text-[10px] leading-tight">Brief + selección y edición de 15 imágenes.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="border-t border-neutral-200 pt-6 mt-8">
-            <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · entrega 3–4 semanas</p>
+            <p data-i18n="suites.esencial.investment"
+              class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · entrega 3–4 semanas</p>
             <div class="flex justify-between items-end">
               <div>
                 <p class="text-2xl font-bold tracking-tight">$35k – $55k <span
@@ -450,44 +494,48 @@
                 <p class="text-[10px] text-neutral-400 uppercase tracking-wider">$1,750–$2,750 USD</p>
               </div>
               <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Me%20interesa%20el%20ecosistema%20Esencial.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20inicial."
+                data-i18n="suites.esencial.cta"
                 class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">INICIAR</a>
             </div>
           </div>
         </div>
 
+        <!-- GROWTH -->
         <div
           class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-neutral-900 text-white border border-white/20 rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:border-white/50 shadow-2xl">
           <div
+            data-i18n="suites.growth.badge"
             class="absolute top-0 right-0 z-20 bg-white text-black text-[10px] font-bold px-4 py-1.5 leading-none tracking-wider rounded-bl-xl rounded-tr-2xl whitespace-nowrap shadow-sm">
             MÁS ELEGIDO
           </div>
           <div>
             <h3 class="text-2xl font-bold tracking-wider mb-2">GROWTH</h3>
-            <p class="text-neutral-400 text-xs italic mb-8 border-b border-white/10 pb-4">Para marcas listas para
+            <p data-i18n="suites.growth.desc"
+              class="text-neutral-400 text-xs italic mb-8 border-b border-white/10 pb-4">Para marcas listas para
               escalar con un ecosistema completo</p>
 
             <div class="flex flex-col gap-4 text-sm">
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start">
                 <span class="text-neutral-500 text-xs font-medium">Branding</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">Sistema completo</p>
-                  <p class="text-neutral-400 text-[10px] leading-tight">Brandbook + aplicaciones + estrategia escrita.
+                  <p data-i18n="suites.growth.branding" class="font-bold text-xs uppercase">Sistema completo</p>
+                  <p data-i18n="suites.growth.brandingDesc" class="text-neutral-400 text-[10px] leading-tight">Brandbook + aplicaciones + estrategia escrita.
                   </p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-white/10 pt-3">
                 <span class="text-neutral-500 text-xs font-medium">Web</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">Alto rendimiento</p>
-                  <p class="text-neutral-400 text-[10px] leading-tight">CMS, animaciones, SEO técnico + tienda o
+                  <p data-i18n="suites.growth.webcap" class="font-bold text-xs uppercase">Alto rendimiento</p>
+                  <p data-i18n="suites.growth.webDesc" class="text-neutral-400 text-[10px] leading-tight">CMS, animaciones, SEO técnico + tienda o
                     portafolio.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-white/10 pt-3">
-                <span class="text-neutral-500 text-xs font-medium">Fotografía</span>
+                <span data-i18n="suites.categoryPhoto" class="text-neutral-500 text-xs font-medium">Fotografía</span>
                 <div>
-                  <p class="font-bold text-xs uppercase text-green-400">Dirección completa</p>
-                  <p class="text-neutral-400 text-[10px] leading-tight">Concepto, mood, locación + 30 imágenes editadas.
+                  <p data-i18n="suites.growth.photoTitle" class="font-bold text-xs uppercase text-green-400">Dirección completa</p>
+                  <p data-i18n="suites.growth.photoDesc" class="text-neutral-400 text-[10px] leading-tight">Concepto, mood, locación + 30 imágenes editadas.
                   </p>
                 </div>
               </div>
@@ -495,7 +543,8 @@
           </div>
 
           <div class="border-t border-white/20 pt-6 mt-8">
-            <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · 50/50 · entrega 5–7
+            <p data-i18n="suites.growth.investment"
+              class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · 50/50 · entrega 5–7
               semanas</p>
             <div class="flex justify-between items-end">
               <div>
@@ -504,45 +553,48 @@
                 <p class="text-[10px] text-neutral-500 uppercase tracking-wider">$4,000–$6,500 USD</p>
               </div>
               <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Me%20interesa%20el%20ecosistema%20Growth.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20inicial."
+                data-i18n="suites.growth.cta"
                 class="bg-white text-black px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors">INICIAR</a>
             </div>
           </div>
         </div>
 
+        <!-- ELITE -->
         <div
           class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-white text-black rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.1)]">
           <div>
             <div class="flex justify-between items-start mb-2">
               <h3 class="text-2xl font-bold tracking-wider">ELITE</h3>
-              <span
+              <span data-i18n="suites.elite.badge"
                 class="bg-neutral-900 text-white text-[10px] font-bold uppercase tracking-wide rounded px-2 py-1">Alto
                 rendimiento</span>
             </div>
-            <p class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Para marcas que compiten a
+            <p data-i18n="suites.elite.desc"
+              class="text-neutral-500 text-xs italic mb-8 border-b border-neutral-100 pb-4">Para marcas que compiten a
               nivel internacional</p>
 
             <div class="flex flex-col gap-4 text-sm">
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start">
                 <span class="text-neutral-400 text-xs font-medium">Branding</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">Estrategia desde cero</p>
-                  <p class="text-neutral-500 text-[10px] leading-tight">Research, positioning, naming + brandbook
+                  <p data-i18n="suites.elite.branding" class="font-bold text-xs uppercase">Estrategia desde cero</p>
+                  <p data-i18n="suites.elite.brandingDesc" class="text-neutral-500 text-[10px] leading-tight">Research, positioning, naming + brandbook
                     ejecutivo.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
                 <span class="text-neutral-400 text-xs font-medium">Web</span>
                 <div>
-                  <p class="font-bold text-xs uppercase">UI/UX a medida</p>
-                  <p class="text-neutral-500 text-[10px] leading-tight">Sistema de diseño escalable + analítica
+                  <p data-i18n="suites.elite.webcap" class="font-bold text-xs uppercase">UI/UX a medida</p>
+                  <p data-i18n="suites.elite.webDesc" class="text-neutral-500 text-[10px] leading-tight">Sistema de diseño escalable + analítica
                     avanzada.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
-                <span class="text-neutral-400 text-xs font-medium">Fotografía</span>
+                <span data-i18n="suites.categoryPhoto" class="text-neutral-400 text-xs font-medium">Fotografía</span>
                 <div>
-                  <p class="font-bold text-xs uppercase text-purple-700">Producción de campaña</p>
-                  <p class="text-neutral-500 text-[10px] leading-tight">50+ imágenes · video de marca · assets para ads.
+                  <p data-i18n="suites.elite.photoTitle" class="font-bold text-xs uppercase text-purple-700">Producción de campaña</p>
+                  <p data-i18n="suites.elite.photoDesc" class="text-neutral-500 text-[10px] leading-tight">50+ imágenes · video de marca · assets para ads.
                   </p>
                 </div>
               </div>
@@ -550,7 +602,8 @@
           </div>
 
           <div class="border-t border-neutral-200 pt-6 mt-8">
-            <p class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · 3 fases · entrega 10–14
+            <p data-i18n="suites.elite.investment"
+              class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · 3 fases · entrega 10–14
               semanas</p>
             <div class="flex justify-between items-end">
               <div>
@@ -559,6 +612,7 @@
                 <p class="text-[10px] text-neutral-400 uppercase tracking-wider">$9,000–$15,000 USD</p>
               </div>
               <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Me%20interesa%20el%20ecosistema%20Elite.%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20estrat%C3%A9gica."
+                data-i18n="suites.elite.cta"
                 class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">INICIAR</a>
             </div>
           </div>
@@ -586,7 +640,8 @@
         <!-- HEADER FIJO: shrink-0 asegura que nunca se comprima -->
         <div
           class="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-[#0a0a0a] border-b border-white/5 shrink-0">
-          <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase">NUESTRO PROCESO</p>
+          <p id="slide-process-label" data-i18n="slideOver.processLabel"
+            class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase">NUESTRO PROCESO</p>
           <button id="close-slide-over"
             aria-label="Cerrar panel de metodología"
             class="text-white hover:text-gray-400 transition-all hover:scale-110 cursor-pointer text-4xl leading-none font-extralight focus:outline-none">
@@ -637,7 +692,8 @@
     <section id="trusted-partners"
       class="flex flex-col gap-8 py-20 px-4 md:px-8 text-white min-h-[60vh] justify-center items-center"
       aria-label="Clientes y partners de Neutra">
-      <h2 class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">TRUSTED PARTNERS</h2>
+      <h2 data-i18n="partners.title"
+        class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">TRUSTED PARTNERS</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full max-w-5xl mx-auto items-start">
         <article class="flex flex-col items-center text-center gap-6 h-full">
@@ -651,7 +707,8 @@
                 loading="lazy">
             </a>
           </div>
-          <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
+          <p data-i18n-html="partners.sca"
+            class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
             digital
             curada para la arquitecta <strong>Stefany Cano</strong></p>
         </article>
@@ -665,7 +722,8 @@
                 class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
             </a>
           </div>
-          <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
+          <p data-i18n="partners.calcul8"
+            class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
             cálculos y herramientas para ingenieros</p>
         </article>
         <article class="flex flex-col items-center text-center gap-6 h-full">
@@ -678,7 +736,8 @@
                 class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
             </a>
           </div>
-          <p class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Dirección, edición fotográfica
+          <p data-i18n-html="partners.evile"
+            class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Dirección, edición fotográfica
             y concepto para la marca streetwear <strong>Evile Project</strong></p>
         </article>
       </div>
@@ -693,8 +752,8 @@
     <div class="max-w-5xl mx-auto">
 
       <div class="mb-16 text-center md:text-left">
-        <h2 class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h2>
-        <p class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu visión. Sé específico.</p>
+        <h2 data-i18n="contact.title" class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h2>
+        <p data-i18n="contact.subtitle" class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu visión. Sé específico.</p>
       </div>
 
       <form id="project-form" class="space-y-12">
@@ -710,7 +769,7 @@
               class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
             <label
               class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-              Nombre Completo
+              <span data-i18n="contact.name">Nombre Completo</span>
             </label>
           </div>
 
@@ -719,7 +778,7 @@
               class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
             <label
               class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-              Empresa / Marca
+              <span data-i18n="contact.company">Empresa / Marca</span>
             </label>
           </div>
 
@@ -728,18 +787,18 @@
               class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
             <label
               class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-              Correo Corporativo
+              <span data-i18n="contact.email">Correo Corporativo</span>
             </label>
           </div>
 
           <div class="group relative">
             <select name="budget" required
               class="w-full bg-[#21222e] border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors appearance-none text-gray-300">
-              <option value="" disabled selected hidden>Rango de Inversión</option>
-              <option value="Essential (15k - 25k)">ESENCIAL ($35k - $55k MXN)</option>
-              <option value="Vantage (25k - 50k)">GROWTH ($80k - $130k MXN)</option>
-              <option value="Authority (50k+)">ELITE ($180k - $300k MXN)</option>
-              <option value="Custom Enterprise">OTRO SERVICIO</option>
+              <option value="" disabled selected hidden data-i18n="contact.budget">Rango de Inversión</option>
+              <option value="Essential (15k - 25k)" data-i18n="contact.budgetEsencial">ESENCIAL ($35k – $55k MXN)</option>
+              <option value="Vantage (25k - 50k)" data-i18n="contact.budgetGrowth">GROWTH ($80k – $130k MXN)</option>
+              <option value="Authority (50k+)" data-i18n="contact.budgetElite">ELITE ($180k – $300k MXN)</option>
+              <option value="Custom Enterprise" data-i18n="contact.budgetOther">OTRO SERVICIO</option>
             </select>
             <div class="absolute right-0 top-4 pointer-events-none">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -756,21 +815,20 @@
             class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent resize-none"></textarea>
           <label
             class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-            Detalles del Proyecto
+            <span data-i18n="contact.project">Detalles del Proyecto</span>
           </label>
         </div>
 
         <div class="flex justify-end pt-8">
           <button type="submit" id="submit-btn"
             class="group relative px-12 py-4 bg-white text-black font-bold tracking-[0.2em] uppercase text-xs overflow-hidden transition-all hover:bg-gray-200">
-            <span id="btn-text">Enviar Solicitud</span>
-            <span id="btn-loading" class="hidden animate-pulse">Procesando...</span>
+            <span id="btn-text" data-i18n="contact.submit">Enviar Solicitud</span>
+            <span id="btn-loading" class="hidden animate-pulse" data-i18n="contact.loading">Procesando...</span>
           </button>
         </div>
 
         <div id="form-result"
           class="hidden text-center p-4 border border-green-500/50 bg-green-500/10 text-green-400 text-sm tracking-widest uppercase">
-          Solicitud recibida. Nuestro equipo analizará tu perfil en breve.
         </div>
 
       </form>
@@ -784,50 +842,54 @@
 
         <div class="space-y-4">
           <img src="./src/logos/neutralogotipo.svg" alt="Neutra Digital Growth Partner — logotipo" class="w-100 lg:w-50">
-          <p class="text-sm text-gray-500 max-w-xs">
+          <p data-i18n="footer.tagline" class="text-sm text-gray-500 max-w-xs">
             Construimos el ecosistema que convierte tu marca en tu mejor activo.
           </p>
         </div>
 
         <div class="flex flex-col space-y-3">
-          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3><!-- h3 válido: dentro de footer, fuera del outline de encabezados principal -->
+          <h3 data-i18n="footer.contactTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3><!-- h3 válido: dentro de footer, fuera del outline de encabezados principal -->
           <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información"
             class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            WhatsApp: 222 197 8263
+            <span data-i18n="footer.whatsapp">WhatsApp: 222 197 8263</span>
           </a>
           <a class="text-gray-600" href="hola@neutra.mx">hola@neutra.mx</a>
-          <p class="text-gray-600 text-sm">Coatepec, Veracruz, MX</p>
+          <p data-i18n="footer.location" class="text-gray-600 text-sm">Coatepec, Veracruz, MX</p>
         </div>
 
         <div class="flex flex-col space-y-3">
-          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3><!-- h3 válido: dentro de footer -->
-          <a href="/privacidad.html" class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de
-            Privacidad</a>
-          <a href="/terminos.html" class="text-gray-600 hover:text-black text-sm transition-colors">Términos de
-            Servicio</a>
+          <h3 data-i18n="footer.legalTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3><!-- h3 válido: dentro de footer -->
+          <a href="/privacidad.html" data-i18n="footer.privacy"
+            class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
+          <a href="/terminos.html" data-i18n="footer.terms"
+            class="text-gray-600 hover:text-black text-sm transition-colors">Términos de Servicio</a>
         </div>
 
       </div>
 
-      <div class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
-        <p class="text-xs text-gray-400">
+      <div
+        class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
+        <p data-i18n="footer.copyright" class="text-xs text-gray-400">
           &copy; 2026 NEUTRA. Todos los derechos reservados.
         </p>
-        <p class="text-xs text-gray-400 mt-2 md:mt-0 italic">
+        <p data-i18n="footer.tagline2" class="text-xs text-gray-400 mt-2 md:mt-0 italic">
           Estrategia con enfoque y claridad.
         </p>
       </div>
     </div>
   </footer>
+
   <div id="cursor-dot" class="hidden lg:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none"
     style="background-color: #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
   <div id="cursor-outline" class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none"
     style="border: 1px solid #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
   <script type="module" src="/src/main.js"></script>
+
 </body>
 
 </html>

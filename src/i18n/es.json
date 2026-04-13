@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "title": "Neutra | Digital Growth Partner & Arquitectura de Marca Premium",
+    "description": "Elevamos empresas a través de identidad estructural, dirección fotográfica de alto rendimiento e ingeniería frontend. Tu ecosistema digital, estandarizado."
+  },
+  "nav": {
+    "home": "HOME",
+    "suites": "SUITES",
+    "trustedPartners": "TRUSTED PARTNERS",
+    "contact": "CONTACTO"
+  },
+  "hero": {
+    "eyebrow": "Digital Growth Partner — Neutra",
+    "h1Line1": "Las marcas",
+    "h1Line2": "que dominan",
+    "h1Line3": "no tuvieron",
+    "h1Line4": "suerte.",
+    "subtitle": "Identidad &middot; Dirección fotográfica &middot; Experiencia digital<br><br>Un solo ecosistema. <strong>Un solo partner.</strong>",
+    "ecosystem": "El ecosistema",
+    "cta": "Agendar diagnóstico"
+  },
+  "whatWeDo": {
+    "label": "Digital Growth Partner",
+    "headingPre": "Elevamos la percepción de tu marca a través de una",
+    "headingHighlight": "identidad visual inquebrantable",
+    "body": "Desde su concepción hasta un rebranding estratégico. Integramos diseño de marca, dirección fotográfica y desarrollo web de alto rendimiento para que tu empresa proyecte autoridad y se comunique con excelencia absoluta en cualquier entorno donde tenga presencia."
+  },
+  "pillars": {
+    "label": "NUESTROS PILARES",
+    "service1": {
+      "name": "Identidad Estructural",
+      "desc": "No diseñamos logotipos; definimos el reglamento visual de tu autoridad. Construimos los cimientos estéticos y estratégicos que dictarán cómo el mundo percibe tu marca.",
+      "cta": "Explorar Metodología →"
+    },
+    "service2": {
+      "name": "Dirección Fotográfica",
+      "desc": "Traducimos tu identidad en activos visuales de estándar internacional. Capturamos la esencia de tu empresa para alimentar tu ecosistema con material gráfico diseñado para impactar.",
+      "cta": "Explorar Metodología →"
+    },
+    "service3": {
+      "name": "Ingeniería Frontend",
+      "desc": "El contenedor donde tu autoridad cobra vida. Desarrollamos plataformas web de precisión en Tailwind. Aquí el branding y la fotografía se fusionan en una experiencia digital ultrarrápida.",
+      "cta": "Explorar Metodología →"
+    }
+  },
+  "slideOver": {
+    "processLabel": "NUESTRO PROCESO",
+    "identidad": {
+      "title": "Identidad Estructural",
+      "phases": [
+        {
+          "label": "Fase 1",
+          "title": "Auditoría Orgánica",
+          "text": "Analizamos a fondo el ecosistema actual de tu marca, su posicionamiento, competidores y los objetivos comerciales a largo plazo para detectar brechas y oportunidades reales."
+        },
+        {
+          "label": "Fase 2",
+          "title": "Arquitectura Visual",
+          "text": "Diseñamos las reglas fundamentales: paletas de color, tipografías y proporciones matemáticas que sostendrán la autoridad visual del proyecto de forma inmutable."
+        },
+        {
+          "label": "Fase 3",
+          "title": "Manual de Operaciones",
+          "text": "Entregamos el reglamento oficial de uso para que tu marca se mantenga unificada e inquebrantable sin importar el medio, el formato o el ejecutor."
+        }
+      ]
+    },
+    "fotografia": {
+      "title": "Dirección Fotográfica",
+      "phases": [
+        {
+          "label": "Fase 1",
+          "title": "Conceptualización",
+          "text": "Aterrizamos la narrativa visual, referencias de iluminación y seleccionamos locaciones que fortalezcan el branding empresarial desde el primer encuadre."
+        },
+        {
+          "label": "Fase 2",
+          "title": "Ejecución en Set",
+          "text": "Operamos con equipo de alto rango, controlando meticulosamente cada variable: composición, temperatura de luz y dirección de talent para asegurar capturas premium."
+        },
+        {
+          "label": "Fase 3",
+          "title": "Tratamiento Editorial",
+          "text": "Post-producción intensiva: retoque milimétrico, calibración de color corporativo (Color Grading) y optimización multi-formato para todos los canales del ecosistema."
+        }
+      ]
+    },
+    "frontend": {
+      "title": "Ingeniería Frontend",
+      "phases": [
+        {
+          "label": "Fase 1",
+          "title": "Wireframing Riguroso",
+          "text": "Mapeamos la arquitectura de información y los flujos de usuario (UX) para garantizar una navegación sin fricciones antes de escribir una sola línea de código."
+        },
+        {
+          "label": "Fase 2",
+          "title": "Código Puro & Tailwind",
+          "text": "Construimos interfaces con Tailwind CSS v4 e integramos animaciones calculadas con GPU-acceleration para mantener una fluidez de 60fps en cualquier dispositivo."
+        },
+        {
+          "label": "Fase 3",
+          "title": "Performance & QA",
+          "text": "Auditorías Lighthouse, minificación de assets, lazy loading y pruebas de estrés multiplataforma para garantizar tiempos de carga menores a 1.5 segundos en producción."
+        }
+      ]
+    }
+  },
+  "suites": {
+    "label": "SUITES",
+    "sublabel": "Selecciona tu nivel de escalabilidad",
+    "categoryPhoto": "Fotografía",
+    "esencial": {
+      "desc": "Para marcas que necesitan un punto de partida sólido",
+      "branding": "Identidad base",
+      "brandingDesc": "Logo, paleta, tipografía + manual esencial.",
+      "webcap": "4–5 secciones",
+      "webDesc": "Astro + Tailwind v4. Dominio y deploy incluidos.",
+      "photoTitle": "Dirección visual",
+      "photoDesc": "Brief + selección y edición de 15 imágenes.",
+      "investment": "Inversión · entrega 3–4 semanas",
+      "cta": "INICIAR"
+    },
+    "growth": {
+      "badge": "MÁS ELEGIDO",
+      "desc": "Para marcas listas para escalar con un ecosistema completo",
+      "branding": "Sistema completo",
+      "brandingDesc": "Brandbook + aplicaciones + estrategia escrita.",
+      "webcap": "Alto rendimiento",
+      "webDesc": "CMS, animaciones, SEO técnico + tienda o portafolio.",
+      "photoTitle": "Dirección completa",
+      "photoDesc": "Concepto, mood, locación + 30 imágenes editadas.",
+      "investment": "Inversión · 50/50 · entrega 5–7 semanas",
+      "cta": "INICIAR"
+    },
+    "elite": {
+      "badge": "Alto rendimiento",
+      "desc": "Para marcas que compiten a nivel internacional",
+      "branding": "Estrategia desde cero",
+      "brandingDesc": "Research, positioning, naming + brandbook ejecutivo.",
+      "webcap": "UI/UX a medida",
+      "webDesc": "Sistema de diseño escalable + analítica avanzada.",
+      "photoTitle": "Producción de campaña",
+      "photoDesc": "50+ imágenes · video de marca · assets para ads.",
+      "investment": "Inversión · 3 fases · entrega 10–14 semanas",
+      "cta": "INICIAR"
+    }
+  },
+  "partners": {
+    "title": "TRUSTED PARTNERS",
+    "sca": "Identidad digital y plataforma digital curada para la arquitecta <strong>Stefany Cano</strong>",
+    "calcul8": "Automatización y optimización de cálculos y herramientas para ingenieros",
+    "evile": "Dirección, edición fotográfica y concepto para la marca streetwear <strong>Evile Project</strong>"
+  },
+  "contact": {
+    "title": "INICIAR SOLICITUD",
+    "subtitle": "Cuéntanos sobre tu visión. Sé específico.",
+    "name": "Nombre Completo",
+    "company": "Empresa / Marca",
+    "email": "Correo Corporativo",
+    "budget": "Rango de Inversión",
+    "budgetEsencial": "ESENCIAL ($35k – $55k MXN)",
+    "budgetGrowth": "GROWTH ($80k – $130k MXN)",
+    "budgetElite": "ELITE ($180k – $300k MXN)",
+    "budgetOther": "OTRO SERVICIO",
+    "project": "Detalles del Proyecto",
+    "submit": "Enviar Solicitud",
+    "loading": "Procesando...",
+    "success": "Solicitud recibida. Analizaremos tu perfil en breve.",
+    "error": "Error de conexión. Intente nuevamente."
+  },
+  "footer": {
+    "tagline": "Construimos el ecosistema que convierte tu marca en tu mejor activo.",
+    "contactTitle": "Contacto",
+    "whatsapp": "WhatsApp: 222 197 8263",
+    "location": "Coatepec, Veracruz, MX",
+    "legalTitle": "Legal",
+    "privacy": "Aviso de Privacidad",
+    "terms": "Términos de Servicio",
+    "copyright": "© 2026 NEUTRA. Todos los derechos reservados.",
+    "tagline2": "Estrategia con enfoque y claridad."
+  }
+}

@@ -1,8 +1,9 @@
 import './style.css'
-
+import { initI18n } from './i18n/i18n.js';
 
 // Inicialización Centralizada
 document.addEventListener('DOMContentLoaded', () => {
+    initI18n();           // ← PRIMERO: detecta idioma y aplica traducciones antes del resto
     initAnimations();
     initMobileMenu();
     initSectorCards();
@@ -50,8 +51,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION")
 
 // 3. SISTEMA DE ANIMACIONES ("NEUTRA MOTION")
 
@@ -137,9 +136,6 @@ window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('opacity-0'); // Desvanece
             preloader.classList.add('pointer-events-none'); // Permite clickear debajo
-
-            // Opcional: Iniciar animaciones de entrada del Hero aquí
-            // document.getElementById('hero-title').classList.add('animate-in');
         }, 900);
     }
 });
@@ -229,9 +225,6 @@ function initSectorCards() {
 
             // Lógica exclusiva para Tablets y Móviles (< 1025px)
             if (window.innerWidth < 1025) {
-
-                // Evitar conflictos con enlaces internos si los hubiera
-                // e.preventDefault(); 
 
                 const isExpanded = card.classList.contains('is-expanded');
 
@@ -326,6 +319,9 @@ function initContactForm() {
     form.addEventListener('submit', function (e) {
         e.preventDefault(); // Evita recargar la página
 
+        // Obtener traducciones del idioma activo
+        const tr = window.__neutraTranslations?.contact ?? {};
+
         // UI: Estado de carga
         submitBtn.disabled = true;
         btnText.classList.add('hidden');
@@ -350,14 +346,14 @@ function initContactForm() {
                 let json = await response.json();
                 if (response.status == 200) {
                     // ÉXITO
-                    result.innerHTML = "Solicitud recibida. Analizaremos tu perfil en breve.";
+                    result.textContent = tr.success ?? 'Solicitud recibida. Analizaremos tu perfil en breve.';
                     result.classList.remove('hidden', 'text-red-400', 'border-red-500/50', 'bg-red-500/10');
                     result.classList.add('text-green-400', 'border-green-500/50', 'bg-green-500/10');
                     form.reset(); // Limpiar campos
                 } else {
                     // ERROR DE API
                     console.log(response);
-                    result.innerHTML = json.message;
+                    result.textContent = json.message;
                     result.classList.remove('hidden', 'text-green-400', 'border-green-500/50', 'bg-green-500/10');
                     result.classList.add('text-red-400', 'border-red-500/50', 'bg-red-500/10');
                 }
@@ -365,7 +361,7 @@ function initContactForm() {
             .catch(error => {
                 // ERROR DE RED
                 console.log(error);
-                result.innerHTML = "Error de conexión. Intente nuevamente.";
+                result.textContent = tr.error ?? 'Error de conexión. Intente nuevamente.';
                 result.classList.remove('hidden');
                 result.classList.add('text-red-400', 'border-red-500/50', 'bg-red-500/10');
             })
@@ -405,79 +401,30 @@ function initSlideOver() {
     slideScrollBody.addEventListener('wheel', (e) => { e.stopPropagation(); }, { passive: true });
     slideScrollBody.addEventListener('touchmove', (e) => { e.stopPropagation(); }, { passive: true });
 
-    // ── CATÁLOGO DE SERVICIOS (estructura por fases) ─────────────
-    const slideData = {
+    // ── ACTIVOS ESTÁTICOS (rutas de imágenes/vídeo — no se traducen) ────────────
+    const slideAssets = {
         'identidad': {
-            title: 'Identidad Estructural',
             phases: [
-                {
-                    label: 'Fase 1',
-                    title: 'Auditoría Orgánica',
-                    text: 'Analizamos a fondo el ecosistema actual de tu marca, su posicionamiento, competidores y los objetivos comerciales a largo plazo para detectar brechas y oportunidades reales.',
-                    image: '/assets/images/auditoria_neutra.jpg'
-                },
-                {
-                    label: 'Fase 2',
-                    title: 'Arquitectura Visual',
-                    text: 'Diseñamos las reglas fundamentales: paletas de color, tipografías y proporciones matemáticas que sostendrán la autoridad visual del proyecto de forma inmutable.',
-                    image: '/assets/images/proceso_identidad.jpg'
-                },
-                {
-                    label: 'Fase 3',
-                    title: 'Manual de Operaciones',
-                    text: 'Entregamos el reglamento oficial de uso para que tu marca se mantenga unificada e inquebrantable sin importar el medio, el formato o el ejecutor.',
-                    image: '/assets/images/reglamento_brand.jpg'
-                }
+                { image: '/assets/images/auditoria_neutra.jpg' },
+                { image: '/assets/images/proceso_identidad.jpg' },
+                { image: '/assets/images/reglamento_brand.jpg' }
             ]
         },
         'fotografia': {
-            title: 'Dirección Fotográfica',
             phases: [
-                {
-                    label: 'Fase 1',
-                    title: 'Conceptualización',
-                    text: 'Aterrizamos la narrativa visual, referencias de iluminación y seleccionamos locaciones que fortalezcan el branding empresarial desde el primer encuadre.',
-                    image: '/assets/ourWork/ourwork7.jpg'
-                },
-                {
-                    label: 'Fase 2',
-                    title: 'Ejecución en Set',
-                    text: 'Operamos con equipo de alto rango, controlando meticulosamente cada variable: composición, temperatura de luz y dirección de talent para asegurar capturas premium.',
-                    image: '/assets/ourWork/ourwork5.jpg'
-                },
-                {
-                    label: 'Fase 3',
-                    title: 'Tratamiento Editorial',
-                    text: 'Post-producción intensiva: retoque milimétrico, calibración de color corporativo (Color Grading) y optimización multi-formato para todos los canales del ecosistema.',
-                    image: '/assets/images/detailing_foto.jpg'
-                }
+                { image: '/assets/ourWork/ourwork7.jpg' },
+                { image: '/assets/ourWork/ourwork5.jpg' },
+                { image: '/assets/images/detailing_foto.jpg' }
             ]
         },
         'frontend': {
-            title: 'Ingeniería Frontend',
             phases: [
-                {
-                    label: 'Fase 1',
-                    title: 'Wireframing Riguroso',
-                    text: 'Mapeamos la arquitectura de información y los flujos de usuario (UX) para garantizar una navegación sin fricciones antes de escribir una sola línea de código.',
-                    image: '/assets/images/process_ux.jpeg'
-                },
-                {
-                    label: 'Fase 2',
-                    title: 'Código Puro & Tailwind',
-                    text: 'Construimos interfaces con Tailwind CSS v4 e integramos animaciones calculadas con GPU-acceleration para mantener una fluidez de 60fps en cualquier dispositivo.',
-                    image: '/assets/images/code_process.jpeg'
-                },
-                {
-                    label: 'Fase 3',
-                    title: 'Performance & QA',
-                    text: 'Auditorías Lighthouse, minificación de assets, lazy loading y pruebas de estrés multiplataforma para garantizar tiempos de carga menores a 1.5 segundos en producción.',
-                    video: '/assets/videos/video_qa.mp4'
-                }
+                { image: '/assets/images/process_ux.jpeg' },
+                { image: '/assets/images/code_process.jpeg' },
+                { video: '/assets/videos/video_qa.mp4' }
             ]
         }
     };
-
 
     // Estado interno: rastrear si el panel está abierto
     let isSlideOpen = false;
@@ -486,20 +433,33 @@ function initSlideOver() {
     let spyObserver = null;
 
     const openSlideOver = (serviceId) => {
-        const data = slideData[serviceId];
-        if (!data) return;
+        // ── OBTENER DATOS: texto de traducciones + assets estáticos ──────────────
+        const tr = window.__neutraTranslations?.slideOver ?? {};
+        const textData = tr[serviceId];
+        const assetData = slideAssets[serviceId];
+        if (!textData || !assetData) return;
+
+        // Combinar texto traducido con rutas de assets
+        const phases = textData.phases.map((phase, i) => ({
+            ...phase,
+            ...assetData.phases[i]
+        }));
 
         // ── LIMPIEZA DE ESTADO DEL ACORDEÓN ────────────────────────
         document.querySelectorAll('.is-open').forEach(row => row.classList.remove('is-open'));
         if (document.activeElement) document.activeElement.blur();
 
         // ── RENDERIZADO DEL TÍTULO ──────────────────────────────────
-        titleEl.textContent = data.title;
+        titleEl.textContent = textData.title;
+
+        // ── ACTUALIZAR LABEL DEL PANEL ──────────────────────────────
+        const processLabel = document.getElementById('slide-process-label');
+        if (processLabel) processLabel.textContent = tr.processLabel ?? 'NUESTRO PROCESO';
 
         // ── RENDERIZADO DE FASES (Columna Izquierda) ───────────────
         const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
 
-        phasesCol.innerHTML = data.phases.map((phase, i) => `
+        phasesCol.innerHTML = phases.map((phase, i) => `
             <div class="phase-block ${isDesktop ? 'min-h-[70vh] flex flex-col justify-center' : 'pb-10'} transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-30'}"
                  data-index="${i}">
                 <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase mb-3">${phase.label}</p>
@@ -517,7 +477,7 @@ function initSlideOver() {
 
         // ── RENDERIZADO DE IMÁGENES SUPERPUESTAS (Columna Derecha, solo desktop) ──
         if (isDesktop) {
-            stickyCol.innerHTML = data.phases.map((phase, i) => {
+            stickyCol.innerHTML = phases.map((phase, i) => {
                 const baseClass = `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'}`;
                 if (phase.video) {
                     return `<video src="${phase.video}" data-index="${i}" class="${baseClass}" autoplay muted loop playsinline></video>`;
