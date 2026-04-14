@@ -118,8 +118,7 @@
       "webDesc": "Astro + Tailwind v4. Dominio y deploy incluidos.",
       "photoTitle": "Dirección visual",
       "photoDesc": "Brief + selección y edición de 15 imágenes.",
-      "investment": "Inversión · entrega 3–4 semanas",
-      "cta": "INICIAR"
+      "cta": "Agendar Sesión de Diagnóstico"
     },
     "growth": {
       "badge": "MÁS ELEGIDO",
@@ -130,8 +129,7 @@
       "webDesc": "CMS, animaciones, SEO técnico + tienda o portafolio.",
       "photoTitle": "Dirección completa",
       "photoDesc": "Concepto, mood, locación + 30 imágenes editadas.",
-      "investment": "Inversión · 50/50 · entrega 5–7 semanas",
-      "cta": "INICIAR"
+      "cta": "Agendar Sesión de Diagnóstico"
     },
     "elite": {
       "badge": "Alto rendimiento",
@@ -142,8 +140,7 @@
       "webDesc": "Sistema de diseño escalable + analítica avanzada.",
       "photoTitle": "Producción de campaña",
       "photoDesc": "50+ imágenes · video de marca · assets para ads.",
-      "investment": "Inversión · 3 fases · entrega 10–14 semanas",
-      "cta": "INICIAR"
+      "cta": "Agendar Sesión de Diagnóstico"
     }
   },
   "partners": {
@@ -158,11 +155,11 @@
     "name": "Nombre Completo",
     "company": "Empresa / Marca",
     "email": "Correo Corporativo",
-    "budget": "Rango de Inversión",
-    "budgetEsencial": "ESENCIAL ($35k – $55k MXN)",
-    "budgetGrowth": "GROWTH ($80k – $130k MXN)",
-    "budgetElite": "ELITE ($180k – $300k MXN)",
-    "budgetOther": "OTRO SERVICIO",
+    "budget": "Inversión en identidad de marca",
+    "budget1": "$1,000 - $3,000 USD",
+    "budget2": "$3,000 - $6,000 USD",
+    "budget3": "$6,000 - $10,000 USD",
+    "budget4": "$10,000+ USD",
     "project": "Detalles del Proyecto",
     "submit": "Enviar Solicitud",
     "loading": "Procesando...",

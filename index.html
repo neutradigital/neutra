@@ -174,23 +174,16 @@
         <li><a href="#suites" data-i18n="nav.suites" class="hover:text-gray-400 transition-colors duration-300"
             onclick="closeMenu()">SUITES</a></li>
         <li><a href="#trusted-partners" data-i18n="nav.trustedPartners"
-            class="hover:text-gray-400 transition-colors duration-300"
-            onclick="closeMenu()">TRUSTED PARTNERS</a></li>
+            class="hover:text-gray-400 transition-colors duration-300" onclick="closeMenu()">TRUSTED PARTNERS</a></li>
         <li><a href="#contacto" data-i18n="nav.contact" class="hover:text-gray-400 transition-colors duration-300"
             onclick="closeMenu()">CONTACTO</a></li>
 
         <!-- ── Language Toggle ────────────────────────────── -->
         <li class="flex items-center gap-2 mt-2 md:mt-0 md:ml-4">
-          <button
-            id="btn-lang-en"
-            onclick="setLang('en')"
-            aria-label="Switch to English"
+          <button id="btn-lang-en" onclick="setLang('en')" aria-label="Switch to English"
             class="font-mono text-[11px] tracking-[0.15em] transition-all duration-300 cursor-pointer hover:opacity-80 text-white/40 font-normal">EN</button>
           <span class="text-white/20 text-xs font-light">/</span>
-          <button
-            id="btn-lang-es"
-            onclick="setLang('es')"
-            aria-label="Cambiar a Español"
+          <button id="btn-lang-es" onclick="setLang('es')" aria-label="Cambiar a Español"
             class="font-mono text-[11px] tracking-[0.15em] transition-all duration-300 cursor-pointer hover:opacity-80 text-white font-bold opacity-100">ES</button>
         </li>
 
@@ -304,12 +297,13 @@
 
         <!-- Fila 01 -->
         <div class="group cursor-pointer border-gray-800 border-t border-b relative"
-          onclick="this.classList.toggle('is-open')" role="button" tabindex="0"
-          aria-expanded="false" aria-label="Expandir servicio: Identidad Estructural">
+          onclick="this.classList.toggle('is-open')" role="button" tabindex="0" aria-expanded="false"
+          aria-label="Expandir servicio: Identidad Estructural">
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
-              01 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service1.name">Identidad Estructural</span>
+              01 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service1.name">Identidad
+                Estructural</span>
             </h2>
           </div>
 
@@ -345,13 +339,13 @@
         </div>
 
         <!-- Fila 02 -->
-        <div class="group cursor-pointer border-gray-800 border-b relative"
-          onclick="this.classList.toggle('is-open')" role="button" tabindex="0"
-          aria-expanded="false" aria-label="Expandir servicio: Dirección Fotográfica">
+        <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')"
+          role="button" tabindex="0" aria-expanded="false" aria-label="Expandir servicio: Dirección Fotográfica">
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
-              02 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service2.name">Dirección Fotográfica</span>
+              02 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service2.name">Dirección
+                Fotográfica</span>
             </h2>
           </div>
 
@@ -387,13 +381,13 @@
         </div>
 
         <!-- Fila 03 -->
-        <div class="group cursor-pointer border-gray-800 border-b relative"
-          onclick="this.classList.toggle('is-open')" role="button" tabindex="0"
-          aria-expanded="false" aria-label="Expandir servicio: Ingeniería Frontend">
+        <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')"
+          role="button" tabindex="0" aria-expanded="false" aria-label="Expandir servicio: Ingeniería Frontend">
           <div
             class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
             <h2 class="text-4xl md:text-6xl font-light uppercase tracking-tight transition-colors duration-300">
-              03 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service3.name">Ingeniería Frontend</span>
+              03 <span class="text-gray-700 mx-2">/</span> <span data-i18n="pillars.service3.name">Ingeniería
+                Frontend</span>
             </h2>
           </div>
 
@@ -437,8 +431,8 @@
       <div class="text-center mb-16">
         <p data-i18n="suites.label"
           class="font-extralight text-5xl md:text-7xl lg:text-[100px] tracking-tighter text-white/90">SUITES</p>
-        <p data-i18n="suites.sublabel"
-          class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel de escalabilidad</p>
+        <p data-i18n="suites.sublabel" class="text-gray-400 mt-4 tracking-widest uppercase text-sm">Selecciona tu nivel
+          de escalabilidad</p>
       </div>
 
       <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 px-4 -mx-4
@@ -463,14 +457,16 @@
                 <span class="text-neutral-400 text-xs font-medium">Branding</span>
                 <div>
                   <p data-i18n="suites.esencial.branding" class="font-bold text-xs uppercase">Identidad base</p>
-                  <p data-i18n="suites.esencial.brandingDesc" class="text-neutral-500 text-[10px] leading-tight">Logo, paleta, tipografía + manual esencial.</p>
+                  <p data-i18n="suites.esencial.brandingDesc" class="text-neutral-500 text-[10px] leading-tight">Logo,
+                    paleta, tipografía + manual esencial.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
                 <span class="text-neutral-400 text-xs font-medium">Web</span>
                 <div>
                   <p data-i18n="suites.esencial.webcap" class="font-bold text-xs uppercase">4–5 secciones</p>
-                  <p data-i18n="suites.esencial.webDesc" class="text-neutral-500 text-[10px] leading-tight">Astro + Tailwind v4. Dominio y deploy incluidos.
+                  <p data-i18n="suites.esencial.webDesc" class="text-neutral-500 text-[10px] leading-tight">Astro +
+                    Tailwind v4. Dominio y deploy incluidos.
                   </p>
                 </div>
               </div>
@@ -478,24 +474,18 @@
                 <span data-i18n="suites.categoryPhoto" class="text-neutral-400 text-xs font-medium">Fotografía</span>
                 <div>
                   <p data-i18n="suites.esencial.photoTitle" class="font-bold text-xs uppercase">Dirección visual</p>
-                  <p data-i18n="suites.esencial.photoDesc" class="text-neutral-500 text-[10px] leading-tight">Brief + selección y edición de 15 imágenes.</p>
+                  <p data-i18n="suites.esencial.photoDesc" class="text-neutral-500 text-[10px] leading-tight">Brief +
+                    selección y edición de 15 imágenes.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="border-t border-neutral-200 pt-6 mt-8">
-            <p data-i18n="suites.esencial.investment"
-              class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · entrega 3–4 semanas</p>
-            <div class="flex justify-between items-end">
-              <div>
-                <p class="text-2xl font-bold tracking-tight">$35k – $55k <span
-                    class="text-neutral-400 text-lg">MXN</span></p>
-                <p class="text-[10px] text-neutral-400 uppercase tracking-wider">$1,750–$2,750 USD</p>
-              </div>
+          <div class="border-t border-neutral-200 pt-6 mt-8 flex flex-col justify-end">
+            <div class="flex justify-center items-end mt-2">
               <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Me%20interesa%20el%20ecosistema%20Esencial.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20inicial."
                 data-i18n="suites.esencial.cta"
-                class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">INICIAR</a>
+                class="bg-black text-white px-6 py-3 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors w-full text-center uppercase">INICIAR</a>
             </div>
           </div>
         </div>
@@ -503,8 +493,7 @@
         <!-- GROWTH -->
         <div
           class="snap-center shrink-0 w-[85vw] md:w-[350px] lg:w-auto h-full bg-neutral-900 text-white border border-white/20 rounded-2xl p-8 flex flex-col justify-between relative group transition-all duration-500 hover:-translate-y-2 hover:border-white/50 shadow-2xl">
-          <div
-            data-i18n="suites.growth.badge"
+          <div data-i18n="suites.growth.badge"
             class="absolute top-0 right-0 z-20 bg-white text-black text-[10px] font-bold px-4 py-1.5 leading-none tracking-wider rounded-bl-xl rounded-tr-2xl whitespace-nowrap shadow-sm">
             MÁS ELEGIDO
           </div>
@@ -519,7 +508,8 @@
                 <span class="text-neutral-500 text-xs font-medium">Branding</span>
                 <div>
                   <p data-i18n="suites.growth.branding" class="font-bold text-xs uppercase">Sistema completo</p>
-                  <p data-i18n="suites.growth.brandingDesc" class="text-neutral-400 text-[10px] leading-tight">Brandbook + aplicaciones + estrategia escrita.
+                  <p data-i18n="suites.growth.brandingDesc" class="text-neutral-400 text-[10px] leading-tight">Brandbook
+                    + aplicaciones + estrategia escrita.
                   </p>
                 </div>
               </div>
@@ -527,34 +517,29 @@
                 <span class="text-neutral-500 text-xs font-medium">Web</span>
                 <div>
                   <p data-i18n="suites.growth.webcap" class="font-bold text-xs uppercase">Alto rendimiento</p>
-                  <p data-i18n="suites.growth.webDesc" class="text-neutral-400 text-[10px] leading-tight">CMS, animaciones, SEO técnico + tienda o
+                  <p data-i18n="suites.growth.webDesc" class="text-neutral-400 text-[10px] leading-tight">CMS,
+                    animaciones, SEO técnico + tienda o
                     portafolio.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-white/10 pt-3">
                 <span data-i18n="suites.categoryPhoto" class="text-neutral-500 text-xs font-medium">Fotografía</span>
                 <div>
-                  <p data-i18n="suites.growth.photoTitle" class="font-bold text-xs uppercase text-green-400">Dirección completa</p>
-                  <p data-i18n="suites.growth.photoDesc" class="text-neutral-400 text-[10px] leading-tight">Concepto, mood, locación + 30 imágenes editadas.
+                  <p data-i18n="suites.growth.photoTitle" class="font-bold text-xs uppercase text-green-400">Dirección
+                    completa</p>
+                  <p data-i18n="suites.growth.photoDesc" class="text-neutral-400 text-[10px] leading-tight">Concepto,
+                    mood, locación + 30 imágenes editadas.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="border-t border-white/20 pt-6 mt-8">
-            <p data-i18n="suites.growth.investment"
-              class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · 50/50 · entrega 5–7
-              semanas</p>
-            <div class="flex justify-between items-end">
-              <div>
-                <p class="text-2xl font-bold tracking-tight">$80k – $130k <span
-                    class="text-neutral-400 text-lg">MXN</span> </p>
-                <p class="text-[10px] text-neutral-500 uppercase tracking-wider">$4,000–$6,500 USD</p>
-              </div>
+          <div class="border-t border-white/20 pt-6 mt-8 flex flex-col justify-end">
+            <div class="flex justify-center items-end mt-2">
               <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Me%20interesa%20el%20ecosistema%20Growth.%20Me%20gustar%C3%ADa%20agendar%20un%20diagn%C3%B3stico%20inicial."
                 data-i18n="suites.growth.cta"
-                class="bg-white text-black px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors">INICIAR</a>
+                class="bg-white text-black px-6 py-3 rounded text-xs font-bold tracking-widest hover:bg-gray-200 transition-colors w-full text-center uppercase">INICIAR</a>
             </div>
           </div>
         </div>
@@ -578,7 +563,8 @@
                 <span class="text-neutral-400 text-xs font-medium">Branding</span>
                 <div>
                   <p data-i18n="suites.elite.branding" class="font-bold text-xs uppercase">Estrategia desde cero</p>
-                  <p data-i18n="suites.elite.brandingDesc" class="text-neutral-500 text-[10px] leading-tight">Research, positioning, naming + brandbook
+                  <p data-i18n="suites.elite.brandingDesc" class="text-neutral-500 text-[10px] leading-tight">Research,
+                    positioning, naming + brandbook
                     ejecutivo.</p>
                 </div>
               </div>
@@ -586,34 +572,29 @@
                 <span class="text-neutral-400 text-xs font-medium">Web</span>
                 <div>
                   <p data-i18n="suites.elite.webcap" class="font-bold text-xs uppercase">UI/UX a medida</p>
-                  <p data-i18n="suites.elite.webDesc" class="text-neutral-500 text-[10px] leading-tight">Sistema de diseño escalable + analítica
+                  <p data-i18n="suites.elite.webDesc" class="text-neutral-500 text-[10px] leading-tight">Sistema de
+                    diseño escalable + analítica
                     avanzada.</p>
                 </div>
               </div>
               <div class="grid grid-cols-[90px_1fr] gap-2 items-start border-t border-neutral-100 pt-3">
                 <span data-i18n="suites.categoryPhoto" class="text-neutral-400 text-xs font-medium">Fotografía</span>
                 <div>
-                  <p data-i18n="suites.elite.photoTitle" class="font-bold text-xs uppercase text-purple-700">Producción de campaña</p>
-                  <p data-i18n="suites.elite.photoDesc" class="text-neutral-500 text-[10px] leading-tight">50+ imágenes · video de marca · assets para ads.
+                  <p data-i18n="suites.elite.photoTitle" class="font-bold text-xs uppercase text-purple-700">Producción
+                    de campaña</p>
+                  <p data-i18n="suites.elite.photoDesc" class="text-neutral-500 text-[10px] leading-tight">50+ imágenes
+                    · video de marca · assets para ads.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="border-t border-neutral-200 pt-6 mt-8">
-            <p data-i18n="suites.elite.investment"
-              class="text-[10px] text-neutral-500 mb-1 uppercase tracking-widest">Inversión · 3 fases · entrega 10–14
-              semanas</p>
-            <div class="flex justify-between items-end">
-              <div>
-                <p class="text-2xl font-bold tracking-tight">$180k – $300k <span
-                    class="text-neutral-400 text-lg">MXN</span></p>
-                <p class="text-[10px] text-neutral-400 uppercase tracking-wider">$9,000–$15,000 USD</p>
-              </div>
+          <div class="border-t border-neutral-200 pt-6 mt-8 flex flex-col justify-end">
+            <div class="flex justify-center items-end mt-2">
               <a href="https://wa.me/522221978263?text=Hola%20Neutra.%20Me%20interesa%20el%20ecosistema%20Elite.%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20estrat%C3%A9gica."
                 data-i18n="suites.elite.cta"
-                class="bg-black text-white px-6 py-2 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors">INICIAR</a>
+                class="bg-black text-white px-6 py-3 rounded text-xs font-bold tracking-widest hover:bg-neutral-800 transition-colors w-full text-center uppercase">INICIAR</a>
             </div>
           </div>
         </div>
@@ -642,8 +623,7 @@
           class="w-full flex justify-between items-center px-8 md:px-16 py-6 bg-[#0a0a0a] border-b border-white/5 shrink-0">
           <p id="slide-process-label" data-i18n="slideOver.processLabel"
             class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase">NUESTRO PROCESO</p>
-          <button id="close-slide-over"
-            aria-label="Cerrar panel de metodología"
+          <button id="close-slide-over" aria-label="Cerrar panel de metodología"
             class="text-white hover:text-gray-400 transition-all hover:scale-110 cursor-pointer text-4xl leading-none font-extralight focus:outline-none">
             &times;
           </button>
@@ -692,8 +672,8 @@
     <section id="trusted-partners"
       class="flex flex-col gap-8 py-20 px-4 md:px-8 text-white min-h-[60vh] justify-center items-center"
       aria-label="Clientes y partners de Neutra">
-      <h2 data-i18n="partners.title"
-        class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">TRUSTED PARTNERS</h2>
+      <h2 data-i18n="partners.title" class="font-extralight text-4xl md:text-[60px] tracking-tighter text-center mb-16">
+        TRUSTED PARTNERS</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 w-full max-w-5xl mx-auto items-start">
         <article class="flex flex-col items-center text-center gap-6 h-full">
@@ -707,8 +687,8 @@
                 loading="lazy">
             </a>
           </div>
-          <p data-i18n-html="partners.sca"
-            class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Identidad digital y plataforma
+          <p data-i18n-html="partners.sca" class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">
+            Identidad digital y plataforma
             digital
             curada para la arquitecta <strong>Stefany Cano</strong></p>
         </article>
@@ -722,8 +702,8 @@
                 class="logo-premium-glow w-40 md:w-56 h-auto max-h-24 md:max-h-32 object-contain" loading="lazy">
             </a>
           </div>
-          <p data-i18n="partners.calcul8"
-            class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">Automatización y optimización de
+          <p data-i18n="partners.calcul8" class="font-['Manrope'] text-sm md:text-base text-white font-light max-w-sm">
+            Automatización y optimización de
             cálculos y herramientas para ingenieros</p>
         </article>
         <article class="flex flex-col items-center text-center gap-6 h-full">
@@ -749,90 +729,92 @@
     <section id="contacto"
       class="w-full max-w-[1920px] mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e] text-white border-t border-white/5">
 
-    <div class="max-w-5xl mx-auto">
+      <div class="max-w-5xl mx-auto">
 
-      <div class="mb-16 text-center md:text-left">
-        <h2 data-i18n="contact.title" class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR SOLICITUD</h2>
-        <p data-i18n="contact.subtitle" class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu visión. Sé específico.</p>
-      </div>
+        <div class="mb-16 text-center md:text-left">
+          <h2 data-i18n="contact.title" class="font-extralight text-4xl md:text-6xl tracking-tighter mb-4">INICIAR
+            SOLICITUD</h2>
+          <p data-i18n="contact.subtitle" class="text-gray-400 text-sm tracking-widest uppercase">Cuéntanos sobre tu
+            visión. Sé específico.</p>
+        </div>
 
-      <form id="project-form" class="space-y-12">
+        <form id="project-form" class="space-y-12">
 
-        <input type="hidden" name="access_key" value="bbee927e-886d-47cb-aeee-07bde7291ba3">
+          <input type="hidden" name="access_key" value="bbee927e-886d-47cb-aeee-07bde7291ba3">
 
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-          <div class="group relative">
-            <input type="text" name="name" required
-              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
-            <label
-              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-              <span data-i18n="contact.name">Nombre Completo</span>
-            </label>
-          </div>
-
-          <div class="group relative">
-            <input type="text" name="company" required
-              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
-            <label
-              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-              <span data-i18n="contact.company">Empresa / Marca</span>
-            </label>
-          </div>
-
-          <div class="group relative">
-            <input type="email" name="email" required
-              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
-            <label
-              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-              <span data-i18n="contact.email">Correo Corporativo</span>
-            </label>
-          </div>
-
-          <div class="group relative">
-            <select name="budget" required
-              class="w-full bg-[#21222e] border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors appearance-none text-gray-300">
-              <option value="" disabled selected hidden data-i18n="contact.budget">Rango de Inversión</option>
-              <option value="Essential (15k - 25k)" data-i18n="contact.budgetEsencial">ESENCIAL ($35k – $55k MXN)</option>
-              <option value="Vantage (25k - 50k)" data-i18n="contact.budgetGrowth">GROWTH ($80k – $130k MXN)</option>
-              <option value="Authority (50k+)" data-i18n="contact.budgetElite">ELITE ($180k – $300k MXN)</option>
-              <option value="Custom Enterprise" data-i18n="contact.budgetOther">OTRO SERVICIO</option>
-            </select>
-            <div class="absolute right-0 top-4 pointer-events-none">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-4 h-4 text-white">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
+            <div class="group relative">
+              <input type="text" name="name" required
+                class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
+              <label
+                class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+                <span data-i18n="contact.name">Nombre Completo</span>
+              </label>
             </div>
+
+            <div class="group relative">
+              <input type="text" name="company" required
+                class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
+              <label
+                class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+                <span data-i18n="contact.company">Empresa / Marca</span>
+              </label>
+            </div>
+
+            <div class="group relative">
+              <input type="email" name="email" required
+                class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent">
+              <label
+                class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+                <span data-i18n="contact.email">Correo Corporativo</span>
+              </label>
+            </div>
+
+            <div class="group relative">
+              <select name="budget" required
+                class="w-full bg-[#21222e] border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors appearance-none text-gray-300">
+                <option value="" disabled selected hidden data-i18n="contact.budget">Rango de Inversión</option>
+                <option value="1000-3000" data-i18n="contact.budget1">$1,000 - $3,000 USD</option>
+                <option value="3000-6000" data-i18n="contact.budget2">$3,000 - $6,000 USD</option>
+                <option value="6000-10000" data-i18n="contact.budget3">$6,000 - $10,000 USD</option>
+                <option value="10000+" data-i18n="contact.budget4">$10,000+ USD</option>
+              </select>
+              <div class="absolute right-0 top-4 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-4 h-4 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
+            </div>
+
           </div>
 
-        </div>
+          <div class="group relative mt-12">
+            <textarea name="message" rows="4" required
+              class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent resize-none"></textarea>
+            <label
+              class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
+              <span data-i18n="contact.project">Detalles del Proyecto</span>
+            </label>
+          </div>
 
-        <div class="group relative mt-12">
-          <textarea name="message" rows="4" required
-            class="peer w-full bg-transparent border-b border-white/20 py-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-transparent resize-none"></textarea>
-          <label
-            class="absolute left-0 top-3 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-white peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white pointer-events-none">
-            <span data-i18n="contact.project">Detalles del Proyecto</span>
-          </label>
-        </div>
+          <div class="flex justify-end pt-8">
+            <button type="submit" id="submit-btn"
+              class="group relative px-12 py-4 bg-white text-black font-bold tracking-[0.2em] uppercase text-xs overflow-hidden transition-all hover:bg-gray-200">
+              <span id="btn-text" data-i18n="contact.submit">Enviar Solicitud</span>
+              <span id="btn-loading" class="hidden animate-pulse" data-i18n="contact.loading">Procesando...</span>
+            </button>
+          </div>
 
-        <div class="flex justify-end pt-8">
-          <button type="submit" id="submit-btn"
-            class="group relative px-12 py-4 bg-white text-black font-bold tracking-[0.2em] uppercase text-xs overflow-hidden transition-all hover:bg-gray-200">
-            <span id="btn-text" data-i18n="contact.submit">Enviar Solicitud</span>
-            <span id="btn-loading" class="hidden animate-pulse" data-i18n="contact.loading">Procesando...</span>
-          </button>
-        </div>
+          <div id="form-result"
+            class="hidden text-center p-4 border border-green-500/50 bg-green-500/10 text-green-400 text-sm tracking-widest uppercase">
+          </div>
 
-        <div id="form-result"
-          class="hidden text-center p-4 border border-green-500/50 bg-green-500/10 text-green-400 text-sm tracking-widest uppercase">
-        </div>
-
-      </form>
-    </div>
+        </form>
+      </div>
     </section><!-- /contacto -->
   </main>
 
@@ -841,14 +823,16 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
 
         <div class="space-y-4">
-          <img src="./src/logos/neutralogotipo.svg" alt="Neutra Digital Growth Partner — logotipo" class="w-100 lg:w-50">
+          <img src="./src/logos/neutralogotipo.svg" alt="Neutra Digital Growth Partner — logotipo"
+            class="w-100 lg:w-50">
           <p data-i18n="footer.tagline" class="text-sm text-gray-500 max-w-xs">
             Construimos el ecosistema que convierte tu marca en tu mejor activo.
           </p>
         </div>
 
         <div class="flex flex-col space-y-3">
-          <h3 data-i18n="footer.contactTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3><!-- h3 válido: dentro de footer, fuera del outline de encabezados principal -->
+          <h3 data-i18n="footer.contactTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+            Contacto</h3><!-- h3 válido: dentro de footer, fuera del outline de encabezados principal -->
           <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información"
             class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -859,7 +843,8 @@
         </div>
 
         <div class="flex flex-col space-y-3">
-          <h3 data-i18n="footer.legalTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3><!-- h3 válido: dentro de footer -->
+          <h3 data-i18n="footer.legalTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal
+          </h3><!-- h3 válido: dentro de footer -->
           <a href="/privacidad.html" data-i18n="footer.privacy"
             class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
           <a href="/terminos.html" data-i18n="footer.terms"
@@ -868,8 +853,7 @@
 
       </div>
 
-      <div
-        class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
+      <div class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
         <p data-i18n="footer.copyright" class="text-xs text-gray-400">
           &copy; 2026 NEUTRA. Todos los derechos reservados.
         </p>
