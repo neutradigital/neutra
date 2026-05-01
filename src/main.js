@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCustomCursor();
     initContactForm();
     initSlideOver();
+    initLightbox();
 });
 
 
@@ -401,6 +402,18 @@ function initSlideOver() {
     slideScrollBody.addEventListener('wheel', (e) => { e.stopPropagation(); }, { passive: true });
     slideScrollBody.addEventListener('touchmove', (e) => { e.stopPropagation(); }, { passive: true });
 
+    // ── LIGHTBOX: Delegación de clicks (setup único — las imágenes se reinjectan cada apertura) ──
+    // Desktop: el click llega al container porque las imágenes inactivas tienen pointer-events-none
+    stickyCol.addEventListener('click', (e) => {
+        const img = e.target.closest('img[data-lightbox-src]');
+        if (img) window.openLightbox(img.dataset.lightboxSrc, img.alt ?? '');
+    });
+    // Móvil: imágenes no apiladas, delegación directa
+    phasesCol.addEventListener('click', (e) => {
+        const img = e.target.closest('img[data-lightbox-src]');
+        if (img) window.openLightbox(img.dataset.lightboxSrc, img.alt ?? '');
+    });
+
     // ── ACTIVOS ESTÁTICOS (rutas de imágenes/vídeo — no se traducen) ────────────
     const slideAssets = {
         'identidad': {
@@ -412,8 +425,8 @@ function initSlideOver() {
         },
         'fotografia': {
             phases: [
+                { image: '/assets/ourWork/clubdenuit_notext.jpg' },
                 { image: '/assets/ourWork/ourwork7.jpg' },
-                { image: '/assets/ourWork/ourwork5.jpg' },
                 { image: '/assets/images/detailing_foto.jpg' }
             ]
         },
@@ -459,34 +472,126 @@ function initSlideOver() {
         // ── RENDERIZADO DE FASES (Columna Izquierda) ───────────────
         const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
 
+        // Helper: contenido del bloque móvil — varía por servicio/fase
+        const getMobileBlock = (phase, i) => {
+            if (isDesktop) return '';
+
+            // ── Caso especial: Identidad · Fase 1 (Auditoría Orgánica) ──
+            if (serviceId === 'identidad' && i === 0) {
+                return `
+                <div class="flex flex-col gap-8 mt-6">
+                  <p class="text-white/50 text-xs tracking-[0.3em] uppercase">Fase 1 · Auditoría Orgánica</p>
+                  <h3 class="text-white text-2xl font-light leading-snug max-w-sm">Lo que analizamos antes de diseñar una sola línea</h3>
+                  <ul class="flex flex-col gap-4 mt-2">
+                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
+                      <span class="text-white/30 text-xs mt-1 font-mono">01</span>
+                      <span class="text-white/70 text-sm leading-relaxed">Ecosistema actual de la marca</span>
+                    </li>
+                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
+                      <span class="text-white/30 text-xs mt-1 font-mono">02</span>
+                      <span class="text-white/70 text-sm leading-relaxed">Posicionamiento frente a competidores directos</span>
+                    </li>
+                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
+                      <span class="text-white/30 text-xs mt-1 font-mono">03</span>
+                      <span class="text-white/70 text-sm leading-relaxed">Brechas entre percepción actual y percepción deseada</span>
+                    </li>
+                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
+                      <span class="text-white/30 text-xs mt-1 font-mono">04</span>
+                      <span class="text-white/70 text-sm leading-relaxed">Objetivos comerciales a 12 y 24 meses</span>
+                    </li>
+                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
+                      <span class="text-white/30 text-xs mt-1 font-mono">05</span>
+                      <span class="text-white/70 text-sm leading-relaxed">Audiencia real vs audiencia aspiracional</span>
+                    </li>
+                  </ul>
+                </div>`;
+            }
+
+            // ── Caso genérico: imagen o vídeo ──
+            return `
+                <div class="mt-6 aspect-square overflow-hidden rounded-lg bg-gray-900">
+                    ${phase.video
+                    ? `<video src="${phase.video}" class="w-full h-full object-cover" autoplay muted loop playsinline></video>`
+                    : `<img src="${phase.image}" alt="${phase.title}" data-lightbox-src="${phase.image}" class="w-full h-full object-cover cursor-zoom-in" loading="lazy" decoding="async">`
+                }
+                </div>`;
+        };
+
         phasesCol.innerHTML = phases.map((phase, i) => `
             <div class="phase-block ${isDesktop ? 'min-h-[70vh] flex flex-col justify-center' : 'pb-10'} transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-30'}"
                  data-index="${i}">
                 <p class="text-gray-600 text-xs font-bold tracking-[0.3em] uppercase mb-3">${phase.label}</p>
                 <h4 class="text-white text-2xl md:text-3xl font-light tracking-tight mb-4 max-w-sm">${phase.title}</h4>
                 <p class="text-gray-400 text-base leading-relaxed max-w-lg">${phase.text}</p>
-                ${!isDesktop ? `
-                <div class="mt-6 aspect-square overflow-hidden rounded-lg bg-gray-900">
-                    ${phase.video
-                        ? `<video src="${phase.video}" class="w-full h-full object-cover" autoplay muted loop playsinline></video>`
-                        : `<img src="${phase.image}" alt="${phase.title}" class="w-full h-full object-cover" loading="lazy" decoding="async">`
-                    }
-                </div>` : ''}
+                ${getMobileBlock(phase, i)}
             </div>
         `).join('');
 
+
         // ── RENDERIZADO DE IMÁGENES SUPERPUESTAS (Columna Derecha, solo desktop) ──
         if (isDesktop) {
-            stickyCol.innerHTML = phases.map((phase, i) => {
-                const baseClass = `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'}`;
-                if (phase.video) {
-                    return `<video src="${phase.video}" data-index="${i}" class="${baseClass}" autoplay muted loop playsinline></video>`;
+
+            // CHANGE 1: Quitar fondo/borde solo para identidad (el bloque es texto puro)
+            if (serviceId === 'identidad') {
+                stickyCol.classList.remove('bg-gray-900', 'rounded-xl', 'overflow-hidden');
+            } else {
+                stickyCol.classList.add('bg-gray-900', 'rounded-xl', 'overflow-hidden');
+            }
+
+            // Helper: elemento sticky por servicio/fase
+            const getStickyElement = (phase, i) => {
+                const isActive = i === 0;
+                const baseClass = [
+                    'absolute inset-0 w-full h-full',
+                    'transition-opacity duration-700 ease-in-out',
+                    isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                ].join(' ');
+
+                // ── Caso especial: Identidad · Fase 1 (Auditoría Orgánica) ──
+                if (serviceId === 'identidad' && i === 0) {
+                    return `
+                    <div data-index="0" class="${baseClass} flex flex-col justify-center gap-10 px-4">
+                      <h3 class="text-white text-4xl md:text-5xl font-extralight leading-tight tracking-tight max-w-lg">Lo que analizamos antes de diseñar una sola línea</h3>
+                      <ul class="flex flex-col">
+                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
+                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">01</span>
+                          <span class="text-white/60 text-base font-light">Ecosistema actual de la marca</span>
+                        </li>
+                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
+                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">02</span>
+                          <span class="text-white/60 text-base font-light">Posicionamiento frente a competidores directos</span>
+                        </li>
+                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
+                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">03</span>
+                          <span class="text-white/60 text-base font-light">Brechas entre percepción actual y percepción deseada</span>
+                        </li>
+                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
+                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">04</span>
+                          <span class="text-white/60 text-base font-light">Objetivos comerciales a 12 y 24 meses</span>
+                        </li>
+                        <li class="flex gap-6 items-center py-5 border-t border-b border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
+                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">05</span>
+                          <span class="text-white/60 text-base font-light">Audiencia real vs audiencia aspiracional</span>
+                        </li>
+                      </ul>
+                    </div>`;
+
                 }
-                return `<img src="${phase.image}" alt="${phase.title}" data-index="${i}" class="${baseClass}" loading="lazy" decoding="async">`;
-            }).join('');
+
+                // ── Caso genérico: video o imagen ──
+                const mediaCoverClass = baseClass + ' object-cover' + (isActive ? ' cursor-zoom-in' : '');
+                if (phase.video) {
+                    return `<video src="${phase.video}" data-index="${i}" class="${mediaCoverClass}" autoplay muted loop playsinline></video>`;
+                }
+                return `<img src="${phase.image}" alt="${phase.title}" data-index="${i}" data-lightbox-src="${phase.image}" class="${mediaCoverClass}" loading="lazy" decoding="async">`;
+            };
+
+            stickyCol.innerHTML = phases.map((phase, i) => getStickyElement(phase, i)).join('');
+
         } else {
             stickyCol.innerHTML = '';
         }
+
 
         // ── INTERSECTION OBSERVER (Scroll-Spy, solo desktop) ────────
         // Desconectar observer anterior si existe
@@ -494,7 +599,7 @@ function initSlideOver() {
 
         if (isDesktop) {
             const phaseBlocks = phasesCol.querySelectorAll('.phase-block');
-            const stickyImgs = stickyCol.querySelectorAll('img, video');
+            const stickyImgs = stickyCol.querySelectorAll('img, video, div[data-index]');
 
             spyObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -507,10 +612,14 @@ function initSlideOver() {
                         block.classList.toggle('opacity-30', i !== activeIndex);
                     });
 
-                    // b) Cambiar imagen activa en columna sticky
+                    // b) Cambiar imagen activa en columna sticky + corregir pointer-events
                     stickyImgs.forEach((img, i) => {
-                        img.classList.toggle('opacity-100', i === activeIndex);
-                        img.classList.toggle('opacity-0', i !== activeIndex);
+                        const active = i === activeIndex;
+                        img.classList.toggle('opacity-100', active);
+                        img.classList.toggle('opacity-0', !active);
+                        // Solo la imagen visible recibe clicks; el resto se bloquea
+                        img.classList.toggle('cursor-zoom-in', active && img.tagName === 'IMG');
+                        img.classList.toggle('pointer-events-none', !active);
                     });
                 });
             }, {
@@ -609,9 +718,16 @@ function initSlideOver() {
     closeBtn.addEventListener('click', closeSlideOver);
     slideBackdrop.addEventListener('click', closeSlideOver);
 
-    // Cerrar con Escape (desktop)
+    // Cerrar con Escape (desktop) — lightbox tiene prioridad
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeSlideOver();
+        if (e.key === 'Escape') {
+            const lb = document.getElementById('img-lightbox');
+            if (lb && !lb.classList.contains('opacity-0')) {
+                window.closeLightbox();
+            } else {
+                closeSlideOver();
+            }
+        }
     });
 
     // ── HISTORY API: interceptar el botón "Atrás" del navegador ────
@@ -650,4 +766,40 @@ function initSlideOver() {
             }
         }
     }, { passive: true });
+}
+
+/**
+ * ------------------------------------------------------------------
+ * SISTEMA 4: LIGHTBOX — Visor de imagen en tamaño completo
+ * ------------------------------------------------------------------
+ */
+function initLightbox() {
+    const lb = document.getElementById('img-lightbox');
+    const lbImg = document.getElementById('img-lightbox-img');
+    const lbClose = document.getElementById('img-lightbox-close');
+    if (!lb || !lbImg || !lbClose) return;
+
+    // Exponer funciones globalmente (necesario porque las usan atributos onclick en HTML dinámico)
+    window.openLightbox = (src, alt = '') => {
+        lbImg.src = src;
+        lbImg.alt = alt;
+        lb.classList.remove('opacity-0', 'pointer-events-none');
+        lb.classList.add('opacity-100');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeLightbox = () => {
+        lb.classList.remove('opacity-100');
+        lb.classList.add('opacity-0', 'pointer-events-none');
+        // Limpiar src tras la transición para liberar memoria
+        setTimeout(() => { lbImg.src = ''; }, 300);
+        document.body.style.overflow = '';
+    };
+
+    // Click en el backdrop (no en la imagen) cierra el modal
+    lb.addEventListener('click', (e) => {
+        if (e.target === lb) window.closeLightbox();
+    });
+
+    lbClose.addEventListener('click', window.closeLightbox);
 }

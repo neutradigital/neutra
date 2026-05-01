@@ -863,6 +863,27 @@
     </div>
   </footer>
 
+  <!-- ═══════════════════════════════════════════════
+       LIGHTBOX — Visor de imagen en tamaño original
+  ═══════════════════════════════════════════════ -->
+  <div id="img-lightbox"
+    class="fixed inset-0 z-[300] flex items-center justify-center bg-black/92 opacity-0 pointer-events-none transition-opacity duration-300"
+    role="dialog" aria-modal="true" aria-label="Visor de imagen">
+
+    <!-- Botón cerrar -->
+    <button id="img-lightbox-close"
+      aria-label="Cerrar imagen"
+      class="absolute top-5 right-6 text-white/50 hover:text-white text-5xl font-extralight leading-none transition-colors duration-200 focus:outline-none z-10 cursor-pointer select-none">
+      &times;
+    </button>
+
+    <!-- Imagen centrada — object-contain garantiza aspecto original sin recorte -->
+    <img id="img-lightbox-img" src="" alt=""
+      class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default select-none"
+      onclick="event.stopPropagation()"
+      draggable="false">
+  </div>
+
   <div id="cursor-dot" class="hidden lg:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none"
     style="background-color: #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
   <div id="cursor-outline" class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none"
