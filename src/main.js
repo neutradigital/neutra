@@ -426,7 +426,7 @@ function initSlideOver() {
         'fotografia': {
             phases: [
                 { image: '/assets/ourWork/clubdenuit_notext.jpg' },
-                { image: '/assets/ourWork/ourwork7.jpg' },
+                { image: '/assets/images/swetpicture.jpg' },
                 { image: '/assets/images/detailing_foto.jpg' }
             ]
         },
