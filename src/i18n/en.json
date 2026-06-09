@@ -11,11 +11,11 @@
   },
   "hero": {
     "eyebrow": "Digital Growth Partner — Neutra",
-    "h1Line1": "The brands",
-    "h1Line2": "that dominate",
-    "h1Line3": "didn't get",
-    "h1Line4": "lucky.",
-    "subtitle": "Identity &middot; Photographic Direction &middot; Digital Experience<br><br>One ecosystem. <strong>One partner.</strong>",
+    "h1Line1": "Profitable brands",
+    "h1Line2": "aren't just",
+    "h1Line3": "better.",
+    "h1Line4": "They look better.",
+    "subtitle": "We elevate brands' perception through visual identity, photography and digital presence that justify their prices.",
     "ecosystem": "The ecosystem",
     "cta": "Schedule Assessment"
   },
@@ -28,80 +28,80 @@
   "pillars": {
     "label": "OUR PILLARS",
     "service1": {
-      "name": "Structural Identity",
-      "desc": "We don't design logos; we engineer the visual rules of your authority. We build the aesthetic and strategic foundation that will dictate how the world perceives your brand.",
+      "name": "Visual Identity & Structure",
+      "desc": "Every day your brand doesn't look like what it's worth, you're leaving money on the table. We build the visual identity that eliminates that friction and turns the first impression into a real competitive advantage.",
       "cta": "Explore Methodology →"
     },
     "service2": {
-      "name": "Photographic Direction",
-      "desc": "We translate your identity into international-standard visual assets. We capture the essence of your business to fuel your ecosystem with graphic material engineered to make an impact.",
+      "name": "Commercial Photography Direction",
+      "desc": "80% of online purchase decisions are made in less than three seconds. Your product might be the best on the market, but if it doesn't look like the best, it doesn't matter. We produce the photographic material that eliminates that gap and turns each image into a silent sales argument.",
       "cta": "Explore Methodology →"
     },
     "service3": {
-      "name": "Frontend Engineering",
-      "desc": "The container where your authority comes alive. We build precision web platforms with Tailwind CSS. Here branding and photography fuse into an ultra-fast digital experience.",
+      "name": "Digital Infrastructure",
+      "desc": "Most websites inform. Yours should sell. We develop the digital platform that converts visitors into leads and leads into clients, while you sleep.",
       "cta": "Explore Methodology →"
     }
   },
   "slideOver": {
     "processLabel": "OUR PROCESS",
     "identidad": {
-      "title": "Structural Identity",
+      "title": "Visual Identity & Structure",
       "phases": [
         {
           "label": "Phase 1",
-          "title": "Organic Audit",
-          "text": "We conduct a deep analysis of your brand's current ecosystem — its positioning, competitive landscape, and long-term commercial objectives — to uncover real gaps and high-value opportunities."
+          "title": "Commercial Diagnosis",
+          "text": "We identify the exact point where your current image prevents you from billing more. We map the definitive route so your new visual identity justifies higher prices."
         },
         {
           "label": "Phase 2",
           "title": "Visual Architecture",
-          "text": "We design the foundational rules: color palettes, typefaces, and mathematical proportions that will sustain the visual authority of your project in an immutable, unbreakable form."
+          "text": "We define the visual rulebook for your brand. We unify color palettes and typography to build a presence that increases the perceived value of what you offer."
         },
         {
           "label": "Phase 3",
           "title": "Operations Manual",
-          "text": "We deliver the official usage guidelines to ensure your brand remains unified and consistent regardless of the medium, format, or the team executing it."
+          "text": "We deliver the official rulebook. Your brand will remain unified and impeccable regardless of the medium, format, or who executes it."
         }
       ]
     },
     "fotografia": {
-      "title": "Photographic Direction",
+      "title": "Commercial Photography Direction",
       "phases": [
         {
           "label": "Phase 1",
           "title": "Conceptualization",
-          "text": "We ground the visual narrative, lighting references, and select locations that reinforce the corporate brand from the very first frame."
+          "text": "We land the narrative and the ideal environment for your brand. We select every visual element to strengthen your commercial status from the first image."
         },
         {
           "label": "Phase 2",
           "title": "On-Set Execution",
-          "text": "We operate with top-tier equipment, meticulously controlling every variable: composition, light temperature, and talent direction to guarantee premium-grade captures."
+          "text": "Zero improvisation. We execute the session controlling every detail to ensure the final material justifies your company's status from the first glance."
         },
         {
           "label": "Phase 3",
           "title": "Editorial Treatment",
-          "text": "Intensive post-production: precision retouching, corporate color calibration (Color Grading), and multi-format optimization across every channel in your ecosystem."
+          "text": "We elevate the material to the highest commercial level. We process each capture to ensure your brand projects absolute authority on any platform and format."
         }
       ]
     },
     "frontend": {
-      "title": "Frontend Engineering",
+      "title": "Digital Infrastructure",
       "phases": [
         {
           "label": "Phase 1",
-          "title": "Rigorous Wireframing",
-          "text": "We map the information architecture and user flows (UX) to guarantee frictionless navigation before writing a single line of code."
+          "title": "Conversion Architecture",
+          "text": "We map your client's route. We design the platform's structure to eliminate distractions and guide every click directly toward the close, before starting development."
         },
         {
           "label": "Phase 2",
-          "title": "Pure Code & Tailwind",
-          "text": "We build interfaces with Tailwind CSS v4 and integrate GPU-accelerated animations to maintain 60fps fluidity across every device."
+          "title": "High-End Performance",
+          "text": "We build the platform from scratch, with no slow templates. Intuitive structure, imperceptible load times, and fluid navigation with a premium feel."
         },
         {
           "label": "Phase 3",
-          "title": "Performance & QA",
-          "text": "Lighthouse audits, asset minification, lazy loading, and cross-platform stress testing to guarantee sub-1.5-second load times in production."
+          "title": "Quality Control (QA)",
+          "text": "We subject the infrastructure to intensive load testing before going to production. We optimize the ecosystem to maintain load times under 1.5 seconds, protecting your lead retention."
         }
       ]
     }
@@ -170,7 +170,7 @@
     "tagline": "We build the ecosystem that turns your brand into your greatest asset.",
     "contactTitle": "Contact",
     "whatsapp": "WhatsApp: 222 197 8263",
-    "location": "Coatepec, Veracruz, MX",
+    "location": "México · USA",
     "legalTitle": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",

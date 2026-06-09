@@ -12,10 +12,10 @@
   "hero": {
     "eyebrow": "Digital Growth Partner — Neutra",
     "h1Line1": "Las marcas",
-    "h1Line2": "que dominan",
-    "h1Line3": "no tuvieron",
-    "h1Line4": "suerte.",
-    "subtitle": "Identidad &middot; Dirección fotográfica &middot; Experiencia digital<br><br>Un solo ecosistema. <strong>Un solo partner.</strong>",
+    "h1Line2": "que ganan más",
+    "h1Line3": "no son mejores.",
+    "h1Line4": "Se ven mejor.",
+    "subtitle": "Elevamos la percepción de marcas a través de identidad visual, fotografía y presencia digital que justifican sus precios.",
     "ecosystem": "El ecosistema",
     "cta": "Agendar diagnóstico"
   },
@@ -28,40 +28,40 @@
   "pillars": {
     "label": "NUESTROS PILARES",
     "service1": {
-      "name": "Identidad Estructural",
-      "desc": "No diseñamos logotipos; definimos el reglamento visual de tu autoridad. Construimos los cimientos estéticos y estratégicos que dictarán cómo el mundo percibe tu marca.",
+      "name": "Identidad Visual / Estructural",
+      "desc": "Cada día que tu marca no se ve como lo que vale, estás dejando dinero sobre la mesa. Construimos la identidad visual que elimina esa fricción y convierte la primera impresión en una ventaja competitiva real.",
       "cta": "Explorar Metodología →"
     },
     "service2": {
       "name": "Dirección Fotográfica",
-      "desc": "Traducimos tu identidad en activos visuales de estándar internacional. Capturamos la esencia de tu empresa para alimentar tu ecosistema con material gráfico diseñado para impactar.",
+      "desc": "El 80% de las decisiones de compra online se toman en menos de tres segundos. Tu producto puede ser el mejor del mercado, pero si no se ve como el mejor, no importa. Producimos el material fotográfico que elimina esa brecha y convierte cada imagen en un argumento de venta silencioso.",
       "cta": "Explorar Metodología →"
     },
     "service3": {
-      "name": "Ingeniería Frontend",
-      "desc": "El contenedor donde tu autoridad cobra vida. Desarrollamos plataformas web de precisión en Tailwind. Aquí el branding y la fotografía se fusionan en una experiencia digital ultrarrápida.",
+      "name": "Infraestructura Digital",
+      "desc": "La mayoría de los sitios web informan. El tuyo debería vender. Desarrollamos la plataforma digital que convierte visitantes en prospectos y prospectos en clientes, mientras tú duermes.",
       "cta": "Explorar Metodología →"
     }
   },
   "slideOver": {
     "processLabel": "NUESTRO PROCESO",
     "identidad": {
-      "title": "Identidad Estructural",
+      "title": "Identidad Visual / Estructural",
       "phases": [
         {
           "label": "Fase 1",
-          "title": "Auditoría Orgánica",
-          "text": "Analizamos a fondo el ecosistema actual de tu marca, su posicionamiento, competidores y los objetivos comerciales a largo plazo para detectar brechas y oportunidades reales."
+          "title": "Diagnóstico Comercial",
+          "text": "Identificamos el punto exacto donde tu imagen actual te impide facturar más. Trazamos la ruta definitiva para que tu nueva identidad visual justifique precios más altos."
         },
         {
           "label": "Fase 2",
           "title": "Arquitectura Visual",
-          "text": "Diseñamos las reglas fundamentales: paletas de color, tipografías y proporciones matemáticas que sostendrán la autoridad visual del proyecto de forma inmutable."
+          "text": "Definimos el reglamento visual de tu marca. Unificamos paletas de color y tipografías para construir una presencia que aumente la percepción del valor de lo que ofreces."
         },
         {
           "label": "Fase 3",
           "title": "Manual de Operaciones",
-          "text": "Entregamos el reglamento oficial de uso para que tu marca se mantenga unificada e inquebrantable sin importar el medio, el formato o el ejecutor."
+          "text": "Entregamos el reglamento oficial de uso. Tu marca se mantendrá unificada e impecable sin importar el medio, el formato o quién la ejecute."
         }
       ]
     },
@@ -71,37 +71,37 @@
         {
           "label": "Fase 1",
           "title": "Conceptualización",
-          "text": "Aterrizamos la narrativa visual, referencias de iluminación y seleccionamos locaciones que fortalezcan el branding empresarial desde el primer encuadre."
+          "text": "Aterrizamos la narrativa y el entorno ideal para tu marca. Seleccionamos cada elemento visual para fortalecer tu estatus comercial desde la primera imagen."
         },
         {
           "label": "Fase 2",
           "title": "Ejecución en Set",
-          "text": "Operamos con equipo de alto rango, controlando meticulosamente cada variable: composición, temperatura de luz y dirección de talent para asegurar capturas premium."
+          "text": "Cero improvisación. Ejecutamos la sesión controlando cada detalle para asegurar que el material final justifique el estatus de tu empresa desde el primer vistazo."
         },
         {
           "label": "Fase 3",
           "title": "Tratamiento Editorial",
-          "text": "Post-producción intensiva: retoque milimétrico, calibración de color corporativo (Color Grading) y optimización multi-formato para todos los canales del ecosistema."
+          "text": "Elevamos el material al más alto nivel comercial. Procesamos cada captura para asegurar que tu marca proyecte autoridad absoluta en cualquier plataforma y formato."
         }
       ]
     },
     "frontend": {
-      "title": "Ingeniería Frontend",
+      "title": "Infraestructura Digital",
       "phases": [
         {
           "label": "Fase 1",
-          "title": "Wireframing Riguroso",
-          "text": "Mapeamos la arquitectura de información y los flujos de usuario (UX) para garantizar una navegación sin fricciones antes de escribir una sola línea de código."
+          "title": "Arquitectura de Conversión",
+          "text": "Trazamos la ruta de tu cliente. Diseñamos la estructura de la plataforma para eliminar distracciones y guiar cada clic directamente hacia el cierre, antes de empezar el desarrollo."
         },
         {
           "label": "Fase 2",
-          "title": "Código Puro & Tailwind",
-          "text": "Construimos interfaces con Tailwind CSS v4 e integramos animaciones calculadas con GPU-acceleration para mantener una fluidez de 60fps en cualquier dispositivo."
+          "title": "Rendimiento de Alta Gama",
+          "text": "Construimos la plataforma desde cero, sin plantillas lentas. Estructura intuitiva, tiempos de carga imperceptibles y navegación fluida con sensación premium."
         },
         {
           "label": "Fase 3",
-          "title": "Performance & QA",
-          "text": "Auditorías Lighthouse, minificación de assets, lazy loading y pruebas de estrés multiplataforma para garantizar tiempos de carga menores a 1.5 segundos en producción."
+          "title": "Control de Calidad (QA)",
+          "text": "Sometemos la infraestructura a pruebas de carga intensivas antes de salir a producción. Optimizamos el ecosistema para mantener tiempos de carga menores a 1.5 segundos, protegiendo la retención de tus prospectos."
         }
       ]
     }
@@ -170,7 +170,7 @@
     "tagline": "Construimos el ecosistema que convierte tu marca en tu mejor activo.",
     "contactTitle": "Contacto",
     "whatsapp": "WhatsApp: 222 197 8263",
-    "location": "Coatepec, Veracruz, MX",
+    "location": "México · USA",
     "legalTitle": "Legal",
     "privacy": "Aviso de Privacidad",
     "terms": "Términos de Servicio",

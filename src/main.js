@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initLightbox();
 });
 
-
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -476,36 +475,7 @@ function initSlideOver() {
         const getMobileBlock = (phase, i) => {
             if (isDesktop) return '';
 
-            // ── Caso especial: Identidad · Fase 1 (Auditoría Orgánica) ──
-            if (serviceId === 'identidad' && i === 0) {
-                return `
-                <div class="flex flex-col gap-8 mt-6">
-                  <p class="text-white/50 text-xs tracking-[0.3em] uppercase">Fase 1 · Auditoría Orgánica</p>
-                  <h3 class="text-white text-2xl font-light leading-snug max-w-sm">Lo que analizamos antes de diseñar una sola línea</h3>
-                  <ul class="flex flex-col gap-4 mt-2">
-                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
-                      <span class="text-white/30 text-xs mt-1 font-mono">01</span>
-                      <span class="text-white/70 text-sm leading-relaxed">Ecosistema actual de la marca</span>
-                    </li>
-                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
-                      <span class="text-white/30 text-xs mt-1 font-mono">02</span>
-                      <span class="text-white/70 text-sm leading-relaxed">Posicionamiento frente a competidores directos</span>
-                    </li>
-                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
-                      <span class="text-white/30 text-xs mt-1 font-mono">03</span>
-                      <span class="text-white/70 text-sm leading-relaxed">Brechas entre percepción actual y percepción deseada</span>
-                    </li>
-                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
-                      <span class="text-white/30 text-xs mt-1 font-mono">04</span>
-                      <span class="text-white/70 text-sm leading-relaxed">Objetivos comerciales a 12 y 24 meses</span>
-                    </li>
-                    <li class="flex gap-4 items-start border-t border-white/10 pt-4">
-                      <span class="text-white/30 text-xs mt-1 font-mono">05</span>
-                      <span class="text-white/70 text-sm leading-relaxed">Audiencia real vs audiencia aspiracional</span>
-                    </li>
-                  </ul>
-                </div>`;
-            }
+
 
             // ── Caso genérico: imagen o vídeo ──
             return `
@@ -531,12 +501,7 @@ function initSlideOver() {
         // ── RENDERIZADO DE IMÁGENES SUPERPUESTAS (Columna Derecha, solo desktop) ──
         if (isDesktop) {
 
-            // CHANGE 1: Quitar fondo/borde solo para identidad (el bloque es texto puro)
-            if (serviceId === 'identidad') {
-                stickyCol.classList.remove('bg-gray-900', 'rounded-xl', 'overflow-hidden');
-            } else {
-                stickyCol.classList.add('bg-gray-900', 'rounded-xl', 'overflow-hidden');
-            }
+            stickyCol.classList.add('bg-gray-900', 'rounded-xl', 'overflow-hidden');
 
             // Helper: elemento sticky por servicio/fase
             const getStickyElement = (phase, i) => {
@@ -546,37 +511,6 @@ function initSlideOver() {
                     'transition-opacity duration-700 ease-in-out',
                     isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'
                 ].join(' ');
-
-                // ── Caso especial: Identidad · Fase 1 (Auditoría Orgánica) ──
-                if (serviceId === 'identidad' && i === 0) {
-                    return `
-                    <div data-index="0" class="${baseClass} flex flex-col justify-center gap-10 px-4">
-                      <h3 class="text-white text-4xl md:text-5xl font-extralight leading-tight tracking-tight max-w-lg">Lo que analizamos antes de diseñar una sola línea</h3>
-                      <ul class="flex flex-col">
-                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
-                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">01</span>
-                          <span class="text-white/60 text-base font-light">Ecosistema actual de la marca</span>
-                        </li>
-                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
-                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">02</span>
-                          <span class="text-white/60 text-base font-light">Posicionamiento frente a competidores directos</span>
-                        </li>
-                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
-                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">03</span>
-                          <span class="text-white/60 text-base font-light">Brechas entre percepción actual y percepción deseada</span>
-                        </li>
-                        <li class="flex gap-6 items-center py-5 border-t border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
-                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">04</span>
-                          <span class="text-white/60 text-base font-light">Objetivos comerciales a 12 y 24 meses</span>
-                        </li>
-                        <li class="flex gap-6 items-center py-5 border-t border-b border-white/10 transition-transform duration-300 ease-out hover:scale-[1.02] origin-left cursor-default">
-                          <span class="text-white/20 text-xs font-mono tracking-widest w-6 shrink-0">05</span>
-                          <span class="text-white/60 text-base font-light">Audiencia real vs audiencia aspiracional</span>
-                        </li>
-                      </ul>
-                    </div>`;
-
-                }
 
                 // ── Caso genérico: video o imagen ──
                 const mediaCoverClass = baseClass + ' object-cover' + (isActive ? ' cursor-zoom-in' : '');
