@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.disabled = true;
 
     try {
-      const ENDPOINT_URL = 'TU_URL_DE_FORMSPREE_AQUI'; 
+      const ENDPOINT_URL = 'https://formspree.io/f/mykqljnl'; 
       
       await fetch(ENDPOINT_URL, {
         method: 'POST',
