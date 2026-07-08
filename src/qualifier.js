@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentStep = 0;
   
   let leadData = {
-    sector: window.location.pathname.includes('architecture') ? 'Arquitectura' : 'Automotriz',
+    sector: (window.location.pathname.includes('real-estate') || window.location.pathname.includes('architecture')) ? 'Arquitectura' : 'Automotriz',
     company: '',
     value: '',
     improvement: '',
