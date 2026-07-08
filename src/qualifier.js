@@ -158,11 +158,16 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const ENDPOINT_URL = 'https://formspree.io/f/mykqljnl'; 
       
-      await fetch(ENDPOINT_URL, {
+      const response = await fetch(ENDPOINT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(leadData)
       });
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || errorData.message || `Error HTTP ${response.status}`);
+      }
       
       contentArea.innerHTML = `
         <div class="text-center py-10">
@@ -174,6 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     } catch (error) {
+      console.error('Error enviando a Formspree:', error);
+      alert('Error al enviar la postulación: ' + error.message);
       btn.innerText = 'ERROR. INTENTAR DE NUEVO';
       btn.disabled = false;
     }
