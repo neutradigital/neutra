@@ -212,42 +212,74 @@ function initMobileMenu() {
  * ------------------------------------------------------------------
  */
 function initSectorCards() {
-    // IMPORTANTE: Asegúrate que en HTML las tarjetas tengan la clase 'js-sector-card'
-    const cards = document.querySelectorAll('.js-sector-card');
+    const archWrapper = document.getElementById('sector-arch');
+    const autoWrapper = document.getElementById('sector-auto');
+    const archElements = document.querySelectorAll('.js-sector-interactive-arch');
+    const autoElements = document.querySelectorAll('.js-sector-interactive-auto');
 
-    if (cards.length === 0) {
-        console.warn('Neutra Debug: No se encontraron tarjetas con clase .js-sector-card');
+    if (!archWrapper || !autoWrapper) {
+        console.warn('Neutra Debug: No se encontraron los contenedores del sector brutalista.');
         return;
     }
 
-    cards.forEach(card => {
-        card.addEventListener('click', (e) => {
+    // Lógica de gestión de estado de hover (foco visual)
+    function setHoveredSector(sector) {
+        // En móviles y tablets apilados (< 768px) no aplicamos efectos de escala de hover
+        if (window.innerWidth < 768) {
+            archElements.forEach(el => {
+                el.classList.remove('scale-105', 'scale-95', 'opacity-20', 'opacity-100');
+                el.classList.add('scale-100', 'opacity-90');
+            });
+            autoElements.forEach(el => {
+                el.classList.remove('scale-105', 'scale-95', 'opacity-20', 'opacity-100');
+                el.classList.add('scale-100', 'opacity-90');
+            });
+            return;
+        }
 
-            // Lógica exclusiva para Tablets y Móviles (< 1025px)
-            if (window.innerWidth < 1025) {
+        if (sector === 'arch') {
+            archElements.forEach(el => {
+                el.classList.remove('scale-95', 'opacity-20', 'scale-100', 'opacity-90');
+                el.classList.add('scale-105', 'opacity-100');
+            });
+            autoElements.forEach(el => {
+                el.classList.remove('scale-105', 'opacity-100', 'scale-100', 'opacity-90');
+                el.classList.add('scale-95', 'opacity-20');
+            });
+        } else if (sector === 'auto') {
+            autoElements.forEach(el => {
+                el.classList.remove('scale-95', 'opacity-20', 'scale-100', 'opacity-90');
+                el.classList.add('scale-105', 'opacity-100');
+            });
+            archElements.forEach(el => {
+                el.classList.remove('scale-105', 'opacity-100', 'scale-100', 'opacity-90');
+                el.classList.add('scale-95', 'opacity-20');
+            });
+        } else {
+            // Estado base: null
+            archElements.forEach(el => {
+                el.classList.remove('scale-105', 'opacity-100', 'scale-95', 'opacity-20');
+                el.classList.add('scale-100', 'opacity-90');
+            });
+            autoElements.forEach(el => {
+                el.classList.remove('scale-105', 'opacity-100', 'scale-95', 'opacity-20');
+                el.classList.add('scale-100', 'opacity-90');
+            });
+        }
+    }
 
-                const isExpanded = card.classList.contains('is-expanded');
+    archWrapper.addEventListener('mouseenter', () => setHoveredSector('arch'));
+    archWrapper.addEventListener('mouseleave', () => setHoveredSector(null));
+    autoWrapper.addEventListener('mouseenter', () => setHoveredSector('auto'));
+    autoWrapper.addEventListener('mouseleave', () => setHoveredSector(null));
 
-                // 1. Reset: Cerrar todas las demás tarjetas
-                cards.forEach(c => c.classList.remove('is-expanded'));
-
-                // 2. Acción: Si no estaba expandida, la expandimos
-                if (!isExpanded) {
-                    // Forzar repintado para evitar glitches en iOS
-                    void card.offsetWidth;
-                    card.classList.add('is-expanded');
-                }
-            }
-        });
-    });
-
-    // Limpieza al redimensionar: debounced para no disparar en cada pixel
+    // Limpieza al redimensionar: restablecer a estado por defecto si se reduce la pantalla
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            if (window.innerWidth >= 1025) {
-                cards.forEach(c => c.classList.remove('is-expanded'));
+            if (window.innerWidth < 768) {
+                setHoveredSector(null);
             }
         }, 150);
     });

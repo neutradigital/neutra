@@ -30,7 +30,10 @@ function applyTranslations() {
 
     // 2. [data-i18n-html] → innerHTML (for elements with <strong>, <br>, etc.)
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const val = get(el.dataset.i18nHtml);
+        let val = get(el.dataset.i18nHtml);
+        if (Array.isArray(val)) {
+            val = val.join('<br/>');
+        }
         if (val && val !== el.dataset.i18nHtml) el.innerHTML = val;
     });
 
@@ -56,6 +59,12 @@ function applyTranslations() {
     document.querySelectorAll('[data-i18n-aria]').forEach(el => {
         const val = get(el.dataset.i18nAria);
         if (val && val !== el.dataset.i18nAria) el.setAttribute('aria-label', val);
+    });
+
+    // 7. [data-i18n-href] → href attribute (e.g. WhatsApp links conditioned by lang)
+    document.querySelectorAll('[data-i18n-href]').forEach(el => {
+        const val = get(el.dataset.i18nHref);
+        if (val && val !== el.dataset.i18nHref) el.setAttribute('href', val);
     });
 }
 

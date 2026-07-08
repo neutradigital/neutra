@@ -12,6 +12,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         privacidad: resolve(__dirname, 'privacidad.html'),
         terminos: resolve(__dirname, 'terminos.html'),
+        architecture: resolve(__dirname, 'architecture.html'),
+        automotive: resolve(__dirname, 'automotive.html'),
       },
     },
   },

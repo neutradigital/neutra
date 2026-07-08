@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Neutra | Digital Growth Partner & Arquitectura de Marca Premium",
+    "title": "Neutra | Estudio de Dirección Visual — Marketing Cinematográfico",
     "description": "Elevamos empresas a través de identidad estructural, dirección fotográfica de alto rendimiento e ingeniería frontend. Tu ecosistema digital, estandarizado."
   },
   "nav": {
@@ -10,27 +10,59 @@
     "contact": "CONTACTO"
   },
   "hero": {
-    "eyebrow": "Digital Growth Partner — Neutra",
-    "h1Line1": "Las marcas",
-    "h1Line2": "que ganan más",
-    "h1Line3": "no son mejores.",
-    "h1Line4": "Se ven mejor.",
-    "subtitle": "Elevamos la percepción de marcas a través de identidad visual, fotografía y presencia digital que justifican sus precios.",
-    "ecosystem": "El ecosistema",
-    "cta": "Agendar diagnóstico"
+    "eyebrow": "Estudio de Dirección Visual — Marketing Cinematográfico",
+    "headline": [
+      "El valor de tu",
+      "activo no se",
+      "explica.",
+      "Se demuestra."
+    ],
+    "description": "Cinematografía comercial para Real Estate y Automotriz Sport. Posicionamos tu producto para pre-cerrar al comprador ideal y ofrecerle la experiencia más cercana a estar frente a tu activo.",
+    "cta": "AGENDAR DIAGNÓSTICO"
   },
   "whatWeDo": {
-    "label": "Digital Growth Partner",
+    "label": "DIRECCIÓN VISUAL — MARKETING CINEMATOGRÁFICO",
     "headingPre": "Elevamos la percepción de tu marca a través de una",
     "headingHighlight": "identidad visual inquebrantable",
     "body": "Desde su concepción hasta un rebranding estratégico. Integramos diseño de marca, dirección fotográfica y desarrollo web de alto rendimiento para que tu empresa proyecte autoridad y se comunique con excelencia absoluta en cualquier entorno donde tenga presencia."
+  },
+  "manifesto": {
+    "label": "NARRATIVA DE ESTATUS",
+    "title": "Si tienes que justificar tu precio, tu narrativa visual ya falló.",
+    "description": "Un video estético o una galería genérica no justifican un ticket alto; solo atraen curiosos sin liquidez. Integramos cinematografía comercial y arquitectura digital para contar una historia que demuestra la exclusividad innegable de tu activo y pre-cierra al comprador ideal a precio de lista."
+  },
+  "sectors": {
+    "card1": {
+      "title": "Arquitectura & Real Estate",
+      "text": "<p>Consolidamos el valor de tus propiedades y desarrollos eliminando cualquier presentación genérica.</p><p>Transformamos tu portafolio arquitectónico en <span class=\"text-white font-medium\">open houses a distancia</span>.</p><p>Capturamos la magnitud espacial con <span class=\"text-white font-medium\">cinematografía en tierra y aire</span> para construir una experiencia que justifica el precio de cada metro cuadrado.</p>"
+    },
+    "card2": {
+      "title": "Automotriz Sport",
+      "text": "<p>El margen de ganancia de un vehículo de alto rendimiento se destruye con una mala presentación visual.</p><p>Ejecutamos <span class=\"text-white font-medium\">dirección de arte dinámica</span> para tu inventario.</p><p>Construimos sucursales digitales premium que transforman tu concesionario en una <span class=\"text-white font-medium\">galería de colección privada</span>, separándote de la competencia local.</p>"
+    }
   },
   "pillars": {
     "label": "NUESTROS PILARES",
     "service1": {
       "name": "Identidad Visual / Estructural",
       "desc": "Cada día que tu marca no se ve como lo que vale, estás dejando dinero sobre la mesa. Construimos la identidad visual que elimina esa fricción y convierte la primera impresión en una ventaja competitiva real.",
-      "cta": "Explorar Metodología →"
+      "cta": "Explorar Metodología →",
+      "sop1": {
+        "title": "Auditoría de Brecha Perceptiva",
+        "desc": "Detectamos la desconexión exacta entre la calidad real de tu oferta y el estatus visual que proyectas hacia el mercado."
+      },
+      "sop2": {
+        "title": "Rastreo de Fricción en Cierre",
+        "desc": "Aislamos los elementos visuales que generan desconfianza en tu cliente ideal y lo obligan a cuestionar o negociar tus tarifas."
+      },
+      "sop3": {
+        "title": "Optimización de Activos",
+        "desc": "Optimizamos cualquier recurso gráfico o tipográfico que debilite tu posicionamiento corporativo y te asocie con servicios de bajo presupuesto."
+      },
+      "sop4": {
+        "title": "Infraestructura de Estatus",
+        "desc": "Construimos un sistema visual de autoridad absoluta que justifica tus precios más altos y elimina el regateo."
+      }
     },
     "service2": {
       "name": "Dirección Fotográfica",
@@ -144,10 +176,7 @@
     }
   },
   "partners": {
-    "title": "TRUSTED PARTNERS",
-    "sca": "Identidad digital y plataforma digital curada para la arquitecta <strong>Stefany Cano</strong>",
-    "calcul8": "Automatización y optimización de cálculos y herramientas para ingenieros",
-    "evile": "Dirección, edición fotográfica y concepto para la marca streetwear <strong>Evile Project</strong>"
+    "label": "TRUSTED PARTNERS"
   },
   "contact": {
     "title": "INICIAR SOLICITUD",
@@ -166,6 +195,74 @@
     "success": "Solicitud recibida. Analizaremos tu perfil en breve.",
     "error": "Error de conexión. Intente nuevamente."
   },
+  "custom_form": {
+    "title": "¿BUSCAS ALGO EN ESPECIAL?",
+    "subtitle": "CUÉNTANOS SOBRE TU VISIÓN. SÉ ESPECÍFICO.",
+    "budget_label": "Presupuesto Asignado (MXN)",
+    "budget_placeholder": "$"
+  },
+  "architecture": {
+    "meta": {
+      "title": "Neutra | Arquitectura & Real Estate",
+      "description": "Consolidamos el valor de tus desarrollos inmobiliarios y proyectos arquitectónicos. Capturamos la magnitud espacial y creamos experiencias digitales inmersivas."
+    },
+    "hero": {
+      "eyebrow": "01 / SECTOR",
+      "title": "Arquitectura & Real Estate",
+      "subtitle": "Consolidamos el valor de tus propiedades y desarrollos eliminando cualquier presentación genérica."
+    },
+    "cases": {
+      "title": "Casos de Estudio",
+      "subtitle": "Proyectando el estatus de cada desarrollo",
+      "project1": {
+        "title": "Stefany Cano Arquitecta",
+        "desc": "Identidad digital y plataforma digital curada para destacar el portafolio arquitectónico."
+      },
+      "project2": {
+        "title": "Dirección Fotográfica Premium",
+        "desc": "Fotografía y cinematografía de alta gama para capturar la magnitud espacial."
+      },
+      "project3": {
+        "title": "Identidad Estructural",
+        "desc": "Rediseño de imagen corporativa para consolidar el posicionamiento en el mercado."
+      }
+    },
+    "suites": {
+      "title": "Suites",
+      "cta": "Agendar Diagnóstico"
+    }
+  },
+  "automotive": {
+    "meta": {
+      "title": "Neutra | Automotriz Sport",
+      "description": "Dirección de arte dinámica para tu inventario y desarrollo de sucursales digitales premium. Separamos tu concesionario de la competencia."
+    },
+    "hero": {
+      "eyebrow": "02 / SECTOR",
+      "title": "Automotriz Sport",
+      "subtitle": "Ejecutamos dirección de arte dinámica para tu inventario y construimos sucursales digitales premium."
+    },
+    "cases": {
+      "title": "Casos de Estudio",
+      "subtitle": "Dirección de arte dinámica para inventarios exclusivos",
+      "project1": {
+        "title": "Showroom Digital",
+        "desc": "Optimización de inventarios y experiencia interactiva premium para compradores exigentes."
+      },
+      "project2": {
+        "title": "Cinematografía Automotriz",
+        "desc": "Material visual de alta gama desde tierra y aire capturando el rendimiento."
+      },
+      "project3": {
+        "title": "Identidad Corporativa",
+        "desc": "Alineación de marca para concesionarios de vehículos deportivos y de lujo."
+      }
+    },
+    "suites": {
+      "title": "Suites",
+      "cta": "Agendar Diagnóstico"
+    }
+  },
   "footer": {
     "tagline": "Construimos el ecosistema que convierte tu marca en tu mejor activo.",
     "contactTitle": "Contacto",
@@ -176,5 +273,111 @@
     "terms": "Términos de Servicio",
     "copyright": "© 2026 NEUTRA. Todos los derechos reservados.",
     "tagline2": "Estrategia con enfoque y claridad."
+  },
+  "pillars_architecture": {
+    "p1_header": "01 / DIAGNÓSTICO DE ESTATUS VISUAL",
+    "p1_manifesto": "Tu inmueble vale millones, pero si tu marketing y production son genéricos, atrae a clientes equivocados. Identificamos la fuga exacta de autoridad visual que te obliga a negociar precios y dar recorridos que desde el inicio sabes que no terminarán en venta.",
+    "p1_s1_title": "01 / AUDITORÍA DE BRECHA PERCEPTIVA",
+    "p1_s1_desc": "Detectamos la desconexión exacta entre la plusvalía de tu propiedad y cómo es percibida en el mercado digital.",
+    "p1_s2_title": "02 / DEPURACIÓN DE ESTATUS",
+    "p1_s2_desc": "Aislamos los elementos visuales que devalúan visualmente el inmueble y provocan el regateo.",
+    "p1_s3_title": "03 / MAPEO DE DIRECCIÓN VISUAL",
+    "p1_s3_desc": "Diseñamos la iluminación y los encuadres arquitectónicos para justificar tu precio por metro cuadrado.",
+    "p2_header": "02 / DIRECCIÓN CINEMATOGRÁFICA",
+    "p2_manifesto": "La estética sin enfoque comercial es solo arte. Ejecutamos cinematografía enfocada en ventas para extraer la escala, los materiales y la arquitectura que dictan la exclusividad de tu inmueble o proyecto.",
+    "p2_s1_title": "01 / CAPTURA ESPACIAL",
+    "p2_s1_desc": "Despliegue aéreo estabilizado que expone las proporciones y mejores ángulos de tu propiedad y su integración con el entorno.",
+    "p2_s2_title": "02 / ENFOQUE DE MATERIALES",
+    "p2_s2_desc": "Enfoque y detalle visual de acabados premium, materiales finos y diseño interior.",
+    "p2_s3_title": "03 / GRADACIÓN DE COLOR",
+    "p2_s3_desc": "Procesamiento visual avanzado que establece una temperatura de color para proyectar plusvalía y autoridad corporativa.",
+    "p3_header": "03 / ECOSISTEMA DE PRE-CIERRE",
+    "p3_manifesto": "Entregar un archivo de video no sirve de nada si tu sitio web es lento o genérico. Construimos la interfaz digital que aloja tu propiedad: una plataforma rápida, de diseño premium y sin distracciones, orientada exclusivamente a concretar el cierre.",
+    "p3_s1_title": "01 / INGENIERÍA DE INTERFAZ",
+    "p3_s1_desc": "Desarrollo web con código limpio y tiempos de carga instantáneos. La arquitectura visual domina la pantalla en cualquier dispositivo móvil o de escritorio.",
+    "p3_s2_title": "02 / FLUJO SIN DISTRACCIONES",
+    "p3_s2_desc": "Eliminamos menús complejos y botones innecesarios. El comprador experimenta el activo sin interrupciones.",
+    "p3_s3_title": "03 / PUENTE DE FIRMA",
+    "p3_s3_desc": "Integración directa del portafolio visual con tu sistema de agenda para recibir únicamente a prospectos con intención de compra."
+  },
+  "pillars_automotive": {
+    "p1_header": "01 / DIAGNÓSTICO DE ESTATUS VISUAL",
+    "p1_manifesto": "Tu vehículo vale cientos de miles, o millones, pero una producción y marketing genéricos atraen a curiosos sin liquidez. Identificamos la fuga exacta de autoridad visual que te obliga a atender pruebas de manejo innecesarias.",
+    "p1_s1_title": "01 / AUDITORÍA DE BRECHA PERCEPTIVA",
+    "p1_s1_desc": "Detectamos la desconexión exacta entre el valor de tus vehículos y cómo se perciben en tu catálogo.",
+    "p1_s2_title": "02 / DEPURACIÓN DE ESTATUS",
+    "p1_s2_desc": "Aislamos los reflejos, fondos o elementos en el concesionario que dañan el look premium de tus vehículos.",
+    "p1_s3_title": "03 / MAPEO DE DIRECCIÓN VISUAL",
+    "p1_s3_desc": "Diseñamos los ángulos que resaltarán la aerodinámica y el diseño interior antes de encender las cámaras.",
+    "p2_header": "02 / DIRECCIÓN CINEMATOGRÁFICA",
+    "p2_manifesto": "La estética sin enfoque comercial es solo arte. Ejecutamos cinematografía para extraer las líneas de diseño, el motor y los acabados que separan tu inventario del mercado tradicional.",
+    "p2_s1_title": "01 / CAPTURA DE PRESENCIA",
+    "p2_s1_desc": "Movimientos estabilizados que exponen la aerodinámica y la postura física del vehículo.",
+    "p2_s2_title": "02 / ENFOQUE DE INGENIERÍA",
+    "p2_s2_desc": "Aislamiento visual de la cabina, costuras, fibra de carbono y componentes del motor.",
+    "p2_s3_title": "03 / GRADACIÓN DE COLOR",
+    "p2_s3_desc": "Procesamiento visual que resalta la pintura original y proyecta un lujo agresivo y limpio.",
+    "p3_header": "03 / ECOSISTEMA DE PRE-CIERRE",
+    "p3_manifesto": "Una galería de fotos no justifica un ticket alto. Construimos la interfaz web que exhibe tu vehículo: una plataforma de alto rendimiento y diseño clínico orientada a asegurar el depósito antes de la visita al concesionario.",
+    "p3_s1_title": "01 / INGENIERÍA DE INTERFAZ",
+    "p3_s1_desc": "Desarrollo con arquitectura de código moderna que responde al instante. El vehículo se expone a pantalla completa en máxima resolución.",
+    "p3_s2_title": "02 / FLUJO SIN DISTRACCIONES",
+    "p3_s2_desc": "Diseño de interfaz sin elementos de distracción. Toda la atención del usuario se dirige a las especificaciones, la aerodinámica y el botón de contacto.",
+    "p3_s3_title": "03 / PUENTE DE FIRMA",
+    "p3_s3_desc": "Conexión directa desde la exhibición digital hasta tu línea comercial para agilizar la transacción y filtrar a los curiosos."
+  },
+  "suites_architecture": {
+    "tier1": {
+      "title": "OPEN HOUSE",
+      "subtitle": "Dirección Visual",
+      "description": "Producción audiovisual enfocada en proyectar el valor arquitectónico de la propiedad. Incluye:",
+      "bullets": [
+        "1 video cinematográfico de recorrido con especificaciones de la propiedad en texto y/o voz.",
+        "Un mínimo de 25 fotografías profesionales (fachada, interiores y detalles), volumen adaptable a la escala del proyecto."
+      ]
+    },
+    "tier2": {
+      "title": "WIDE OPEN HOUSE",
+      "subtitle": "Plataforma y Dirección Visual",
+      "description": "Todo el material de captura de Open House, estructurado dentro de un ecosistema web premium desarrollado a medida. Interfaz limpia, rápida y sólida, diseñada exclusivamente para:",
+      "bullets": [
+        "Exhibir las propiedades ofreciendo una modalidad Open House a distancia a tus clientes.",
+        "Posicionarte.",
+        "Gestionar contacto.",
+        "Calcular cotizaciones (créditos y planes de financiamiento).",
+        "Programar citas para visitas a la propiedad.",
+        "Cualificar compradores."
+      ]
+    }
+  },
+  "suites_automotive": {
+    "tier1": {
+      "title": "SHOWROOM",
+      "subtitle": "Dirección Visual",
+      "description": "Producción audiovisual enfocada en destacar la estética y condición del vehículo. Incluye:",
+      "bullets": [
+        "1 video cinematográfico del vehículo (estático y en movimiento).",
+        "15 fotografías profesionales de exteriores e interiores, garantizando una exhibición digital impecable."
+      ]
+    },
+    "tier2": {
+      "title": "SHOWROOM PRO",
+      "subtitle": "Plataforma y Dirección Visual",
+      "description": "Todo el material de captura de Showroom, integrado en un ecosistema web premium diseñado a medida exclusivamente para tu inventario. Catálogo digital estructurado con diseño luxury, navegación fluida y conexión directa con el equipo de ventas para:",
+      "bullets": [
+        "Posicionarte.",
+        "Gestionar contacto.",
+        "Agendar pruebas de manejo.",
+        "Calcular cotizaciones (créditos y planes de financiamiento).",
+        "Cualificar clientes."
+      ]
+    }
+  },
+  "cta_suites": "COTIZAR PROYECTO →",
+  "suites_links": {
+    "architecture_t1": "https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20iniciar%20la%20cotizaci%C3%B3n%20de%20un%20proyecto%20bajo%20la%20suite%20OPEN%20HOUSE.%20Mi%20nombre%3A%20%20%20%2F%20%20Empresa%3A",
+    "architecture_t2": "https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20iniciar%20la%20cotizaci%C3%B3n%20de%20un%20proyecto%20bajo%20la%20suite%20WIDE%20OPEN%20HOUSE.%20Mi%20nombre%3A%20%20%20%2F%20%20Empresa%3A",
+    "automotive_t1": "https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20iniciar%20la%20cotizaci%C3%B3n%20de%20un%20proyecto%20bajo%20la%20suite%20SHOWROOM.%20Mi%20nombre%3A%20%20%20%2F%20%20Empresa%3A",
+    "automotive_t2": "https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20iniciar%20la%20cotizaci%C3%B3n%20de%20un%20proyecto%20bajo%20la%20suite%20SHOWROOM%20PRO.%20Mi%20nombre%3A%20%20%20%2F%20%20Empresa%3A"
   }
 }

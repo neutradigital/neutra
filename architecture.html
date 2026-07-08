@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./src/logos/n.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO PRIMARY METADATA -->
+  <title data-i18n-title="architecture.meta.title">Neutra | Arquitectura & Real Estate</title>
+  <meta name="description" data-i18n-content="architecture.meta.description"
+    content="Consolidamos el valor de tus desarrollos inmobiliarios y proyectos arquitectónicos. Capturamos la magnitud espacial y creamos experiencias digitales inmersivas." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Neutra Digital" />
+
+  <link href="/src/style.css" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/images/camilo.png">
+  <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./src/style.css">
+  </noscript>
+</head>
+
+<body class="bg-[#21222e]">
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true" role="presentation"
+    class="fixed inset-0 z-[100] bg-[#21222e] flex flex-col justify-center items-center transition-opacity duration-700 ease-out">
+    <p id="text-pre" class="text-white text-3xl font-bold tracking-[0.3em] animate-pulse">NEUTRA</p>
+    <div class="mt-4 w-32 h-0.5 bg-white/20 overflow-hidden rounded-full">
+      <div class="w-full h-full bg-white animate-loading-bar origin-left"></div>
+    </div>
+  </div>
+
+  <header class="relative w-full min-h-[75vh] flex flex-col justify-center items-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 w-full h-full -z-10">
+      <img src="/assets/images/real_estate2.jpg" alt="Dirección fotográfica de arquitectura — Neutra Digital"
+        class="w-full h-full object-cover">
+      <!-- Dark overlay to maximize text contrast -->
+      <div class="absolute inset-0 bg-black/65"></div>
+      <div class="absolute inset-0"
+        style="background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(0,0,0,0.5) 0%, transparent 100%);"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-5 md:px-12 bg-[#21222e]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <a href="/index.html" class="relative z-50" aria-label="Neutra — Ir al inicio">
+        <span id="brand" class="text-xl md:text-2xl font-bold tracking-[0.2em] text-white">
+          NEUTRA
+        </span>
+      </a>
+
+      <button id="menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-items"
+        class="relative z-50 flex flex-col gap-1.5 md:hidden focus:outline-none group">
+        <span id="line1"
+          class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
+        <span id="line2"
+          class="block w-6 h-0.5 bg-white transition-opacity duration-300 group-hover:bg-gray-300"></span>
+        <span id="line3"
+          class="block w-6 h-0.5 bg-white transition-transform duration-300 group-hover:bg-gray-300"></span>
+      </button>
+
+      <ul id="menu-items"
+        class="fixed inset-0 z-40 bg-[#21222e] h-full w-full flex flex-col justify-start items-center pt-32 gap-8 text-2xl tracking-widest opacity-0 pointer-events-none transition-all duration-300 overflow-y-auto
+        md:static md:h-auto md:w-auto md:bg-transparent md:flex-row md:justify-end md:pt-0 md:gap-10 md:text-xs md:font-medium md:tracking-[0.15em] md:opacity-100 md:pointer-events-auto md:overflow-visible text-white">
+        <li><a href="/index.html" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">HOME</a></li>
+        <li><a href="/index.html#trusted-partners" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">TRUSTED PARTNERS</a></li>
+        <li><a href="/index.html#contacto" class="hover:text-gray-400 transition-colors duration-300"
+            onclick="closeMenu()">CONTACTO</a></li>
+
+        <!-- Language Toggle -->
+        <li class="flex items-center gap-2 mt-2 md:mt-0 md:ml-4">
+          <button id="btn-lang-en" onclick="setLang('en')" aria-label="Switch to English"
+            class="font-mono text-[11px] tracking-[0.15em] transition-all duration-300 cursor-pointer hover:opacity-80 text-white/40 font-normal">EN</button>
+          <span class="text-white/20 text-xs font-light">/</span>
+          <button id="btn-lang-es" onclick="setLang('es')" aria-label="Cambiar a Español"
+            class="font-mono text-[11px] tracking-[0.15em] transition-all duration-300 cursor-pointer hover:opacity-80 text-white font-bold opacity-100">ES</button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero Content -->
+    <section class="relative z-10 container mx-auto px-4 flex flex-col justify-end pt-32 pb-16 gap-6 max-w-5xl">
+      <div class="flex flex-col animate-fade-in-up">
+        <span data-i18n="architecture.hero.eyebrow"
+          class="text-[10px] font-bold tracking-[0.5em] text-white/40 uppercase mb-4">01 / SECTOR</span>
+        <h1 id="hero-title"
+          class="font-black uppercase tracking-tighter text-[8vw] md:text-[6vw] leading-[0.9] text-white">
+          <span data-i18n="architecture.hero.title">Arquitectura & Real Estate</span>
+        </h1>
+      </div>
+      <p data-i18n="architecture.hero.subtitle"
+        class="text-white/70 text-base md:text-xl font-light max-w-2xl leading-relaxed tracking-wide animate-fade-in-up">
+        Consolidamos el valor de tus propiedades y desarrollos eliminando cualquier presentación genérica.
+      </p>
+    </section>
+  </header>
+
+  <section id="pilares-arquitectura" class="w-full mx-auto px-4 md:px-8 py-20 lg:py-32 bg-[#21222e]">
+    <div class="mb-12 lg:mb-20">
+      <p class="text-center text-sm md:text-base font-bold tracking-[0.3em] text-gray-400 uppercase">
+        NUESTROS PILARES
+      </p>
+      <div class="h-px w-24 bg-white/20 mx-auto mt-4"></div>
+    </div>
+
+    <div class="w-full max-w-7xl mx-auto flex flex-col">
+      <!-- PILAR 01 -->
+      <div class="group cursor-pointer border-gray-800 border-t border-b relative"
+        onclick="this.classList.toggle('is-open')" role="button" tabindex="0">
+        <div
+          class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+          <h2
+            class="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-tight transition-colors duration-300"
+            data-i18n="pillars_architecture.p1_header">
+            01 / DIAGNÓSTICO DE ESTATUS VISUAL
+          </h2>
+        </div>
+        <div
+          class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-[.is-open]:grid-rows-[1fr]">
+          <div class="overflow-hidden">
+            <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
+              <div class="md:w-1/2 flex flex-col items-start w-full">
+                <p data-i18n="pillars_architecture.p1_manifesto"
+                  class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed"></p>
+              </div>
+              <div class="md:w-1/2 w-full flex flex-col gap-6 justify-center">
+                <div class="space-y-4 md:space-y-6">
+                  <div class="flex flex-col gap-1">
+                    <span data-i18n="pillars_architecture.p1_s1_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p1_s1_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                  <div class="flex flex-col gap-1 border-t border-white/5 pt-4">
+                    <span data-i18n="pillars_architecture.p1_s2_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p1_s2_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                  <div class="flex flex-col gap-1 border-t border-white/5 pt-4">
+                    <span data-i18n="pillars_architecture.p1_s3_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p1_s3_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILAR 02 -->
+      <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')"
+        role="button" tabindex="0">
+        <div
+          class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+          <h2
+            class="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-tight transition-colors duration-300"
+            data-i18n="pillars_architecture.p2_header">
+            02 / DIRECCIÓN CINEMATOGRÁFICA
+          </h2>
+        </div>
+        <div
+          class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-[.is-open]:grid-rows-[1fr]">
+          <div class="overflow-hidden">
+            <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
+              <div class="md:w-1/2 flex flex-col items-start w-full">
+                <p data-i18n="pillars_architecture.p2_manifesto"
+                  class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed"></p>
+              </div>
+              <div class="md:w-1/2 w-full flex flex-col gap-6 justify-center">
+                <div class="space-y-4 md:space-y-6">
+                  <div class="flex flex-col gap-1">
+                    <span data-i18n="pillars_architecture.p2_s1_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p2_s1_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                  <div class="flex flex-col gap-1 border-t border-white/5 pt-4">
+                    <span data-i18n="pillars_architecture.p2_s2_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p2_s2_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                  <div class="flex flex-col gap-1 border-t border-white/5 pt-4">
+                    <span data-i18n="pillars_architecture.p2_s3_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p2_s3_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILAR 03 -->
+      <div class="group cursor-pointer border-gray-800 border-b relative" onclick="this.classList.toggle('is-open')"
+        role="button" tabindex="0">
+        <div
+          class="py-8 md:py-12 transition-colors duration-300 text-gray-500 md:group-hover:text-white group-[.is-open]:text-white">
+          <h2
+            class="text-3xl md:text-5xl lg:text-6xl font-light uppercase tracking-tight transition-colors duration-300"
+            data-i18n="pillars_architecture.p3_header">
+            03 / ECOSISTEMA DE PRE-CIERRE
+          </h2>
+        </div>
+        <div
+          class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-[.is-open]:grid-rows-[1fr]">
+          <div class="overflow-hidden">
+            <div class="flex flex-col md:flex-row pb-8 md:pb-12 gap-8 md:gap-12 w-full">
+              <div class="md:w-1/2 flex flex-col items-start w-full">
+                <p data-i18n="pillars_architecture.p3_manifesto"
+                  class="max-w-xl text-lg text-gray-400 mt-2 md:mt-8 leading-relaxed"></p>
+              </div>
+              <div class="md:w-1/2 w-full flex flex-col gap-6 justify-center">
+                <div class="space-y-4 md:space-y-6">
+                  <div class="flex flex-col gap-1">
+                    <span data-i18n="pillars_architecture.p3_s1_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p3_s1_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                  <div class="flex flex-col gap-1 border-t border-white/5 pt-4">
+                    <span data-i18n="pillars_architecture.p3_s2_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p3_s2_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                  <div class="flex flex-col gap-1 border-t border-white/5 pt-4">
+                    <span data-i18n="pillars_architecture.p3_s3_title"
+                      class="text-sm font-semibold text-white uppercase tracking-wider block"></span>
+                    <p data-i18n="pillars_architecture.p3_s3_desc"
+                      class="text-xs text-neutral-400 font-light leading-relaxed mt-1"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="w-full bg-[#21222e] text-white overflow-x-hidden">
+    <!-- Bloque CTA: Laboratorios Maestros -->
+    <section class="w-full bg-[#1b1c26] py-32 border-t border-gray-800 flex justify-center px-4">
+      <div class="max-w-3xl text-center">
+        <span class="text-[9px] font-bold tracking-[0.3em] text-white/40 uppercase block mb-6">
+          FASE DE CAPTURA / MÉXICO
+        </span>
+        <h2 class="text-4xl md:text-5xl font-light text-white mb-8 tracking-tight">
+          Laboratorios Maestros: <br><span class="italic text-gray-400">Selección 2026</span>
+        </h2>
+        <p class="text-gray-400 text-lg leading-relaxed mb-12 font-light max-w-2xl mx-auto">
+          Estamos construyendo los casos de estudio que definirán el estándar visual de la industria. Seleccionaremos estrictamente a tres clientes con inventario premium para ejecutar nuestra Dirección Cinematográfica bajo un acuerdo especial. Tú obtienes la infraestructura visual para vender a precio de lista; nosotros obtenemos nuestro caso de estudio.
+        </p>
+        <button type="button" class="js-open-qualifier bg-white text-black text-xs font-bold tracking-widest uppercase py-5 px-10 hover:bg-gray-200 transition-colors duration-300">
+          POSTULAR INVENTARIO →
+        </button>
+      </div>
+    </section>
+
+    <!-- SUITES SECTION: Binary Architecture (2-tier) -->
+    <section id="suites-sector" class="w-full bg-[#1b1c26] py-32 px-4 border-t border-gray-800">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="mb-24">
+          <h2 data-i18n="architecture.suites.title"
+            class="font-extralight text-4xl md:text-6xl tracking-tight text-white/90">
+            Suites
+          </h2>
+        </div>
+
+        <!-- Binary Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+          <!-- CARD TIER 1 -->
+          <div
+            data-suite-card
+            class="suite-card group/card flex flex-col justify-between p-8 md:p-12 border border-gray-800 bg-[#1b1c26] transition-all duration-700 hover:scale-[1.02] hover:border-gray-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-0 translate-y-8">
+            <div class="mb-12">
+              <span class="text-[10px] text-gray-500 tracking-[0.2em] uppercase font-bold mb-3 block">Tier 1</span>
+              <h3 data-i18n="suites_architecture.tier1.title"
+                class="text-3xl md:text-4xl text-white font-light mb-2">OPEN HOUSE</h3>
+              <h4 data-i18n="suites_architecture.tier1.subtitle"
+                class="text-sm text-gray-400 font-light mb-8">Dirección Visual</h4>
+              <p data-i18n="suites_architecture.tier1.description"
+                class="text-gray-300 text-sm leading-relaxed font-light mb-6">
+                Producción audiovisual enfocada en proyectar el valor arquitectónico de la propiedad. Incluye:
+              </p>
+              <ul class="text-gray-400 text-sm font-light space-y-3 list-disc pl-4 marker:text-gray-600">
+                <li data-i18n="suites_architecture.tier1.bullets.0">1 video cinematográfico de recorrido con especificaciones de la propiedad en texto y/o voz.</li>
+                <li data-i18n="suites_architecture.tier1.bullets.1">Un mínimo de 25 fotografías profesionales (fachada, interiores y detalles), volumen adaptable a la escala del proyecto.</li>
+              </ul>
+            </div>
+            <!-- CTA Link with cubic-bezier sweep -->
+            <a href="https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20iniciar%20la%20cotizaci%C3%B3n%20de%20un%20proyecto%20bajo%20la%20suite%20OPEN%20HOUSE.%20Mi%20nombre%3A%20%20%20%2F%20%20Empresa%3A"
+              data-i18n-href="suites_links.architecture_t1"
+              target="_blank" rel="noopener noreferrer"
+              class="group/btn relative overflow-hidden bg-white w-full py-5 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] mt-auto block">
+              <div class="absolute inset-0 bg-[#1b1c26] translate-y-[101%] group-hover/btn:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
+              <span data-i18n="cta_suites"
+                class="relative z-10 text-black group-hover/btn:text-white text-xs font-bold uppercase tracking-[0.2em] group-hover/btn:tracking-[0.3em] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] block text-center">
+                COTIZAR PROYECTO →
+              </span>
+            </a>
+          </div>
+
+          <!-- CARD TIER 2 (Premium Highlight) -->
+          <div
+            data-suite-card
+            class="suite-card group/card flex flex-col justify-between p-8 md:p-12 border border-white/20 bg-[#1b1c26] relative overflow-hidden transition-all duration-700 hover:scale-[1.02] hover:border-white/50 hover:shadow-[0_20px_50px_rgba(255,255,255,0.05)] opacity-0 translate-y-8" style="transition-delay: 120ms;">
+            <!-- Full Ecosystem Badge -->
+            <div class="absolute top-0 right-0 bg-white text-black text-[9px] font-bold tracking-[0.2em] uppercase px-4 py-2">
+              Full Ecosystem
+            </div>
+
+            <div class="mb-12">
+              <span class="text-[10px] text-gray-500 tracking-[0.2em] uppercase font-bold mb-3 block">Tier 2</span>
+              <h3 data-i18n="suites_architecture.tier2.title"
+                class="text-3xl md:text-4xl text-white font-light mb-2">WIDE OPEN HOUSE</h3>
+              <h4 data-i18n="suites_architecture.tier2.subtitle"
+                class="text-sm text-gray-400 font-light mb-8">Plataforma y Dirección Visual</h4>
+              <p data-i18n="suites_architecture.tier2.description"
+                class="text-gray-300 text-sm leading-relaxed font-light mb-6">
+                Todo el material de captura de Open House, estructurado dentro de un ecosistema web premium desarrollado a medida. Interfaz limpia, rápida y sólida, diseñada exclusivamente para:
+              </p>
+              <ul class="text-gray-400 text-sm font-light space-y-3 list-disc pl-4 marker:text-gray-600">
+                <li data-i18n="suites_architecture.tier2.bullets.0">Exhibir las propiedades ofreciendo una modalidad Open House a distancia a tus clientes.</li>
+                <li data-i18n="suites_architecture.tier2.bullets.1">Posicionarte.</li>
+                <li data-i18n="suites_architecture.tier2.bullets.2">Gestionar contacto.</li>
+                <li data-i18n="suites_architecture.tier2.bullets.3">Calcular cotizaciones (créditos y planes de financiamiento).</li>
+                <li data-i18n="suites_architecture.tier2.bullets.4">Programar citas para visitas a la propiedad.</li>
+                <li data-i18n="suites_architecture.tier2.bullets.5">Cualificar compradores.</li>
+              </ul>
+            </div>
+            <!-- CTA Link with cubic-bezier sweep -->
+            <a href="https://wa.me/522221978263?text=Hola%2C%20Neutra.%20Me%20interesa%20iniciar%20la%20cotizaci%C3%B3n%20de%20un%20proyecto%20bajo%20la%20suite%20WIDE%20OPEN%20HOUSE.%20Mi%20nombre%3A%20%20%20%2F%20%20Empresa%3A"
+              data-i18n-href="suites_links.architecture_t2"
+              target="_blank" rel="noopener noreferrer"
+              class="group/btn relative overflow-hidden bg-white w-full py-5 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] mt-auto block">
+              <div class="absolute inset-0 bg-[#1b1c26] translate-y-[101%] group-hover/btn:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
+              <span data-i18n="cta_suites"
+                class="relative z-10 text-black group-hover/btn:text-white text-xs font-bold uppercase tracking-[0.2em] group-hover/btn:tracking-[0.3em] transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] block text-center">
+                COTIZAR PROYECTO →
+              </span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- IntersectionObserver: staggered reveal for suite cards -->
+    <script>
+      (function () {
+        const cards = document.querySelectorAll('[data-suite-card]');
+        if (!cards.length) return;
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        cards.forEach((card) => io.observe(card));
+      })();
+    </script>
+  </main>
+
+  <footer id="footer" class="bg-white border-t border-gray-100 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div class="space-y-4">
+          <h2 id="neutrafooterlogo" class="text-2xl font-bold text-black font-['Michroma']">NEUTRA</h2>
+          <p data-i18n="footer.tagline" class="text-sm text-gray-500 max-w-xs">
+            Construimos el ecosistema que convierte tu marca en tu mejor activo.
+          </p>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <h3 data-i18n="footer.contactTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+            Contacto</h3>
+          <a href="https://wa.me/522221978263?text=Hola%20NEUTRA,%20me%20gustaría%20más%20información"
+            class="text-gray-600 hover:text-black transition-colors duration-200 flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span data-i18n="footer.whatsapp">WhatsApp: 222 197 8263</span>
+          </a>
+          <a class="text-gray-600" href="mailto:hola@neutra.agency">hola@neutra.agency</a>
+          <p data-i18n="footer.location" class="text-gray-600 text-sm">México · USA</p>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <h3 data-i18n="footer.legalTitle" class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal
+          </h3>
+          <a href="/privacidad.html" data-i18n="footer.privacy"
+            class="text-gray-600 hover:text-black text-sm transition-colors">Aviso de Privacidad</a>
+          <a href="/terminos.html" data-i18n="footer.terms"
+            class="text-gray-600 hover:text-black text-sm transition-colors">Términos de Servicio</a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center opacity-60">
+        <p data-i18n="footer.copyright" class="text-xs text-gray-400">
+          &copy; 2026 NEUTRA. Todos los derechos reservados.
+        </p>
+        <p data-i18n="footer.tagline2" class="text-xs text-gray-400 mt-2 md:mt-0 italic">
+          Estrategia con enfoque y claridad.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="img-lightbox"
+    class="fixed inset-0 z-[300] flex items-center justify-center bg-black/92 opacity-0 pointer-events-none transition-opacity duration-300"
+    role="dialog" aria-modal="true" aria-label="Visor de imagen">
+    <button id="img-lightbox-close" aria-label="Cerrar imagen"
+      class="absolute top-5 right-6 text-white/50 hover:text-white text-5xl font-extralight leading-none transition-colors duration-200 z-10 cursor-pointer select-none">
+      &times;
+    </button>
+    <img id="img-lightbox-img" src="" alt=""
+      class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default select-none"
+      onclick="event.stopPropagation()" draggable="false">
+  </div>
+
+  <!-- Custom Cursor Elements -->
+  <div id="cursor-dot" class="hidden lg:block fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none"
+    style="background-color: #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
+  <div id="cursor-outline" class="hidden lg:block fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none"
+    style="border: 1px solid #ffffff; mix-blend-mode: difference; z-index: 2147483647;"></div>
+
+  <!-- Overlay del Cualificador -->
+  <div id="qualifier-modal" class="fixed inset-0 z-50 hidden bg-[#1b1c26] w-full h-screen overflow-y-auto overflow-x-hidden flex-col items-center justify-center px-4 transition-opacity duration-500 opacity-0">
+    <!-- Barra de progreso minimalista -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-white/5">
+      <div id="qualifier-progress" class="h-full bg-white transition-all duration-500 w-0"></div>
+    </div>
+
+    <button type="button" id="close-qualifier" class="absolute top-6 right-6 text-xs font-bold tracking-widest uppercase text-gray-500 hover:text-white transition-colors z-50">
+      CERRAR ✕
+    </button>
+
+    <!-- Contenedor Dinámico -->
+    <div id="qualifier-content" class="w-full max-w-2xl mx-auto flex flex-col transition-all duration-500 transform translate-y-4 opacity-0 py-20">
+      <!-- El contenido se inyecta vía JS -->
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/qualifier.js"></script>
+</body>
+
+</html>
